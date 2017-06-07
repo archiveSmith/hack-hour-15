@@ -20,6 +20,12 @@
 // The comments not in parens are my original English solution strategry
 // The comments in parens are translating that into a specific approach
 function fizzbuzz(num) {
+    
+    // (check for valid input)
+    if (typeof num !== 'number' || num < 1 || num % 1 !== 0) {
+        return "Not a valid positive integer";
+    }
+    
     // Create an array with elements from 1 to an inputted integeter (num)
     
     // (Create an array)
