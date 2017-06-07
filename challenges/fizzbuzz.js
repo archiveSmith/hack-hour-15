@@ -30,7 +30,7 @@ function fizzbuzz(num) {
 	//if ( (typeof num !== "number") ) return num; 
 
 	// Use for loop to "num" of times 
-	for( let i = 1 ; i <= num ; i += i ) {
+	for( let i = 1 ; i <= num ; i += 1 ) {
 		
 		// fizzbuzz DIVISIBLE by 3 AND 5: 
 		if ( (i % 3 === 0) && (i % 5 === 0))
@@ -45,5 +45,6 @@ function fizzbuzz(num) {
 
 	return result; 
 }
+
 
 module.exports = fizzbuzz;
