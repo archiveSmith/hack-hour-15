@@ -21,9 +21,9 @@ function fizzbuzz(num) {
   for (let i = 0; i <= num; i++) {
   	if (i % 15 === 0) {
   		result.push('fizzbuzz');
-  	} else if (i % 3) {
+  	} else if (i % 3 === 0) {
   		result.push('fizz'); 		
-  	} else if (i % 5) {
+  	} else if (i % 5 === 0) {
   		result.push('buzz');
   	} else {
   		result.push(i);
