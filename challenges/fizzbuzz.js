@@ -24,11 +24,11 @@ function fizzbuzz(num) {
       return 1;
     } else {
       if (num % 3 === 0 && num % 5 === 0) {
-        results.push('FizzBuzz');
+        results.push('fizzbuzz');
       } else if (num % 5 === 0) {
-        results.push('Buzz');
+        results.push('buzz');
       } else if (num % 3 === 0) {
-        results.push('Fizz');
+        results.push('fizz');
       } else {
         results.push(num);
       }
@@ -37,5 +37,4 @@ function fizzbuzz(num) {
   }
   return recursion(num).reverse();
 }
-
 module.exports = fizzbuzz;
