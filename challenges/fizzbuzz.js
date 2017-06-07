@@ -72,5 +72,8 @@ function fizzbuzz(num) {
 }
 
 //console.log(fizzbuzz(100));
+//console.log(fizzbuzz(1.5));
+//console.log(fizzbuzz(-1));
+//console.log(fizzbuzz('blue'));
 
 module.exports = fizzbuzz;
