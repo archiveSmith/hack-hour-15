@@ -17,7 +17,38 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+//fill array
+let newArr = [], res = [];
+for (i=1; i<num+1; i++){
+    newArr.push(i);
+ 
+}
+  
+
+// create check for divisible by three and five
+function isDivby3(num){
+    return (num%3===0);
+}
+
+function isDivby5(num){
+    return (num%5===0);
+}
+
+function isDivby3And5(num){
+    return (num%3===0 && num%5===0);
+}
+
+// go through running both checks before splicing word over number
+newArr.forEach((num)=>{
+    if (isDivby3And5(num)){res.push("fizzbuzz")}
+    else if (isDivby3(num)){res.push("fizz")}
+    else if (isDivby5(num)){res.push("buzz")} 
+  	else {res.push(num)}
+});
+
+return res;
 
 }
+console.log(fizzbuzz(15));
 
 module.exports = fizzbuzz;
