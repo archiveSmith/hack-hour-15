@@ -17,7 +17,25 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  function recursion(num) {
+  
+   let results = [];
+    if (num === 1) {
+      return 1;
+    } else {
+      if (num % 3 === 0 && num % 5 === 0) {
+        results.push('FizzBuzz');
+      } else if (num % 5 === 0) {
+        results.push('Buzz');
+      } else if (num % 3 === 0) {
+        results.push('Fizz');
+      } else {
+        results.push(num);
+      }
+      return results.concat(recursion(num - 1));
+    }
+  }
+  return recursion(num).reverse();
 }
 
 module.exports = fizzbuzz;
