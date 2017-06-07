@@ -46,6 +46,4 @@ function fizzbuzz(num) {
 	return result; 
 }
 
-fizzbuzz(16); 
-
 module.exports = fizzbuzz;
