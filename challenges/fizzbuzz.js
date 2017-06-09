@@ -16,8 +16,30 @@
 //                     'fizzbuzz',
 //                     16 ]
 
+// step through 1-num by 1, then loop. check mods, fizz or buzz appropriately.
+// start with the no go case then work down to either fizz or buzz alone.
+
 function fizzbuzz(num) {
+  const result = [];
+  for (let i = 1; i <= num; i += 1) {
+    const fizz = i % 3 === 0;
+    const buzz = i % 5 === 0;
 
+    /* the easy solution
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      result.push(i);
+    } else if (i % 15 === 0) {
+      result.push('fizzbuzz');
+    } else if (i % 3 === 0) {
+      result.push('fizz');
+    } else {
+      result.push('buzz');
+    } */
+
+    // the clever solution.
+    const element = fizz ? buzz ? 'fizzbuzz' : 'Fizz' : buzz ? 'buzz' : i;
+    result.push(element);
+  }
+  return result;
 }
-
 module.exports = fizzbuzz;
