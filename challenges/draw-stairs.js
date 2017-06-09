@@ -19,9 +19,11 @@ function drawStairs(n) {
     let steps = "*";
     let blank = " "
     let blankcounter = n
-
+    
     function recursive(arg){
-        if(counter === n+1) return result;
+        if(counter === n+1) {
+          let finish = console.log(result)
+          return finish;}
         blankcounter--;
         result += blank.repeat(blankcounter);
         result += steps.repeat(counter);
@@ -33,6 +35,7 @@ function drawStairs(n) {
 
     return recursive(n);
 }
+
 
 
 module.exports = drawStairs;
