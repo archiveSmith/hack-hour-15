@@ -14,6 +14,7 @@
 */
 
 function drawStairs(n) {
+
     let counter = 1
     let result = ""
     let steps = "*";
@@ -35,7 +36,5 @@ function drawStairs(n) {
 
     return recursive(n);
 }
-
-
 
 module.exports = drawStairs;
