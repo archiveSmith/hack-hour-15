@@ -16,8 +16,24 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
 
+const isDivisibleBy = (num, divisors) => {
+  return divisors.reduce((acc, divisor) => acc && num % divisor === 0, true);
+}
+
+const fizzbuzz = (num) => {
+  const fizz = 3;
+  const buzz = 5;
+  const output = [];
+
+  for (let i = 1; i <= num; i += 1) {
+    output.push(i);
+    if (isDivisibleBy(i, [fizz, buzz])) output.push('fizzbuzz');
+    else if (isDivisibleBy(i, [fizz])) output.push('fizz');
+    else if (isDivisibleBy(i, [buzz])) output.push('buzz');
+  }
+
+  return output;
 }
 
 module.exports = fizzbuzz;
