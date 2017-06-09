@@ -14,8 +14,22 @@
 */
 
 function drawStairs(n) {
-
+	let stack = "";
+	let inc = n;
+	for (let i = 1; i <= n; i += 1) {
+		for (let j = 1; j <= n; j += 1) {
+			if (j < inc) {
+				stack += " ";
+			} else {
+				stack += "*";
+			}
+		}
+		stack += "\n";
+		inc -= 1;
+	}
+	return stack;
 }
 
+console.log (drawStairs(6));
 
 module.exports = drawStairs;
