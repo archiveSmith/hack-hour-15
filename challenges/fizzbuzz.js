@@ -17,15 +17,15 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-    var output = [];
-    for (var i = 1; i <= num; i++){
-        var str = '';
+    const output = [];
+    for (let i = 1; i <= num; i++){
+        let str = '';
         if (i % 3 === 0) str += 'fizz';
         if (i % 5 === 0) str += 'buzz';
         if (str.length > 0) {
             output.push(str);
         } else {
-            output.push(i)
+            output.push(i);
         }
     }
     return output;
