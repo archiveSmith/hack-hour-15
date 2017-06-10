@@ -17,28 +17,34 @@
 //                     16 ]
 //function that returns an array from 1 to num. Write "fizz" if i%3===0, "buzz" if i%5===0, and "fizzbuzz" if i div%3===0 && div%5===0.
 
+
+
 function fizzbuzz(num) {
-//the array we'll push the numbers into and return
-let arr = [];
+  	let res = [];
+  	let word = "";
+		let check1 = i => (i%3 === 0);
+    let check2 = i => (i%5 === 0);
 
-//set general array conditions
-  for (let i=1; i<num.length; i++){
-    //add rules for numbers pushed
-    if(i%3 === 0){
-      arr.push("fizz");
-    } else if(i%5===0){
-      arr.push("buzz");
-    } else if(i%3===0 && i%5===0){
-      arr.push("fizzbuzz");
+  for (let i=1; i<=num; i++){
+
+    if (check1(i) && check2(i)){
+      word = 'fizzbuzz';
+      res.push(word);
+
+    } else if (check1(i)){
+      word = 'fizz';
+      res.push(word);
+
+    } else if (check2(i)){
+      word = 'buzz';
+      res.push(word);
+
+    } else {
+      res.push(i);
     }
-    arr.push(i)
   }
+  return res;
+};
 
-
-//output final array
-return arr;
-}
-
-module.exports = fizzbuzz;
-
-console.log(fizzbuzz(16));
+console.log(fizzbuzz(10));
+console.log(fizzbuzz(15));
