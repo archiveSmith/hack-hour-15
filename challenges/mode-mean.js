@@ -41,12 +41,12 @@ function modemean(array) {
  for (let key in occurrences) {
      if (occurrences[key] > maxOccurrences) {
          maxOccurrences = occurrences[key];
-         mode = key;
+         mode = parseInt(key);
      } else if (occurrences[key] === maxOccurrences) {
-        mode = Math.max(mode, key);
+        mode = Math.max(mode, parseInt(key));
      }
  }
- return average == mode;
+ return average === mode;
 }
 
 module.exports = modemean;
