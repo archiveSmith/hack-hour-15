@@ -46,7 +46,7 @@ function modemean(array) {
         mode = Math.max(mode, key);
      }
  }
- return average === mode;
+ return average == mode;
 }
 
 module.exports = modemean;
