@@ -29,15 +29,11 @@ function drawStairs(n) {
   // Loop through the array
   // Add a new line
   // Add the # of white spaces, Add the # of astericks
-  let string = '';
   let i = 0;
   while (i <= n) {
-    string += '\n';
-    string += (' ').repeat(n - i);
-    string += ('*').repeat(i);
+    console.log((' ').repeat(n - i) + ('*').repeat(i));
     i += 1;
   }
-  return string;
 }
 
 
