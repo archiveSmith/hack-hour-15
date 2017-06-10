@@ -23,7 +23,7 @@ function asterisks(n) {
 
 function drawStairs(n) {
   for (let i = 1; i <= n; i += 1) {
-    console.log(asterisks(i));
+    console.log(' '.repeat(n - i) + asterisks(i));
   }
 }
 
