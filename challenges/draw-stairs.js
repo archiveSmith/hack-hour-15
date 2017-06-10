@@ -17,16 +17,17 @@ function drawStairs(n) {
     let spaces =0;
     let astr = 0;
     let print ='';
-    for (let i=0; i<n; i++){
+    for (let i=1; i<n+1; i++){
         spaces=n-(i);
         astr=i
         for (let w=0; w<spaces; w++){
-        print = print.concat(" ");
+        print = print.concat("-");
         }
         for (let ww=0; ww<astr; ww++){
         print = print.concat("*");
         }
         console.log(print);
+        print = "";
     }
 
 }
