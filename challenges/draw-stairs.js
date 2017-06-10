@@ -22,6 +22,7 @@ function drawStairs(n) {
   for (let i = 1; i <= n; i++) {
 	console.log((space.repeat(n-i).concat(star.repeat(i))));
   } 
+
 }
 
 
