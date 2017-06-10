@@ -14,8 +14,18 @@
 */
 
 function drawStairs(n) {
+    let str = "";
+    for (let x = 1; x <= n; x++) {
+        str += "*";
+        for (let y = n; y >= x; y--) {
+            str += " ";
+        }
+        console.log(str.split("").reverse());
 
+    }
 }
+
+drawStairs(6);
 
 
 module.exports = drawStairs;
