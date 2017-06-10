@@ -29,7 +29,7 @@ function drawStairs(n) {
   // Loop through the array
   // Add a new line
   // Add the # of white spaces, Add the # of astericks
-  let i = 0;
+  let i = 1;
   while (i <= n) {
     console.log((' ').repeat(n - i) + ('*').repeat(i));
     i += 1;
