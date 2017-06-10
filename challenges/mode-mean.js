@@ -29,6 +29,10 @@ function modemean(array) {
 	    }
 	  })
 	});
+	//if number all the same return TRUE!
+	if (uniqNum.length === 1){
+		return true;
+	}
 	//reduce to highest number which occurs most number of times and store it in mode
 	mode = uniqNum.reduce((acc,curr)=>{
 	  if(curr[1]>=acc[1]){
