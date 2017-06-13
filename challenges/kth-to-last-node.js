@@ -28,6 +28,9 @@ function kthToLastNode(k, head) {
     currentNode = currentNode.next;
   }
   currentNode = head;
+  if (k > numOfNodes) {
+    return undefined;
+  }
   for (let i = 1; i <= (numOfNodes - k); i += 1) {
     currentNode = currentNode.next;
   }
