@@ -30,9 +30,12 @@ const mode = Object.keys(nums).reduce((mode,b) => {
   mode = nums[b] > mode ? nums[b] : mode;
   return mode;
 });
-
+console.log(mode);
+  console.log(mode);
   return mean === Number(mode);
 }
 
+const ary = [4, 4, 4, 3, 3, 3];
+console.log(modemean(ary));
 
 module.exports = modemean;
