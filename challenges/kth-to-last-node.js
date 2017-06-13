@@ -22,7 +22,25 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+	const num = getNumberOfChildren(head);
+	return getChildAt(head, num - k + 1).value;
+}
 
+function getNumberOfChildren(head, acc = 0) {
+	if (head.next) {
+		acc += 1;
+		return getNumberOfChildren(head.next, acc);
+	} else {
+		return acc;
+	}
+}
+
+function getChildAt(head, index, curr = 0) {
+	if(index === curr) {
+		return head;
+	} else {
+		return getChildAt(head.next, index, curr + 1)
+	}
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
