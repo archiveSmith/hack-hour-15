@@ -9,6 +9,7 @@
  *
  */
 
+<<<<<<< HEAD
 function modemean(array) {
   // find the sum by using a reduce method
   let summed = array.reduce(function(acc, curr) {
@@ -44,4 +45,11 @@ modemean([3,2,5,6,3,6,3]); // -> false
 
 
 
+=======
+
+function modemean(array) {
+
+}
+
+>>>>>>> 7a60201de4fc9a0c3e8d149fb6135cd334da2ad1
 module.exports = modemean;
