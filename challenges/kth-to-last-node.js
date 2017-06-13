@@ -16,13 +16,29 @@
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
  */
 
+function linkedList(val) {
+  this.head;
+  this.tail;
+} 
+
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function kthToLastNode(k, head) {
+  const newNode = new node();
 
+  if (head === null) {
+  	this.head = newNode;
+  	this.tail = newNode;
+  	return this.value
+  } else if (k === 0 || k === undefined) {
+  	return  = this.value;
+  } else {
+  	 this.value = searchNodeAt((linkedList.length) - k)
+  	 return this.value;
+  }
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
