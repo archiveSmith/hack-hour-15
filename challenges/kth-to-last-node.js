@@ -31,8 +31,12 @@ function kthToLastNode(k, head) {
 		do{
 			currNode = currNode.next;
 			counter++;
+			
 		}
 		while(currNode!==null)
+		if(k>counter){
+			return undefined;
+		}
 		counter -= k;
 		currNode = head;
 		for (let i = 0; i<counter; i++){
