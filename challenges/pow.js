@@ -16,9 +16,9 @@ function pow(base, power) {
     return 1 / base * pow(base, power + 1)
   }
 }
-console.log(pow(2, 3)) // 8
-console.log(pow(3, 3)) // 27
-console.log(pow(2, -3)) // 0.125
-console.log(pow(3, -3)) // 1/27 
+// console.log(pow(2, 3)) // 8
+// console.log(pow(3, 3)) // 27
+// console.log(pow(2, -3)) // 0.125
+// console.log(pow(3, -3)) // 1/27 
 
 module.exports = pow;
