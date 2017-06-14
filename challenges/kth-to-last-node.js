@@ -25,24 +25,14 @@ function kthToLastNode(k, head) {
     //Find last node
     let arr = [];
     if (head === null) {
-        return null;
+        return undefined;
     }
     let address = head;
     do {
         arr.push(address.value);
         address = address.next;
     } while (address != null);
-    return arr[arr.length - k - 1];
+    return arr[arr.length - k];
 }
-const a = new Node('A');
-const b = new Node('B');
-const c = new Node('C');
-const d = new Node('D');
-const e = new Node('E');
 
-a.next = b;
-b.next = c;
-c.next = d;
-d.next = e;
-console.log(kthToLastNode(1, a));
 module.exports = { Node: Node, kthToLastNode: kthToLastNode };
