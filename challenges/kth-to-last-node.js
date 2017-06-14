@@ -34,5 +34,4 @@ function kthToLastNode(k, head) {
     } while (address != null);
     return arr[arr.length - k];
 }
-
 module.exports = { Node: Node, kthToLastNode: kthToLastNode };
