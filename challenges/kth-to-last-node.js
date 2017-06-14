@@ -29,7 +29,8 @@ function kthToLastNode(k, head) {
   // Given the integer, k, and the head of a singly linked list
   // Find what kth to the last node is
   const numOfDesiredNode = lengthOfLL - k;
-  if (lengthOfLL > numOfDesiredNode) {
+  // 
+  if (lengthOfLL > numOfDesiredNode && numOfDesiredNode > 0) {
     let currNode = head;
     let counter = 0;
     // Iterate through the linked list to return the value
@@ -38,9 +39,8 @@ function kthToLastNode(k, head) {
       currNode = currNode.next;
     }
     return currNode.value;
-  } else {
-    return undefined;
   }
+  return undefined;
 }
 
 function findLengthOfLL(head) {
