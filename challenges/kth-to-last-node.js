@@ -22,6 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+<<<<<<< HEAD
   let node = head;
   let nodesAry = [node];
   if (k === 0) return 'Too Small';
@@ -35,6 +36,9 @@ function kthToLastNode(k, head) {
   }
 
   return nodesAry[nodesAry.length - k].value;
+=======
+
+>>>>>>> 8eb902e5120eef32caf218fce6d338ec5d4c2fe8
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
