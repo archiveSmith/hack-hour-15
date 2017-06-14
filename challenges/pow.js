@@ -8,13 +8,20 @@ function pow(base, power) {
        || typeof power !== 'number'
        || power % 1 !== 0) return undefined;
     
-    //recursionless solution
-    let product = 1;
-    for (let i = 1; i <= power; i += 1){
-        product *= base;
-    }
+    // Recursion solution
+    if (power === 0) return 1;
     
-    return product;
+    return pow(base, power - 1) * base;
+    
+    
+    
+    // Recursionless solution
+    
+    //let product = 1;
+    //for (let i = 1; i <= power; i += 1){
+    //    product *= base;
+    //}
+    //return product;
 }
 
 // Test cases
