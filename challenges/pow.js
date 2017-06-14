@@ -3,10 +3,10 @@
  */
 
 function pow(base, power) {
-	for (let i = 1; i < power; i += 1) {
-		base *= base;
-	}
-	return base;
+	if (power <= 1) {
+		return base;
+	} 
+	return base * pow (base, power - 1);
 }
 
 module.exports = pow;
