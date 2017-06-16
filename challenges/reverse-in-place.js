@@ -12,7 +12,7 @@
  *
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
- let test = [1, 2, 3, 4, 5, 6] //=> [6, 5, 4, 3, 2, 1] [1 2 3 4 6 5]
+ 
 function reverseInPlace(array) {
   if (array.length === 0) return [];
   let len = array.length - 2; //second to last element.
