@@ -22,23 +22,23 @@ function modemean(array) {
 
         // Add each unique value in the array to the Mode object and increment 
         //      by one every time we come across the same value
-        if(!modes[array[i]]) // mode is not yet in object 
-             modes[array[i]] = 1; 
-
-        modes[array[i]] = modes[array[i]] + 1; 
+        if(!modes[array[i]]) {
+            modes[array[i]] = 1;
+        } else { 
+            modes[array[i]] += 1; 
+        }
     }
-    // console.log("the mode object is: ", modes); 
-    mean = Math.floor( sum / array.length ); 
-    // console.log("The mean is: ", mean); 
+     
+    mean = Math.floor( sum / array.length );  
 
     // if Max Mode is equivalent to the Mean return TRUE otherwsie FALSE 
-    let maxMode =  modes[x]; ; 
+    let maxMode; 
     for(x in modes) {
-        if(maxMode < modes[x]) maxMode = modes[x]; 
+        maxMode = modes[x]; 
+        if (maxMode < modes[x]) maxMode = modes[x]; 
     }
-
-    return ( maxMode === mean)
-
+    
+    return ( maxMode === mean); 
 }
 
 module.exports = modemean;
