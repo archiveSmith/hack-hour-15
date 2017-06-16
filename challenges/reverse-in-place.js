@@ -24,7 +24,8 @@ function reverseInPlace(array) {
     // Edge cases
         // check if the input is an array
         // check if the array is length 0 or 1 return array
-    if (!Array.isArray(array)) return "Not a valid array";
+    // if (!Array.isArray(array)) return "Not a valid array";
+    if (arguments.length === 0) return [];
     if (array.length === 0 || array.length === 1) return array;
     
     // for loop to iterate through input array
