@@ -37,6 +37,7 @@ function reverseInPlace(array) {
 }
 
 // Test cases
+/*
 let test1 = [];
 let test2 = [1];
 let test3 = [1,2];
@@ -55,6 +56,7 @@ console.log(test3); // [ 2, 1 ]
 console.log(test4); // [ 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
 console.log(test5); // [ { '4': 5 }, 3, [ 1, 2 ] ]
 console.log(test6); // "hello"
+*/
 
 
 module.exports = reverseInPlace;
