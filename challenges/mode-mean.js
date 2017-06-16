@@ -9,6 +9,7 @@
  *
  */
 
+<<<<<<< HEAD
 //mode is The number which appears most often in a set of numbers
 //iterate on numbers, pushing them in to their own array if they match.
 //return the array with the longest length
@@ -42,6 +43,10 @@ function modemean(array) {
 mean(array);
 console.log('this is the sum' + sum);
 console.log('this is the mean' + mean);
+=======
+
+function modemean(array) {
+>>>>>>> 5c4b9ad33d4a403859d225df0b325e000ae9b49d
 
 }
 

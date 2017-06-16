@@ -2,6 +2,7 @@
  * Use recursion!
  */
 
+<<<<<<< HEAD
  //find Math functions to aid with exponents
  //power is the number of times base should be multiplied by itself
 
@@ -26,4 +27,10 @@ return newBase;
 
 console.log(pow(3, 4));
 
+=======
+function pow(base, power) {
+
+}
+
+>>>>>>> 5c4b9ad33d4a403859d225df0b325e000ae9b49d
 module.exports = pow;

@@ -14,6 +14,7 @@
  * d.next = e;
  *
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
+<<<<<<< HEAD
 
  *
  */
@@ -26,6 +27,9 @@
  b.next = c;
  c.next = d;
  d.next = e;
+=======
+ */
+>>>>>>> 5c4b9ad33d4a403859d225df0b325e000ae9b49d
 
 function Node(val) {
   this.value = val;
@@ -33,6 +37,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+<<<<<<< HEAD
   let nodeVals = [];
   let node = head;
 
@@ -53,5 +58,9 @@ function kthToLastNode(k, head) {
 
 }
 console.log(kthToLastNode(2, a));
+=======
+
+}
+>>>>>>> 5c4b9ad33d4a403859d225df0b325e000ae9b49d
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
