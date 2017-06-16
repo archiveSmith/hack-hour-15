@@ -13,15 +13,27 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+// function reverseInPlace(array) {
+//   if (!array) return [];
+//   for (let i = array.length - 1; i >= 0; i -= 1) {
+//     array.push(array[i]);
+//   }
+//   for (let j = 0; j < array.length; j += 1) {
+//     array.shift();
+//   }
+//   return array;
+// }
+
+// Better time complexity
+let reverseInPlace = (array) => {
+  let temp;
   if (!array) return [];
-  for (let i = array.length - 1; i >= 0; i -= 1) {
-    array.push(array[i]);
-  }
-  for (let j = 0; j < array.length; j += 1) {
-    array.shift();
+  for (let i = 0, j = array.length - 1; i < j; i += 1, j -= 1) {
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
   return array;
-}
+};
 
 module.exports = reverseInPlace;
