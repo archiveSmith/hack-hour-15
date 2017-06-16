@@ -14,8 +14,9 @@
  */
  let test = [1, 2, 3, 4, 5, 6] //=> [6, 5, 4, 3, 2, 1] [1 2 3 4 6 5]
 function reverseInPlace(array) {
+  if (array.length === 0) return array;
   let len = array.length - 2; //second to last element.
-  for (let i = 0; i <= len; i++){ 
+  for (let i = 0; i <= len; i++){
     let char = array.splice(len - i, 1)[0]
     array.push(char);
   }
