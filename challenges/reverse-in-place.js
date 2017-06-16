@@ -12,7 +12,7 @@
  *
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
- 
+
 function reverseInPlace(array) {
   if (array.length === 0) return [];
   let len = array.length - 2; //second to last element.
@@ -23,7 +23,5 @@ function reverseInPlace(array) {
   return array;
   //grab length, start pushing things around in array.
 }
-
-console.log(reverseInPlace(test));
 
 module.exports = reverseInPlace;
