@@ -14,6 +14,13 @@
  */
 
 function reverseInPlace(array) {
+	if (array.length === 0){
+		return [];
+	}
+	return array.map((ele,index, arr)=>{
+		return arr[(arr.length-1)-index];
+	});
+	
 
 }
 

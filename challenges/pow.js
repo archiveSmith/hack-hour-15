@@ -10,13 +10,16 @@
 //Base case is if power === 1 then I return base.
 //base 
 function pow(base, power) {
+  if (power<0){
+  	return 1/(base*pow(base, power+1));
+  }
   if (power === 0){
     return 1;
   }
-	if(power === 1) return base
-	else{
-	  return pow(base, power-1)
-	}
+  if(power === 1) return base
+  else{
+	  return base*pow(base, power-1)
+  }
 
 }
 
