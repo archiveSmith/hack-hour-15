@@ -14,6 +14,9 @@
  */
 
 function reverseInPlace(array) {
+  
+  if (!array || array.length === 0 || !Array.isArray(array)) return [];
+
   let arrCopy = [];
 
   for (let i = 0; i < array.length; i++) {
