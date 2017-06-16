@@ -13,7 +13,7 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+function reverseInPlace(array=[]) {
   if (!Array.isArray(array)) return new ERROR('Please enter array');
   if (array.length < 2) return array;
   for (let i = 0; i < array.length / 2; i++) {
