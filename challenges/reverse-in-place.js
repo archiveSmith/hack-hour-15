@@ -18,7 +18,7 @@
 
 // Output
     // The inputted array is reversed
-    // Returns undefined
+    // Returns the array
 
 function reverseInPlace(array) {
     if (!Array.isArray(array)) return "Please enter valid array";
@@ -34,6 +34,8 @@ function reverseInPlace(array) {
         // Set the element at length - i to the temp variable
         array[array.length - i - 1] = temp;
     }
+    
+    return array;
 }
 
 // Test cases
