@@ -21,8 +21,36 @@ function Node(val) {
   this.next = null;
 }
 
-function kthToLastNode(k, head) {
+// kth to last node
 
+function kthToLastNode(k, head) {
+  // Find the length of the linked list
+  const lengthOfLL = findLengthOfLL(head);
+  // Given the integer, k, and the head of a singly linked list
+  // Find what kth to the last node is
+  const numOfDesiredNode = lengthOfLL - k;
+  // 
+  if (lengthOfLL > numOfDesiredNode && numOfDesiredNode > 0) {
+    let currNode = head;
+    let counter = 0;
+    // Iterate through the linked list to return the value
+    while (counter < numOfDesiredNode) {
+      counter++;
+      currNode = currNode.next;
+    }
+    return currNode.value;
+  }
+  return undefined;
+}
+
+function findLengthOfLL(head) {
+  let counter = 0;
+  let currNode = head;
+  while (currNode) {
+    counter++;
+    currNode = currNode.next;
+  }
+  return counter;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
