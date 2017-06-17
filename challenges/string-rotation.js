@@ -30,14 +30,16 @@ function stringRotation(s1, s2) {
   if (s1.length !== s2.length || typeof s1 !== typeof s2) {
     return false;
   }
+
+  // will have to add a check to see if every character and in equal quantity exist in both
+
   let temp1 = '';
   let temp2 = '';
   let len = s1.length;
   let rotationStateAt0 = s2.indexOf(s1[0]);
-  let rotationStateAt1 = s2.indexOf(s1[1]);
   
-  temp1 = s1.slice(2);
-  temp2 = s2.slice(rotationStateAt1 + 1) + s2.slice(0, rotationStateAt0);
+  temp1 = s1.slice(1);
+  temp2 = s2.slice(rotationStateAt0 + 1) + s2.slice(0, rotationStateAt0);
 
   return isSubstring(temp1, temp2);
 }
