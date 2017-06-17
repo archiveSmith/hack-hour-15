@@ -37,7 +37,7 @@ function stringRotation(s1, s2) {
         break;
       }
     }
-    return isSubstring(s1, s2.slice(breakPoint, s2.length));
+    return isSubstring(s1, s2.slice(breakPoint));
   }
   return false;
 }
