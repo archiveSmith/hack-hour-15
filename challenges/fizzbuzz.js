@@ -16,8 +16,28 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
 
+//Return an array from  1 - num. Fizz multiples of 3. Buzz multiples of 5. FizzBuzz replace multiples of 3 and 5 (15).
+//% to check for multiples.
+ 
+
+function fizzbuzz(num) {
+	for (let i = 0; i<num.length; i++){
+		if(num[i]%3 === 0){
+		  if(num[i]%5===0){
+		    num[i]="fizzbuzz";
+		  }
+		  else{
+		    num[i]="fizz";
+		  }
+		}
+		if(num[i]%5 === 0){
+			num[i]="buzz";
+		}
+	}
+	console.log("this is working.")
+	return num;
+	
 }
 
 module.exports = fizzbuzz;
