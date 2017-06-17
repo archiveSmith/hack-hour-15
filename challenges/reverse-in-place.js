@@ -25,6 +25,7 @@
 // Return the array
 
 function reverseInPlace(array) {
+  if (array === undefined) return [];
   const length = array.length;
   const halfLength = Math.floor(length / 2);
   for (let i = 0; i < halfLength; i += 1) {
