@@ -21,6 +21,8 @@
   this.next = null;
 }
 
+
+
 function KthToLast(k, head) {
   if (k === isNaN || k < 1) return undefined;
 
