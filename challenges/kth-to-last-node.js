@@ -32,6 +32,7 @@ function KthToLast(k, head) {
     nodeValues.push(head.values);
     head = head.next;
   }
+  
   return nodeValues[nodeValues.length - 1];
 }
 
