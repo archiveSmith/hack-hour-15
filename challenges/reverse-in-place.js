@@ -14,7 +14,6 @@
  */
 
 function reverseInPlace(array) {
-<<<<<<< HEAD
 	if (array.length === 0) return undefined;
 
 	let i = 0;
@@ -28,9 +27,7 @@ function reverseInPlace(array) {
         j--;
     }
     return array;
-=======
 
->>>>>>> bd26c8bf681cf53f294c64eeeb9b57ea68d066a8
 }
 
 module.exports = reverseInPlace;
