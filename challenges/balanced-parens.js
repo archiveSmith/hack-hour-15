@@ -25,7 +25,17 @@
  */
 
 function balancedParens(input){
+    let pattern = /[(+)+]/g; 
+    let subString = input.match(pattern); 
+    console.log("Substring with only parenthesis is: ", subString); 
 
+    let openParanCount = closeParanCount = 0; 
+    for (let i = 0; i < subString.length; i += 1) {
+        if( subString[0] === ')') return false; // not balanced
+        if( subString[i] === '(') openParanCount++; 
+        if( subString[i] === ')') closeParanCount++; 
+    }
+    return openParanCount === closeParanCount; 
 }
 
 module.exports = balancedParens;
