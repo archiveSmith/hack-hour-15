@@ -25,7 +25,52 @@
  */
 
 function balancedParens(input){
-
+  for (let i = 0; i < input.length; i += 1) {
+    switch(input.charAt(i)) {
+      case "(":
+        if (input.indexOf(")", i) === -1) {
+          return false;
+        } else {
+          input = input.replace(')', '');
+        }
+      break;
+      case "[":
+        if (input.indexOf("]", i) === -1) {
+          return false;
+        } else {
+          input = input.replace(']', '');
+        }
+      break;
+      case "{":
+        if (input.indexOf("}", i) === -1) {
+          return false;
+        } else {
+          input = input.replace('}', '');
+        }
+      break;
+    }
+  }
+  return true;
 }
 
+// console.log(balancedParens('(')) //false
+// console.log(balancedParens('()')) //true
+// console.log(balancedParens(')(')) //false
+// console.log(balancedParens('(())')) //true
+// console.log(balancedParens('((')) 
+// console.log(balancedParens('[](){}')) // true
+// console.log(balancedParens('[({})]')) //true
+// console.log(balancedParens('[(]{)}')) //false
+
+
 module.exports = balancedParens;
+    // if (input.charAt(i) === '[' ||
+    //     input.charAt(i) === '(' ||
+    //     input.charAt(i) === '{') {
+    //   lastBracket = input.charAt(i)
+    //   openBrackets += 1;
+    // } else if (input.charAt(i) === ']' ||
+    //           input.charAt(i) === ')' ||
+    //           input.charAt(i) === '}') {
+    //   openBrackets -= 1;
+    // }
