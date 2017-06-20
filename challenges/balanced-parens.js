@@ -25,7 +25,31 @@
  */
 
 function balancedParens(input){
-
+  const lops = ['\\[', '{', '\\('];
+  const rops = ['\\]', '}', '\\)'];
+  
+  const lopCount = [];
+  const ropCount = [];
+  
+  let isBalanced = true;
+  
+  lops.forEach((lop) => {
+    let op = new RegExp(lop,"g");
+    lopCount.push((input.match(op) || []).length);
+  });
+  
+  rops.forEach((rop) => {
+    let op = new RegExp(rop,"g");
+    ropCount.push((input.match(op) || []).length);
+  });
+  
+  lopCount.forEach((lop, i) => {
+    if(lop !== ropCount[i]) {
+      isBalanced = false;;
+    }
+  });
+  return isBalanced;
 }
+
 
 module.exports = balancedParens;
