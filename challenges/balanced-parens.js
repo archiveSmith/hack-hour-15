@@ -25,7 +25,18 @@
  */
 
 function balancedParens(input){
-
+  if (typeof input  !== 'string') return 'Enter valid input';
+  const parens = [];
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === '(' || input[i] === '[' || input[i] === '{') {
+      parens.push(input[i]);
+    } else if (input[i] === ')' && parens[parens.length-1] === '('
+    || input[i] === ']' && parens[parens.length-1] === '['
+    || input[i] === '}' && parens[parens.length-1] === '{') {
+      parens.pop();
+    }
+  }
+  return parens.length === 0;
 }
 
 module.exports = balancedParens;
