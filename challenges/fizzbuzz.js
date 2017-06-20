@@ -35,7 +35,9 @@ function fizzbuzz(num) {
 			num[i]="buzz";
 		}
 	}
+	console.log("this is working.")
 	return num;
+	
 }
 
 module.exports = fizzbuzz;
