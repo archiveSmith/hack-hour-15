@@ -63,7 +63,7 @@ function romanNumeral(n) {
     }
     if(r >= 9) {
       r -= 9
-      l = 'IX';
+      l += 'IX';
       continue;
     }
     if(r >= 5) {
