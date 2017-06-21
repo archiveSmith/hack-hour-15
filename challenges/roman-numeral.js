@@ -43,15 +43,15 @@ function romanNumeral(n) {
     let counter = n;
     function recursive(number)
         for(let prop in obj) {
-            if(n - parseInt(prop, 10) > 0) {
+            if(counter - parseInt(prop, 10) > 0) {
                 temp += obj[prop];
                 counter -= parseInt(prop, 10);
-                return recursive(n);
+                return recursive(counter);
             }
-            while(n<5) {
+            while(counter<5) {
                 temp += "I";
                 counter -= 1;
-                if(n === 0) return temp;
+                if(counter === 0) return temp;
             }
         }
     return recursive(n)
