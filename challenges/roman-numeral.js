@@ -51,6 +51,11 @@ function romanNumeral(n) {
       l += 'XC';
       continue;
     }
+    if(r >= 50) {
+      r -= 50
+      l += 'L';
+      continue;
+    }
     if(r >= 40) {
       r -= 40
       l += 'XL';
