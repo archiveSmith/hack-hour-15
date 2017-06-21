@@ -24,7 +24,7 @@
   // String containing the integer in Roman numeral form
 
 function romanNumeral(n) {
-  const converstions = [
+  const conversions = [
     {letter: 'M', val: 1000},
     {letter: 'D', val: 500},
     {letter: 'C', val: 100},
@@ -41,19 +41,29 @@ function romanNumeral(n) {
   let output = '';
   
   // Iterate through the conversions array
-  converstions.forEach((numeral, i) => {
+  conversions.forEach((numeral, i) => {
     console.log(cur, numeral);
+    
     // Store how many times the value goes into the current number
     const factor = Math.floor(cur / numeral.val);
-    
-    // if the factor is 4, then append the letter once and the next highest letter once
-    if (factor === 4) output += numeral.letter + converstions[i - 1].letter;
-    
+
     // Append the letter that many times to the output string
-    else for (let j = 0; j < factor; j += 1) {output += numeral.letter}
+    for (let j = 0; j < factor; j += 1) {output += numeral.letter}
+
     
     // Set the current number to remainder (current % value)
     cur = cur % numeral.val;
+    
+    // If the current value is equal to the current numeral - another numeral
+    for (let j = i + 1; j < conversions.length; j += 1) {
+      // Append the other numeral plus the current numeral
+      if (cur === numeral.val - conversions[j].val) {
+        output += conversions[j].letter + numeral.letter;
+        
+        // decrement current value by that much
+        cur -= (numeral.val - conversions[j].val);
+      }
+    }
   });
   
   // Return the output string
