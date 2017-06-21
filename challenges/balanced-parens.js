@@ -35,7 +35,7 @@ function balancedParens(input){
                 (input[i] === "]" && bracketsArr[bracketsArr.length - 1] === "[") ||
                 (input[i] === "}" && bracketsArr[bracketsArr.length - 1] === "{")) {
       bracketsArr.pop()
-    } else return false;
+    }
   }
   return bracketsArr.length === 0;
 }
