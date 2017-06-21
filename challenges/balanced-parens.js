@@ -25,43 +25,20 @@
  */
 
 function balancedParens(input){
+  let bracketsArr = [];
   for (let i = 0; i < input.length; i += 1) {
-    switch(input.charAt(i)) {
-      case "(":
-        if (input.indexOf(")", i) === -1) {
-          return false;
-        } else {
-          input = input.replace(')', '');
-        }
-      break;
-      case "[":
-        if (input.indexOf("]", i) === -1) {
-          return false;
-        } else {
-          input = input.replace(']', '');
-        }
-      break;
-      case "{":
-        if (input.indexOf("}", i) === -1) {
-          return false;
-        } else {
-          input = input.replace('}', '');
-        }
-      break;
-    }
+    if (input[i] === "(" ||
+        input[i] === "[" ||
+        input[i] === "{") {
+      bracketsArr.push(input[i]);
+    } else if ( (input[i] === ")" && bracketsArr[bracketsArr.length - 1] === "(") ||
+                (input[i] === "]" && bracketsArr[bracketsArr.length - 1] === "[") ||
+                (input[i] === "}" && bracketsArr[bracketsArr.length - 1] === "{")) {
+      bracketsArr.pop()
+    } else return false;
   }
-  return true;
+  return bracketsArr.length === 0;
 }
-
-// console.log(balancedParens('(')) //false
-// console.log(balancedParens('()')) //true
-// console.log(balancedParens(')(')) //false
-// console.log(balancedParens('(())')) //true
-// console.log(balancedParens('((')) 
-// console.log(balancedParens('[](){}')) // true
-// console.log(balancedParens('[({})]')) //true
-// console.log(balancedParens('[(]{)}')) //false
-
 
 module.exports = balancedParens;
     // if (input.charAt(i) === '[' ||
