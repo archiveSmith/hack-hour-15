@@ -46,7 +46,7 @@ function romanNumeral(n) {
             if(n - parseInt(prop, 10) > 0) {
                 temp += obj[prop];
                 counter -= parseInt(prop, 10);
-                return recursive(n);
+                return recursive(counter);
             }
             while(n<5) {
                 temp += "I";
