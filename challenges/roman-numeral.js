@@ -20,6 +20,9 @@
 
 
 function romanNumeral(n) {
+    if(n === 0){
+        return undefined;
+    }
     let result = [];
     let rObj = {
         I: 1,
@@ -36,6 +39,7 @@ function romanNumeral(n) {
         CM: 900,
         M: 1000
     }
+
     let keys = Object.keys(rObj);
     for (let i = keys.length-1; i>=0; i--){
         console.log(rObj[keys[i]])
