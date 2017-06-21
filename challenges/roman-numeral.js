@@ -36,18 +36,26 @@ function romanNumeral(n) {
   
   // Set the current number to the input value
   let cur = n;
+  
   // Create an empty output string
   let output = '';
+  
   // Iterate through the conversions array
-  converstions.forEach((numeral) => {
-    //console.log(cur, numeral);
+  converstions.forEach((numeral, i) => {
+    console.log(cur, numeral);
     // Store how many times the value goes into the current number
     const factor = Math.floor(cur / numeral.val);
+    
+    // if the factor is 4, then append the letter once and the next highest letter once
+    if (factor === 4) output += numeral.letter + converstions[i - 1].letter;
+    
     // Append the letter that many times to the output string
-    for (let i = 0; i < factor; i += 1) {output += numeral.letter}
+    else for (let j = 0; j < factor; j += 1) {output += numeral.letter}
+    
     // Set the current number to remainder (current % value)
     cur = cur % numeral.val;
   });
+  
   // Return the output string
   return output;
 }
@@ -56,6 +64,7 @@ function romanNumeral(n) {
 console.log(romanNumeral(1)); // I
 console.log(romanNumeral(5)); // V
 console.log(romanNumeral(115)); // CXV
-
+console.log(romanNumeral(90)); // XC
+console.log(romanNumeral(4)); // XC
 
 module.exports = romanNumeral;
