@@ -23,7 +23,7 @@ function romanNumeral(n) {
   const numarr = String(n).split('').map(el => Number(el));
 
   let numstr = '';
-  if (numarr.length < 4) numarr.unshift(0);
+  while (numarr.length < 4) numarr.unshift(0);
   let idx = 0;
   for(let i = 0; i < numarr.length; i++) {
     if (i === 0){
@@ -49,14 +49,11 @@ function romanNumeral(n) {
           numstr += romanNums[idx + 3];
         }
       }
-      console.log(numstr)
       idx += 4;
     }
 
   }
   return numstr;
 }
-
-console.log(romanNumeral(4293)) //->MMMMDCCXCIII
 
 module.exports = romanNumeral;
