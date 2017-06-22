@@ -13,8 +13,16 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
-
+function reverseInPlace(array=[]) {
+  if (!Array.isArray(array)) return new ERROR('Please enter array');
+  if (array.length < 2) return array;
+  for (let i = 0; i < array.length / 2; i++) {
+    let tmp = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = tmp;
+  }
+  return array;
 }
+
 
 module.exports = reverseInPlace;
