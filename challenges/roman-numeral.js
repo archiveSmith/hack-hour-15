@@ -18,6 +18,7 @@
  */
 
 function romanNumeral(n) {
+<<<<<<< HEAD
   let roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
   let arabic = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   let result = ''; //convert to string like roman numerals
@@ -35,6 +36,9 @@ return result;
 }
 
 console.log(romanNumeral(0));
+=======
+
+>>>>>>> d071c56f26fb56db855e191d9deafd6a5394bfa5
 }
 
 module.exports = romanNumeral;
