@@ -39,21 +39,11 @@ function subsetSum(array, target) {
       // Target: the difference found above
     
     // If subsetSum returns true, return true
-    if (subsetSum(splice(array, i), diff)) return true
+    if (subsetSum(array.slice(0, i), diff)) return true
   
   }
   // Return false
   return false;
-}
-
-// returns a new array without element at index
-function splice(array, index) {
-  
-  let output = [];
-  for (let i = 0; i < array.length; i += 1) {
-    if (i !== index) output.push(array[i]);
-  }
-  return output;
 }
 
 // Test cases
@@ -63,6 +53,6 @@ function splice(array, index) {
 //console.log(subsetSum([8, -2, 1, -3], 6)) // -> true, 8 + 1 + (-3) = 6
 //console.log(subsetSum([8, 14, 9, 12, 100, -20, -2, 1, -3], 6)) // -> true, 8 + 1 + (-3) = 6
 //console.log(subsetSum([18, 100, -30, 8, -2, 1, -3], 6)) // -> true, 8 + 1 + (-3) = 6
-//console.log(subsetSum([100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 5, 1], 6)) // -> true, 5 + 1 = 6
+//console.log(subsetSum([100, 100, 100, 100, 100, 100, 100, 100, 5, 1], 6)) // -> true, 5 + 1 = 6
 
 module.exports = subsetSum;
