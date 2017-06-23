@@ -13,16 +13,17 @@
 function subsetSum(array, target) {
 let found = false; 
 	function checkSum(arr, tar) {
-		for (let i = 0; i < arr.length; i++) {
-			if (arr[i] === tar) {
+		for (let i = 0; i < arr.length; i) {
+		  let item = arr[0];
+		  arr = arr.slice(1);
+			if (item === tar) {
 				found = true; 
 				return; 
 			}
 
-			if (arr[i] < target) {
-				checkSum(arr.slice(1), target - arr[i]);
-				checkSum(arr.slice(1), target);
-			}
+			checkSum(arr, tar - item);
+			checkSum(arr, tar);
+			
 		}
 	}
 	checkSum(array, target); 
