@@ -15,7 +15,6 @@
 
 function binToDec(binary) {
   const binarr = binary.split('');
-  console.log(binarr)
   let num = 0;
   for (let n = 0; binarr.length > 0; n++) {
     num += Number(binarr.pop()) * Math.pow(2, n);
@@ -48,6 +47,5 @@ function decToHex(number) {
   return hex;
 }
 
-console.log(decToHex(5)) //59AEB515
 
 module.exports = binToDec;
