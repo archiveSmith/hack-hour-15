@@ -6,9 +6,23 @@
  * subsetSum([3, 34, 4, 12, 5, 12], 32) -> true, 3 + 12 + 5 + 12 = 32
  * subsetSum([8, 2, 4, 12], 13) -> false
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
+ * 
+ * 
  */
 
 function subsetSum(array, target) {
+    let checkSum = 0;
+    for (let i = 0; i<array.length; i++){
+        checkSum = array[i];
+        for (let j = 0; j<array.length; j++){
+            if (j > i){
+                checkSum += array[j]
+                if(checkSum === target){
+
+                }
+            }
+        }
+    }
 
 }
 
