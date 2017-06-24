@@ -14,7 +14,21 @@
  */
 
 function binToDec(binary) {
+    // Read string from right to left, determin length first 
+    const length = binary.length; 
+    let result = 0; 
+    let pow = 0; 
 
+
+    // base case 2^0 = 1
+
+    // loop through binary (a string)
+    for (let i = length - 1; i >= 0; i -= 1, pow += 1) {
+        if (parseInt(binary[i]) === 1) { // only calculate when 1 is found
+            result = result + Math.pow(2, i); 
+        }
+    }
+    return result; 
 }
 
 module.exports = binToDec;
