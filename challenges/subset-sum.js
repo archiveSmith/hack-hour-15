@@ -15,12 +15,12 @@ function subsetSum(array, target) {
   },{});
   for (let i = 0; i < array.length; i++) {
     let diff = target - array[i];
-    if (obj[diff]) return true;
+    if (obj[diff] || diff === 0) return true;
     obj[diff] = true;
   }
   return false;
 }
 
-console.log(subsetSum([], 0))
+console.log(subsetSum([3], 3))
 
 module.exports = subsetSum;
