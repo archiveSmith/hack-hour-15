@@ -9,25 +9,12 @@
  */
 
 
-
 function subsetSum(array, target) {
-let found = false; 
-	function checkSum(arr, tar) {
-		for (let i = 0; i < arr.length; i) {
-		  let item = arr[0];
-		  arr = arr.slice(1);
-			if (item === tar) {
-				found = true; 
-				return; 
-			}
+  if (!target) return true;
+  if (!array.length) return false;
+  
+  return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
+} 
 
-			checkSum(arr, tar - item);
-			checkSum(arr, tar);
-			
-		}
-	}
-	checkSum(array, target); 
-	return found; 
-}
 
 module.exports = subsetSum;
