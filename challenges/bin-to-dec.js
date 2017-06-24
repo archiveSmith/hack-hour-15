@@ -14,7 +14,38 @@
  */
 
 function binToDec(binary) {
-
+  const binarr = binary.split('');
+  let num = 0;
+  for (let n = 0; binarr.length > 0; n++) {
+    num += Number(binarr.pop()) * Math.pow(2, n);
+  }
+  return num;
 }
+
+function decToBin(number) {
+  if (number === 0) return '0';
+  let bin = '';
+  while(number) {
+    bin = number % 2 + bin;
+    number = Math.floor(number / 2);
+  }
+  return bin;
+}
+
+function decToHex(number) {
+  if (number === 0) return '0';
+  let hexAscii = ['A', 'B', 'C', 'D', 'E', 'F']
+  let hex = '';
+  while (number) {
+    let rem = number % 16;
+    if (rem > 9) {
+      rem = hexAscii[rem - 10];
+    }
+    hex = rem + hex;
+    number = Math.floor(number / 16);
+  }
+  return hex;
+}
+
 
 module.exports = binToDec;
