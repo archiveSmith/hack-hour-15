@@ -21,6 +21,6 @@ function subsetSum(array, target) {
   return false;
 }
 
-console.log(subsetSum([3], 3))
+// console.log(subsetSum([3, 7, 4, 2], 5))
 
 module.exports = subsetSum;
