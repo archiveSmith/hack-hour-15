@@ -29,5 +29,22 @@ function binToDec(binary) {
     return sum;
 }
 
+function decToBin(decimal) {
+    let bin = [1];
+    while(decimal > bin[0]) {
+        bin.unshift(bin[0] * 2);
+    }
+
+    for (let i = 0; i < bin.length; i++) {
+        if (decimal >= bin[i] && decimal > 0) {
+            decimal -= bin[i];
+            bin[i] = '1';
+        } else {
+            bin[i] = '0';
+        }
+    }
+    return bin.join("");
+
+}
 
 module.exports = binToDec;
