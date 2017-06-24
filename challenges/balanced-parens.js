@@ -24,8 +24,39 @@
  *
  */
 
-function balancedParens(input){
 
+// Input
+    // String type of unknown text
+
+
+// Output
+    // True or false
+
+// Edge cases
+    // If the string is empty
+    // If no bracket-type characters exist
+
+// There is probably a RegEx out there for selecting all characters except brackets
+// Use a string replace method with a RegEx to fulfill step 3
+// Turn string into an array so we can more easily iterate through
+
+
+function balancedParens(input){
+    let str = input.replace(/\w/gi, '');
+    let check = str.split('');
+    let keys = {'(' : ')', '{': '}', '[': ']' }
+	for(let i = 0, end = check.length - 1 - i; i < check.length; i++) {
+		check[i];
+		for(check[i] in keys) {
+			return check[end] !== keys[check[i]] ? false : true;
+		}
+	}	
 }
+
+console.log(balancedParens('()'));
+console.log(balancedParens(')('));
+console.log(balancedParens('(())'));
+console.log(balancedParens('[](){}'));
+console.log(balancedParens('[({})]'));
 
 module.exports = balancedParens;

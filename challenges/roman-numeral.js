@@ -18,7 +18,66 @@
  */
 
 function romanNumeral(n) {
+    let choices = {
+        1000: 'M',
+        900: 'CM',
+        500: 'D',
+        400: 'CD',
+        100: 'C',
+        90: 'XC',
+        50: 'L',
+        40: 'XL',
+        10: 'X',
+        9: 'IX',
+        5: 'V',
+        4: 'IV',
+        1: 'I'
+    };
+    let answer = '';
 
+    while(n>0) {
+        if (n-1000 >=0) {
+            answer+=choices[1000];
+            n-=1000;
+        } else if (n-900 >=0) {
+            answer+=choices[900];
+            n-=900;
+        } else if (n-500 >=0) {
+            answer+=choices[500];
+            n-=500;
+        } else if (n-400 >= 0) {
+            answer+=choices[400];
+            n-=400;
+        } else if (n-100 >= 0) {
+            answer+=choices[100];
+            n-=100;
+        } else if (n-90 >= 0) {
+            answer+=choices[90];
+            n-=90;
+        } else if (n-50 >= 0) {
+            answer+=choices[50];
+            n-=50;
+        } else if (n-40 >= 0) {
+            answer+=choices[40];
+            n-=40;
+        } else if (n-10 >= 0) {
+            answer+=choices[10];
+            n-=10;
+        } else if (n-9 >= 0) {
+            answer+=choices[9];
+            n-=9;
+        } else if (n-5 >= 0) {
+            answer+=choices[5];
+            n-=5;
+        } else if (n-4 >= 0) {
+            answer+=choices[4];
+            n-=4;
+        } else if (n-1 >=0) {
+            answer+=choices[1];
+            n-=1;
+        }
+    }
+    return answer;
 }
 
 module.exports = romanNumeral;
