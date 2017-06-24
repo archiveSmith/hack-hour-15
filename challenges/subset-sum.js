@@ -9,6 +9,7 @@
  */
 
 function subsetSum(array, target) {
+  console.log(array, target);
   const obj = array.reduce((acc, elem) =>{
     acc[elem] = true;
     return acc;
