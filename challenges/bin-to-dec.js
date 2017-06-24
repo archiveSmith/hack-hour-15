@@ -25,7 +25,7 @@ function binToDec(binary) {
     // loop through binary (a string)
     for (let i = length - 1; i >= 0; i -= 1, pow += 1) {
         if (parseInt(binary[i]) === 1) { // only calculate when 1 is found
-            result = result + Math.pow(2, i); 
+            result = result + Math.pow(2, pow); 
         }
     }
     return result; 
