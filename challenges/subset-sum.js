@@ -13,8 +13,6 @@ function subsetSum(array, target) {
     acc[elem] = true;
     return acc;
   },{});
-  console.log(obj)
-
   for (let i = 0; i < array.length; i++) {
     let diff = target - array[i];
     if (obj[diff]) return true;
@@ -23,6 +21,6 @@ function subsetSum(array, target) {
   return false;
 }
 
-console.log(subsetSum([8, -2, 1, -3], 6))
+console.log(subsetSum([], 0))
 
 module.exports = subsetSum;
