@@ -14,7 +14,24 @@
  */
 
 function binToDec(binary) {
-
+  let decimal = 0;
+  let binArr = binary.split('')
+  let pastZero = false;
+  
+  for(let i = 0; i < binArr.length; i += 1) {
+    if(binArr[i] === '1') pastZero = true;
+    if(binArr[i] === '0' && !pastZero) continue;
+    else {
+     const place = binArr.length - i;
+     let subtract = binArr[i] === '1' ? 0 : 1;
+     let add = (Number(place) - subtract);
+     console.log(place, subtract);
+     decimal += add;
+    }
+  }
+  return decimal;
 }
 
 module.exports = binToDec;
+
+
