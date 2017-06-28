@@ -5,6 +5,7 @@
 // sort nums, split to positive and negative groups.
 // count negatives, discard if less than two.
 function highestProduct(array) {
+  if (!array) return 0;
   if (array.length < 3) return 0;
 
   array = array.sort((a,b)=> a - b);
@@ -14,7 +15,6 @@ function highestProduct(array) {
   if (pos.length <= 2){
     //negatives dominate.
      maxPos = array.reduce((a,b) => a*b,1);
-    console.log(maxPos);
   } else{
     maxPos = array.slice((array.length - 3)).reduce((a,b) => a*b);
   }
@@ -25,11 +25,7 @@ function highestProduct(array) {
   let subPos = pos[pos.length - 2] * pos[pos.length - 3];
   if (maxNeg > subPos) return maxNeg * array[array.length - 1];
   else return maxPos;
-
 }
 
-let test1 = highestProduct([-15, -2, 6, -9, -4, 10]);
-console.log(test1, "Test 1");
-console.log(15*9*10)
-
+console.log(highestProduct());
 module.exports = highestProduct;
