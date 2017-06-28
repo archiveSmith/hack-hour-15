@@ -37,6 +37,6 @@ wordArr.forEach(word=>{
 
 return tf;
 }
-console.log(matchWord('ENDgerDNE'));
+console.log(matchWord('END DNE'));
 module.exports = matchWord;
 
