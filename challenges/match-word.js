@@ -14,9 +14,9 @@ function matchWord(str) {
     const lowerWord = [];
     const reverseWord = [];
     for (let i = 0; i< lowerCase-1; i++) {
-        if(lowerCase[i].includes(/[a-z]/)) {
+        if((/[a-z]/).test(lowerCase)) {
             lowerWord.push(lowerCase[i]);
-            if(!lowerCase[i+1].includes(/[a-z]/)) {
+            if(!(/[a-z]/).test(lowerCase)) {
                 break;
             }
         }

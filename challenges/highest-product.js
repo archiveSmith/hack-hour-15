@@ -3,7 +3,8 @@
  */
 
 function highestProduct(array) {
-
+    const sortedArr = array.sort().reverse()
+    return sortedArr[0]*sortedArr[1]*sortedArr[2]
 }
 
 
