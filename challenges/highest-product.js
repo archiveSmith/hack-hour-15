@@ -4,8 +4,18 @@
 
 function highestProduct(array) {
 	if (array.length < 3) return 0; 
-	var sortArr = array.sort((a,b) => b-a);
-	return sortArr[0] * sortArr[1] * sortArr[2];
+	let highest = -Infinity; 
+	for (let a = 0; a < array.length - 2; a++) {
+		for (let b = 1 + a; b < array.length - 1; b++) {
+			for (let c = 1 + b; c < array.length; c++) {
+				let prod = array[a] * array[b] * array[c];
+				if (prod > highest) {
+					highest = prod; 
+				}
+			}
+		}
+	}
+	return highest; 
 }
 
 
