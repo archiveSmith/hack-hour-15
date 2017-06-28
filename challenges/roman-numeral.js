@@ -42,11 +42,11 @@ function romanNumeral(n) {
     if (Math.abs(remainingVal - romans[keys[i]]) >= remainingVal * .9) {
       numeral += keys[i+2];
       numeral += keys[i];
-      remaininVal -= romans[keys[i+2]] - romans[keys[i]];
+      remainingVal -= romans[keys[i+2]] - romans[keys[i]];
     } else if (Math.abs(remainingVal - romans[keys[i]]) >= remainingVal * .8) {
       numeral += keys[i+1];
       numeral += keys[i];
-      remaininVal -= romans[keys[i+1]] - romans[keys[i]];
+      remainingVal -= romans[keys[i+1]] - romans[keys[i]];
     }
   }
   return numeral;
