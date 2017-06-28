@@ -3,10 +3,12 @@
  */
 
 function highestProduct(array) {
-    let arr = [];
+    if (array.length < 3) {
+        return 0;
+    }
     array = array.sort();
-    return array[-1] * array[-3] * array[-3]
+    return array[array.length - 1] * array[array.length - 2] * array[array.length - 3]
 }
 
-
+//console.log(highestProduct([1, 1, 1, 2, 2, 2]));
 module.exports = highestProduct;
