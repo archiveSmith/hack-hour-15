@@ -3,10 +3,17 @@
  */
 
 function highestProduct(array) {
-    if(array.length < 3) return 0
+    if(array.length <= 2) return 0;
     const sortedArr = array.sort().reverse()
-    if(sortedArr[0] > 0) return sortedArr[0]*sortedArr[1]*sortedArr[2]
-    if(sortedArr[0] < 0) return sortedArr[sortedArr.length-1]*sortedArr[sortedArr.length-2]*sortedArr[sortedArr.length-3]
+    let total = 1;
+    let newSortArr;
+    if(sortedArr[sortedArr.length-1] <= 0 && sortedArr[sortedArr.length-2] <= 0){
+        sortedArr[sortedArr.length-1] = Math.abs(sortedArr[sortedArr.length-1])
+        sortedArr[sortedArr.length-2] = Math.abs(sortedArr[sortedArr.length-2])
+        newSortArr = array.sort().reverse()
+        return newSortArr[0]*newSortArr[1]*newSortArr[2]
+    }
+    return sortedArr[0]*sortedArr[1]*sortedArr[2]
 }
 
 
