@@ -5,7 +5,7 @@
 function highestProduct(array) {
     let arr = [];
     array = array.sort();
-    return array[-1] * array[-3] * array[-3]
+    return array[-1] * array[-2] * array[-3]
 }
 
 
