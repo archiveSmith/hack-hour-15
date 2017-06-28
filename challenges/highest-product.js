@@ -3,7 +3,9 @@
  */
 
 function highestProduct(array) {
-
+	if (array.length < 3) return false; 
+	var sortArr = array.sort((a,b) => b-a);
+	return sortArr[0] * sortArr[1] * sortArr[2];
 }
 
 
