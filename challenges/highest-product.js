@@ -3,10 +3,17 @@
  */
 
 function highestProduct(array) {
- array.sort((a, b)=> {return a - b});
-//array.sort();
-console.log(array)
-return array[array.length-1]*array[array.length-2]*array[array.length-3]
+    if (array.length<3) return 0;
+    array.sort((a, b)=> {return a - b});
+
+    if (array[array.length-1] >0 && array[array.length-2] >0 && array[array.length-3]){
+        return array[array.length-1]*array[array.length-2]*array[array.length-3]
+    }
+
+
+    if (array[array.length-1] >0 && array[array.length-2] >0 && array[array.length-3]){
+        return array[array.length-1]*array[array.length-2]*array[array.length-3]
+    }
 }
 
 
