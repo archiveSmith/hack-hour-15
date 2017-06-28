@@ -35,10 +35,10 @@ function highestProduct(array) {
     return sortedArray[length] * sortedArray[length - 1] * sortedArray[length - 2];
 }
 
-console.log(highestProduct([2])); // 2
-console.log(highestProduct([3, 2])); // 6
-console.log(highestProduct([3, 2, 1, 4])); // 24
-console.log(highestProduct([-20, -10, 3, 7, 8, 50])); // 2800 is incorrect, expect 10000
+// console.log(highestProduct([2])); // 2
+// console.log(highestProduct([3, 2])); // 6
+// console.log(highestProduct([3, 2, 1, 4])); // 24
+// console.log(highestProduct([-20, -10, 3, 7, 8, 50])); // 2800 is incorrect, expect 10000
 
 
 module.exports = highestProduct;
