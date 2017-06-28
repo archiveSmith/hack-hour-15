@@ -22,8 +22,8 @@
     // 5. Multiply product by the largest number
 function highestProduct(array) {
     // Edge Case: 3 or less numbers
-    if (array.length <= 3) {
-        return array.reduce((a, b) => a * b);
+    if (array.length < 3) {
+        return 0;
     }
     // Sort the integers by ascending value
     let sortedArray = array.sort((a, b) => a - b);
