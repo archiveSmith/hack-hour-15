@@ -10,13 +10,13 @@
 function matchWord(str) {
   // separated by space/punctuation
   const matchWords = [];
-  const strArr = str.split(/([_\W])/);
-  // console.log(strArr);
+  const strArr = str.replace(/([_\W])/g, ' ').trim().toLowerCase().split(/\s+|_/g);
   if (str === '') return true;
+  if (strArr.length % 2 === 1) return false;
   for (let i = 0; i < strArr.length; i += 1) {
     if (matchWords.length > 0 && strArr[i].length > 1 && matchWords[matchWords.length -1] === reverse(strArr[i])) {    matchWords.pop();
-    } else if (strArr[i].length > 1) {
-      matchWords.push(strArr[i].toLowerCase());
+    } else {
+      matchWords.push(strArr[i]);
     }
   }
   return matchWords.length === 0;
