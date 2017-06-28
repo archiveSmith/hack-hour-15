@@ -3,8 +3,8 @@
  */
 
 function highestProduct(array) {
-  array.sort((a, b) => b - a);
-  return array.slice(0,3).reduce((a, b) => a * b);
+  if (array.length < 3) return 0;
+  return array.sort((a, b) => Math.abs(b) - Math.abs(a)).slice(0,3).reduce((a, b) => a * b);
 }
-console.log(highestProduct([1,2]));
+console.log(highestProduct([1,2, -3, -4]));
 module.exports = highestProduct;
