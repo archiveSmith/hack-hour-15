@@ -17,10 +17,14 @@
 function highestProduct(array) {
   if (array.length < 3) return 0;
 
-  array.sort( (a, b) => {return b - a});
+  array.sort((a, b) => a - b);
 
-  let max = array[0] * array[1] * array[2];
-  return max;
+  let length = array.length;
+  let neg = array[0] * array[1] * array[length - 1];
+  let pos = array[length - 1] * array[length - 2] * array[length-3];
+  
+  return Math.max(neg, pos);
+  
 }
 
 
