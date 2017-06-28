@@ -25,7 +25,14 @@
  */
 
 function balancedParens(input){
+//requires closed parentheses statements
+//check for syntax errors?
+//
 
+
+  if
+}
+  if (reWrite !== )
 }
 
 module.exports = balancedParens;

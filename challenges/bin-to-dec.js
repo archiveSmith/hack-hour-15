@@ -14,7 +14,17 @@
  */
 
 function binToDec(binary) {
-
+  let arrNum = binary.split("").map(Number).reverse();
+  //map each int to the exponent of it's index, take the sum
+  var binSum = 0;
+  for (let i = 0; i < arrNum.length; i++){
+      if (arrNum[i] === 1){
+        binSum += Math.pow(2, i);
+      }
+  }
+    return binSum;
 }
+
+console.log("answer", binToDec('101'));
 
 module.exports = binToDec;

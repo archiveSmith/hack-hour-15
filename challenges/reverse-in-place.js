@@ -14,7 +14,18 @@
  */
 
 function reverseInPlace(array) {
+//split array in half and iterate from the beginning
+  for(let i=0, ii = array.length - 1; i<Math.floor(array.length/2); i++){
+      array.splice(array[i],null,array[ii]);
 
+    // split array in half and iterate from the end
+    for(let c=array.length - 1, cc=0; c>Math.ceil(array.length/2); c--, c++){
+      array.splice(array[c],null,array[cc]);
+    }
+  }
+  return array;
 }
+
+console.log(reverseInPlace([1,2,3,4,5,6,7]));
 
 module.exports = reverseInPlace;
