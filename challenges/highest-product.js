@@ -5,7 +5,7 @@
 // sort nums, split to positive and negative groups.
 // count negatives, discard if less than two.
 function highestProduct(array) {
-  if (array.length < 3) return 0;
+  if (array.length <= 3) return 0;
 
   array = array.sort((a,b)=> a - b);
   let negs = array.filter((a,b) => a < 0);
