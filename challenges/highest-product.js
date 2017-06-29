@@ -7,8 +7,12 @@ function highestProduct(array) {
         return 0;
     }
     array = array.sort();
-    return array[array.length - 1] * array[array.length - 2] * array[array.length - 3]
+    if (array[array.length - 1] * array[array.length - 2] * array[array.length - 3] > array[0] * array[1] * array[array.length - 1]) {
+        return array[array.length - 1] * array[array.length - 2] * array[array.length - 3];
+    }
+    return array[0] * array[1] * array[array.length - 1];
+
 }
 
-//console.log(highestProduct([1, 1, 1, 2, 2, 2]));
+console.log(highestProduct([-8, -9, 1, 2, 2, 2]));
 module.exports = highestProduct;
