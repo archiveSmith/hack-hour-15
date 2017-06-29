@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-    if (array.length < 3) {
+    if (array.length <= 3) {
         return 0;
     }
     array = array.sort();
@@ -13,6 +13,4 @@ function highestProduct(array) {
     return array[0] * array[1] * array[array.length - 1];
 
 }
-
-console.log(highestProduct([-8, -9, 1, 2, 2, 2]));
 module.exports = highestProduct;
