@@ -5,7 +5,6 @@
 function highestProduct(array) {
     if(array.length <= 2) return 0;
     const sortedArr = array.sort().reverse()
-    let total = 1;
     let newSortArr;
     if(sortedArr[sortedArr.length-1] <= 0 && sortedArr[sortedArr.length-2] <= 0){
         sortedArr[sortedArr.length-1] = Math.abs(sortedArr[sortedArr.length-1])
