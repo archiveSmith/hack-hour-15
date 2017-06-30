@@ -32,6 +32,7 @@ function zip(l1, l2) {
       flag = false;
     }
   }
+  
   if(!l1) l3.next = l2;
   if(!l2) l3.next = l1;
 
