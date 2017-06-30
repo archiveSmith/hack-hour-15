@@ -15,7 +15,7 @@
 // Sort the array using .sort()
 
 function highestProduct(array) {
-  if (array.length < 3) return '0';
+  if (!Array.isArray(array) || array.length < 3) return 0;
 
   array.sort((a, b) => a - b);
 
