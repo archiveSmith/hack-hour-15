@@ -16,6 +16,12 @@ function highestProduct(array) {
   }, 1)
   return highProd
 }
+const test = [0, 1]
+const test2 = [-3, 1, 2, 3]
+console.log(highestProduct(test))
+console.log(test)
+console.log(highestProduct(test2))
+console.log(test2)
 // console.log(highestProduct([0, 1])) // 1
 // console.log(highestProduct([0, 1, 2])) // 2
 // console.log(highestProduct([0, 1, 2, 3])) // 6
