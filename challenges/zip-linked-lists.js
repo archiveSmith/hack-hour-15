@@ -11,6 +11,19 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (!l2) return l1;
+  let l3;
+  // iterate until we're out of l2s, then l1 should fall in place.
+  while (l2){
+    let l3 = Object.assign({},l1.next);
+    l1.next = Object.assign({},l2);
+    l1.next.next = l3;
+    l1 = l1.next.next;
+    l2 = l2.next;
+  }
 };
+
+
+
 
 module.exports = {Node: Node, zip: zip};

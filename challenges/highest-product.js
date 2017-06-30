@@ -5,27 +5,17 @@
 // sort nums, split to positive and negative groups.
 // count negatives, discard if less than two.
 function highestProduct(array) {
+  //O(nlgn);
   if (!array) return 0;
   if (array.length < 3) return 0;
 
   array = array.sort((a,b)=> a - b);
-  let negs = array.filter((a,b) => a < 0);
-  let pos = array.filter((a,b) => b > 0);
-  let maxPos = 0;
-  if (pos.length <= 2){
-    //negatives dominate.
-     maxPos = array.reduce((a,b) => a*b,1);
-  } else{
-    maxPos = array.slice((array.length - 3)).reduce((a,b) => a*b);
-  }
-    // no need to check negatives.
-  if (negs.length < 2) return maxPos;
-
-  let maxNeg = negs[0] * negs[1];
-  let subPos = pos[pos.length - 2] * pos[pos.length - 3];
-  if (maxNeg > subPos) return maxNeg * array[array.length - 1];
-  else return maxPos;
+  let maxPos = array[array.length - 1];
+  let maxNeg = array[0] * array[1];
+  let subPos = array[array.length - 2] * array[array.length - 3];
+  return Math.max(maxNeg, subPos) * maxPos;
 }
 
-console.log(highestProduct());
+console.log(highestProduct([-7, -2, -6, -9, 9, 4, 10]));
+
 module.exports = highestProduct;
