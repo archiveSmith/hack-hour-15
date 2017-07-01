@@ -12,8 +12,25 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+function bestProfit(arr) {
+	// Have var for highest profit found, start it at 0
+	// Loop through the array
+	// For each item, loop through the rest of the array
+	// Store current profit, and highest profit as two variables, update accordingly
+	// Update highest profit var as highest profit is updated
+	let obj = {};
+	let highest = 0;
+	let current; 
 
+	for (let i = 0; i < arr.length - 1; i++) {
+		obj.highest = 0; 
+		for (let y = i + 1; y < arr.length; y++) {
+			current = arr[y] - arr[i];
+			if (current > obj.highest) obj.highest = current; 
+		}
+		if (obj.highest > highest) highest = obj.highest; 
+	}
+	return highest; 
 }
 
 module.exports = bestProfit;
