@@ -13,8 +13,8 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-  if (!Array.isArray(stock_prices_yesterday)) return undefined;
-  if (stock_prices_yesterday.length < 1) return undefined;
+  if (!Array.isArray(stock_prices_yesterday)) return 0;
+  if (stock_prices_yesterday.length < 1) return 0;
   
   let iMax = stock_prices_yesterday
     .reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0);
@@ -25,6 +25,6 @@ function bestProfit(stock_prices_yesterday) {
   
   if (profit > 0) return profit;
   else return 0;
-}
+} 
 
 module.exports = bestProfit;
