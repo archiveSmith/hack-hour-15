@@ -7,7 +7,17 @@
 
 // Given 2 linked lists, add nodes so that their nodes alternate
     // Edge Cases
-    // Start with 1st Linked List. Reassign the next node to the head of 2nd Linked List
+      // l1 or l2 are missing
+    // Counter is 0
+    // Start with 1st Linked List.
+    // Store next node to a variable
+    // Link LL1 to LL2
+    // Change currNode to the next node
+    // Counter is 1
+    // Store next node to a variable
+    // Link LL2 to lL
+
+
     // On the 2nd Node of Linked List, reassign the next node to head of 1st Linked List
     // Store the Linked Lists in variables, so they are easily accessible
       // Reassign the head of the linkedList to the node we cut off
@@ -20,27 +30,29 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (!l1) return l2;
+  if (!l2) return l1;
   let counter = 0;
   let output = l1;
-  let currNode = l1;
+  let currNode = output;
   let modifiedl1 = l1;
   let modifiedl2 = l2;
   function zipLinkedLists(output, modifiedl1, modifiedl2) {
     // Add l2 node
     if (counter % 2 === 0) {
       // Base Case
-      if (modifiedl2.next === null) return output;
+      if (modifiedl2 === null) return output;
       else {
         modifiedl1 = currNode.next;
-        currNode.next = l2;
+        currNode.next = modifiedl2;
         currNode = currNode.next;
       }
     // Add l1 node
     } else if (counter % 2 === 1) {
-      if (modifiedl1.next === null) return output;
+      if (modifiedl1 === null) return output;
       else {
         modifiedl2 = currNode.next;
-        currNode.next = l1;
+        currNode.next = modifiedl1;
         currNode = currNode.next;
       }
     }
