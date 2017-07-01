@@ -12,7 +12,27 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
+// Edge cases
+  // If the input is not an array, return 0
+
+// Algorithm
+  // subzero index will automatically be "lowest" point
+  // define max profit variable to be 0 at first
+  // 
+
 function bestProfit(stock_prices_yesterday) {
+  if(!Array.isArray(stock_prices_yesterday)) return 0;
+
+  let min = stock_prices_yesterday[0];
+  let max = 0;
+
+  for (let i = 1; i < stock_prices_yesterday.length; i++) {
+    let min = Math.min(min, stock_prices_yesterday[i]);
+
+    let max = Math.max(max, stock_prices_yesterday[i] - min);
+  }
+
+  return max;
 
 }
 
