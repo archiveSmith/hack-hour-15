@@ -14,9 +14,10 @@ function zip(l1, l2) {
   if (!l2) return l1;
   // holding var
   let l3;
-
+  let head = l1;
   // iterate until we're out of l2s, then l1 should fall in place.
   while (l2){
+
     let l3 = Object.assign({},l1.next);
     console.log("l3: ", l3);
     l1.next = Object.assign({},l2);
@@ -25,7 +26,7 @@ function zip(l1, l2) {
     l2 = l2.next;
   }
 
-  return l1;
+  return head;
 };
 
 
