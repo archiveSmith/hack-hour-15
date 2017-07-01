@@ -4,7 +4,14 @@
 
 function highestProduct(array) {
   if (array.length < 3) return 0;
-  return array.sort((a, b) => Math.abs(b) - Math.abs(a)).slice(0,3).reduce((a, b) => a * b);
+  let biggest3;
+  let smallest2;
+  array.sort((a, b) => b - a)
+  biggest3 = array.slice(0,3);
+  smallest2 = array.slice()
+  
+  
+  reduce((a, b) => a * b);
 }
 console.log(highestProduct([1,2, -3, -4, -5]));
 module.exports = highestProduct;
