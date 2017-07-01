@@ -13,7 +13,42 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+  // return 0 if input is not array, empty array
+  const prices = stock_prices_yesterday.slice()
+  if (prices === undefined || prices.length === 0) return 0 
+  
+  // set highest and lowest to first element
+  let high = prices[0]
+  let low = prices[0]
+  // set profit to 0
+  let profit = 0
 
+  // iterate through array starting from index 1
+  prices.forEach(price =>{
+    // if element higher than highest
+    if (price > high) {
+      // update higest to elem
+      high = price
+      // if highest - lowest > profile
+      if (high - low > profit){
+        // update profit(highest - lowest)
+        profit = high - low
+      }
+    } else if (price < low){
+      // else if element lower than lowest
+      low = price
+      high = price
+      // update lowest to elem
+      // update highest to elem
+    }
+  })
+  return profit
 }
+// console.log(bestProfit([100, 0, 200, 10])) // 200
+// console.log(bestProfit([0, 100, 0, 200, 10])) // 200
+// console.log(bestProfit([0, 100, 0, 200, 10, 300])) // 300
+// console.log(bestProfit([0, 10, 20, 30])) // 30
+// console.log(bestProfit([30, 20, 10, 0])) // 0
+// console.log(bestProfit([30, 20, 10, 0, 10])) // 10
 
 module.exports = bestProfit;
