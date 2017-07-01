@@ -17,6 +17,7 @@ function bestProfit(stock_prices_yesterday) {
   let minPrice = stock_prices_yesterday[0];
   let maxProfit = stock_prices_yesterday[1] - stock_prices_yesterday[0];
   for (let i = 1; i < stock_prices_yesterday.length; i++) {
+    if(typeof stock_prices_yesterday[i] !== 'number') return 0;
     let currPrice = stock_prices_yesterday[i];
     let possibleProfit = currPrice - minPrice;
     maxProfit = Math.max(maxProfit, possibleProfit);
@@ -24,5 +25,7 @@ function bestProfit(stock_prices_yesterday) {
   }
   return maxProfit;
 }
+
+console.log(stock_prices_yesterday)
 
 module.exports = bestProfit;
