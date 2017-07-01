@@ -23,9 +23,10 @@ function bestProfit(stock_prices_yesterday) {
     lowest = Math.min(lowest, stock_prices_yesterday[i]);
   }
 
+  if (max < 0) max = 0;
   return max
 }
 
-// console.log(bestProfit([4,3,2,5,6]))
+console.log(bestProfit([7,4,2,1]))
 
 module.exports = bestProfit;
