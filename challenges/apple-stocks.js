@@ -29,8 +29,10 @@ function bestProfit(stock_prices_yesterday) {
   for (let i = 1; i < stock_prices_yesterday.length; i++) {
     let min = Math.min(min, stock_prices_yesterday[i]);
 
-    let max = Math.max(max, stock_prices_yesterday[i] - min);
+    let max = Math.max(max, min);
   }
+  
+  if(max < 0) return 0;
 
   return max;
 
