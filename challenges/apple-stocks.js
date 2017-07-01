@@ -13,6 +13,33 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    if (typeof stock_prices_yesterday != "object" || stock_prices_yesterday.length < 2){
+        return 0;
+    }
+    let start = stock_prices_yesterday[0];
+
+    let lowest = stock_prices_yesterday.reduce((acc, curr)=>{
+        if (curr < acc){
+            return curr;
+        }
+        else{
+            return acc;
+        }
+    })
+    let highest = stock_prices_yesterday.reduce((acc, curr)=>{
+        if (curr > acc){
+            return curr;
+        }
+        else{
+            return acc;
+        }
+    })
+    if (highest - lowest < 0){
+        return 0
+    }
+    else{
+        return highest - lowest;
+    }
 
 }
 
