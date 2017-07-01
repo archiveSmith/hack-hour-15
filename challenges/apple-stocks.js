@@ -12,8 +12,33 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+// Input: Array
+    // Edge: 
+        // Return 0 if no profit
+        // Return 0 if input is invalid
 
+        // Given an array, find the max and min numbers
+        // Return max - min
+
+
+
+    // Output: Profit Amount
+
+function bestProfit(stock_prices_yesterday) {
+    if (!Array.isArray(stock_prices_yesterday)) return 0;
+    let maxPrice = -Infinity;
+    let minPrice = Infinity;
+    for (let i = 0; i < stock_prices_yesterday.length; i++) {
+        if (stock_prices_yesterday[i] > maxPrice) {
+          maxPrice = stock_prices_yesterday[i];
+        }
+        if (stock_prices_yesterday[i] < minPrice) {
+          minPrice = stock_prices_yesterday[i];
+        }
+    }
+    console.log('maxPrice', maxPrice);
+    console.log('minPrice', minPrice);
+    return maxPrice - minPrice;
 }
 
 module.exports = bestProfit;
