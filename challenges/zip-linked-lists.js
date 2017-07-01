@@ -14,18 +14,18 @@ function zip(l1, l2) {
   if (!l2) return l1;
   // holding var
   let l3;
-
+  let head = l1;
   // iterate until we're out of l2s, then l1 should fall in place.
   while (l2){
-    let l3 = Object.assign({},l1.next);
-    console.log("l3: ", l3);
+    let l3 = l1.next; //Object.assign({},l1.next);
+    //console.log("l3: ", l3);
     l1.next = Object.assign({},l2);
     l1.next.next = l3;
     l1 = l1.next.next;
     l2 = l2.next;
   }
 
-  return l1;
+  return head;
 };
 
 
@@ -33,19 +33,21 @@ function zip(l1, l2) {
 // l1.next = new Node(3);
 // l1.next.next = new Node(5);
 // l1.next.next.next = new Node(7);
-// // l2 = new Node(2);
-// // l2.next = new Node(4);
-// // l2.next.next = new Node(6);
-// // l2.next.next.next = new Node(8);
+// l1.next.next.next.next = null;
+// l2 = new Node(2);
+// l2.next = new Node(4);
+// l2.next.next = new Node(6);
+// l2.next.next.next = new Node(8);
+// l2.next.next.next.next = null;
 //
-//
-// zip(l1,l2);
+// let test = zip(l1,l2);
 // let values2 = [];
-// while (l1){
-//   if (l1.value !== undefined){
-//     values2.push(l1.value);
-//   }
-//   l1 = l1.next;
+// while (test){
+//   console.log(test);
+//   //if (test.value !== ){
+//     values2.push(test.value);
+//   //}
+//   test = test.next;
 // }
 // console.log("AFTER THE ZIP: ");
 // console.log(values2);
