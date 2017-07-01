@@ -13,7 +13,13 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  let profit = 0;
+  if (!Array.isArray(stock_prices_yesterday)) return profit;
+  if (!stock_prices_yesterday.every(Number.isInteger)) return profit;
+  stock_prices_yesterday.sort((a, b) => b - a);
+  profit = stock_prices_yesterday[0] - stock_prices_yesterday[stock_prices_yesterday.length - 1];
+  if (profit <= 0) return 0;
+  return profit;
 }
 
 module.exports = bestProfit;
