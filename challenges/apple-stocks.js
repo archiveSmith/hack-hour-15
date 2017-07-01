@@ -36,8 +36,6 @@ function bestProfit(stock_prices_yesterday) {
           minPrice = stock_prices_yesterday[i];
         }
     }
-    console.log('maxPrice', maxPrice);
-    console.log('minPrice', minPrice);
     return maxPrice - minPrice;
 }
 
