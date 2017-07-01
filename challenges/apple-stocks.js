@@ -13,7 +13,30 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    if (Array.isArray(stock_prices_yesterday)){
 
+        let sortedArr = stock_prices_yesterday;
+        let buyTime;
+        let SellTime
+        // sort to find highest and lowest
+        sortedArr.sort((a,b)=>{return a - b});
+        let lowest = sortedArr[0];
+        let highest = sortedArr[sortedArr.length-1];
+        // now indices are different so must search thru original to find times
+        for (let i = 0; i<stock_prices_yesterday; i++){
+                if (stock_prices_yesterday[i] === lowest){
+                    buyTime = i;
+                } else if (stock_prices_yesterday[i] === highest){
+                    sellTime = i;
+            }
+        }
+        // trying to think of how to recursively check next best temporal/value pairs
+        if (buyTime <sellTime){
+        return highest - lowest;
+        }
+    } else {
+        return 0;
+    }
 }
 
 module.exports = bestProfit;
