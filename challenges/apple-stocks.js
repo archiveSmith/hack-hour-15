@@ -39,7 +39,7 @@ function bestProfit(stock_prices_yesterday) {
   for(peak in peaks) {
     for (valley in valleys) {
       if(valley < peak) {
-        if(peaks[peak] - valleys[valley] > maxProf) maxProf = peaks[peak] - valleys[valley]
+        if(peaks[peak] - valleys[valley] > maxProf) maxProf = peaks[peak] - valleys[valley];
       }
     }
   }
