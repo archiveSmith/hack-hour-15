@@ -14,6 +14,15 @@
  */
 
 function mergeArrays(arr1, arr2) {
+    if (!arr1 || !arr2){
+        return [];
+    }
+    let arr3 = arr1.concat(arr2);
+    
+    arr3 = arr3.filter((ele,index,arr)=>{
+        return arr.indexOf(ele) === index;
+    })
+    return arr3.sort((a,b) => a - b);
 
 }
 
