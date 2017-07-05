@@ -21,7 +21,6 @@
         // When the array ends, add the rest of the longer array
 
 function mergeArrays(arr1, arr2) {
-    if (!arr1 || !arr2) return undefined;
     let output = [];
     while (arr1.length > 0 && arr2.length > 0) {
         if (arr1[0] > arr2[0]) {
@@ -32,7 +31,7 @@ function mergeArrays(arr1, arr2) {
             arr1.splice(0, 1);
         }
     }
-    arr1.length === 0 ? output.concat(arr2) : output.concat(arr1);
+    arr1.length === 0 ? output = output.concat(arr2) : output = output.concat(arr1);
     return output;
 }
 
