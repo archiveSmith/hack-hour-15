@@ -4,42 +4,49 @@
  *
  * BONUS: Do this in place
  */
-
+ 
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function zip(l1, l2) {
-  //currentNode
-  //tempNode
-  //!li return l2
-  //!l2 return l1
-  //!li && !l2 return null
-  let currentNode1 = l1;
-  let currentNode2 = l2;
-  let tempNode1 = l1;;
-  let tempNode2 = l2;
+  if(!l1) return l2;
+  if(!l2) return l1;
   
-  while(currentNode1 && currentNode2) {
-  //assign the moving node to the next
-  if(tempNode1) {
-    tempNode1 = tempNode1.next;
+  let head = l1;
+  let temp = l1;
+  
+  l1 = l1.next; //don't want to start at the head
+  //l1 to keep the list
+  
+  while(l1 && l2) {
+    temp.next = l2;
+    //keep l2
+    l2 = l2.next;
+    temp = temp.next;
+    temp.next = l1;
+    l1 = l1.next;
+    temp = l1;
+    
   }
-  if(tempNode2) {
-    tempNode2 = tempNode2.next;
-  }
-
-  //zip zip
-  currentNode1.next = currentNode2;
-  if(tempNode1) {
-    currentNode2.next = tempNode1;
-  }
-  //
-  [currentNode1, currentNode2] = [tempNode1, tempNode2];
+  temp.next = l2 ? l2 : l1; 
+  return head
 }
-return l1 ? l1 : l2;
 
-};
+let list1a = new Node(1);
+let list1b = new Node(3);
+let list1c = new Node(5);
+let list2a = new Node(2);
+// let list2b = new Node(4);
+// let list2c = new Node(6);
+
+list1a.next = list1b;
+list1b.next = list1c;
+// list2a.next = list2b;
+// list2b.next = list2c;
+
+console.log(zip(list1a, list2a));
+// console.log(list2a);
 
 module.exports = {Node: Node, zip: zip};
