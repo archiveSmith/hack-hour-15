@@ -41,11 +41,17 @@ function bestProfit(stock_prices_yesterday) {
   return profit;
 }
 //
-// let arry = [100, 200, 300, 400, 500];
-//
-// let test = bestProfit(arry);
-// console.log("Test1: linear growth arry ", test); // 400
-//
+let arry = [200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500, 200, 600, 700, 400, 500, 200, 600, 700, 400, 500, 200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500, 200, 600, 700, 400, 500, 200, 600, 700, 400, 500,200, 600, 700, 400, 500,200, 600, 700, 400, 500, 200, 600, 700, 400, 500, 200, 600, 700, 400, 500, 200, 600, 700, 400, 500, 200, 600, 700, 400, 500];
+let time = new Date().getTime();
+
+for (let i = 0; i<= 100000; i++){
+  bestProfit(arry);
+}
+//let test = bestProfit(test);
+time = new Date().getTime() - time;
+//console.log("Test1: linear growth arry ", test); // 400
+console.log(time);
+
 // arry = [100, 50, 500, 100, 200];
 // test = bestProfit(arry);
 // console.log("Test2: undulating growth arry", test); // 450
