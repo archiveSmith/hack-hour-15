@@ -13,32 +13,26 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-// Edge Cases 
-// Check if both of them have a value, if neither do, return back undefined
-// If one of them doesn't, then the other is set to current node
-// Establish two vars, curr and next so alternate between the nodes
-// Set up a while loop that goes while each of them has a next, switch curr and next each time
+  if (!l1) return l2;
+  if (!l2) return l1;
+  if (!l1 && !l2) return undefined;
 
-if (!l1.value && !l2.value) return undefined; 
-let newList = [];
-while (l1.value !== undefined || l2.value !== undefined) {
-	if (l1.value) newList.push(l1.value);
-	if (l2.value) newList.push(l2.value);
-	l1 = l1.next; 
-	l2 = l2.next;
-}
-let newLinkList = new Node(newList[0]);
-let currNode = newLinkList;
-for (let i = 1; i < newList.length; i++) {
-	let newNode = new Node(newList[i]);
-	currNode.next = newNode;
-	currNode = currNode.next;
-}
-
-return newLinkList; 
-
-
-
-};
+  var head = l1;
+  var temp = l1;
+  
+  l1 = l1.next;
+  
+  while (l2 && l1) {
+    temp.next = l2;
+    l2 = l2.next;
+    temp = temp.next;
+    temp.next = l1;
+    l1 = l1.next;
+    temp = temp.next;
+  }
+  
+  temp.next = l2 ? l2 : l1;
+  return head;
+};																							
 
 module.exports = {Node: Node, zip: zip};
