@@ -18,8 +18,6 @@
   // String containing the number in english in camel case
 
 function numToWords(num) {
-  console.log(num);
-  
   // Edge cases
   if (num === undefined || !isFinite(num)) return undefined;
   if (num === 0) return 'Zero'
@@ -93,19 +91,19 @@ function numToWords(num) {
 }
 
 // Test cases
-console.log(numToWords(0)); // -> 'Zero'
-console.log('Zero');
-console.log(numToWords(43)); // -> 'FortyThree'
-console.log('FortyThree');
-console.log(numToWords(2999)); // -> 'TwoThousandNineHundredNinetyNine'
-console.log('TwoThousandNineHundredNinetyNine');
-console.log(numToWords(15)); // -> 'Fifteen'
-console.log('Fifteen');
-console.log(numToWords(2483579411)); // -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
-console.log('TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven');
-console.log(numToWords(300525151340440)); // -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
-console.log('ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty');
-console.log(numToWords(92120000000000000)); // -> 'NinetyTwoQuadrillionOneHundredTwentyTrillion'
-console.log('NinetyTwoQuadrillionOneHundredTwentyTrillion');
+//console.log(numToWords(0)); // -> 'Zero'
+//console.log('Zero');
+//console.log(numToWords(43)); // -> 'FortyThree'
+//console.log('FortyThree');
+//console.log(numToWords(2999)); // -> 'TwoThousandNineHundredNinetyNine'
+//console.log('TwoThousandNineHundredNinetyNine');
+//console.log(numToWords(15)); // -> 'Fifteen'
+//console.log('Fifteen');
+//console.log(numToWords(2483579411)); // -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
+//console.log('TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven');
+//console.log(numToWords(300525151340440)); // -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
+//console.log('ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty');
+//console.log(numToWords(92120000000000000)); // -> 'NinetyTwoQuadrillionOneHundredTwentyTrillion'
+//console.log('NinetyTwoQuadrillionOneHundredTwentyTrillion');
 
 module.exports = numToWords;
