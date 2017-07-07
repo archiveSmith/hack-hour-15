@@ -10,7 +10,30 @@
  */
 
 function permPalin(str) {
-	
+  if(typeof str !== 'string') return undefined;
+  if(str.length === 0) return undefined;
+  if(str.length === 1) return true;
+//loop through permutations of left side
+	for(let i = 2; i <= str.length; i += 1){
+    let op = str.substring(0, i);
+    // console.log(op);
+    if(op === op.split('').reverse().join('')) {
+      return true;
+    }
+  }
+  for(let i = str.length - 2; i > 0; i -= 1){
+    let op = str.substring(i, str.length);
+    // console.log(op);
+    if(op === op.split('').reverse().join('')) {
+      return true;
+    }
+  }
+  return false;
 }
+
+ console.log(permPalin('abab'));
+ console.log(permPalin('cbaba'));
+ console.log(permPalin('cbac') );
+ console.log(permPalin('a'));
 
 module.exports = permPalin;
