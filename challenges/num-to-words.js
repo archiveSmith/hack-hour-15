@@ -18,6 +18,7 @@
   // String containing the number in english in camel case
 
 function numToWords(num) {
+  console.log(num);
   
   // Edge cases
   if (num === undefined || !isFinite(num)) return undefined;
@@ -36,7 +37,7 @@ function numToWords(num) {
     [70, 'Seventy'],
     [60, 'Sixty'],
     [50, 'Fifty'],
-    [40, 'Fourty'],
+    [40, 'Forty'],
     [30, 'Thirty'],
     [20, 'Twenty'],
     [19, 'Nineteen'],
@@ -92,12 +93,19 @@ function numToWords(num) {
 }
 
 // Test cases
-//console.log(numToWords(0)); // -> 'Zero'
-//console.log(numToWords(43)); // -> 'FortyThree'
-//console.log(numToWords(2999)); // -> 'TwoThousandNineHundredNinetyNine'
-//console.log(numToWords(15)); // -> 'Fifteen'
-//console.log(numToWords(2483579411)); // -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
-//console.log(numToWords(300525151340440)); // -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
-//console.log(numToWords(92120000000000000)); // -> 'NinetyTwoQuadrillionOneHundredTwentyTrillion'
+console.log(numToWords(0)); // -> 'Zero'
+console.log('Zero');
+console.log(numToWords(43)); // -> 'FortyThree'
+console.log('FortyThree');
+console.log(numToWords(2999)); // -> 'TwoThousandNineHundredNinetyNine'
+console.log('TwoThousandNineHundredNinetyNine');
+console.log(numToWords(15)); // -> 'Fifteen'
+console.log('Fifteen');
+console.log(numToWords(2483579411)); // -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
+console.log('TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven');
+console.log(numToWords(300525151340440)); // -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
+console.log('ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty');
+console.log(numToWords(92120000000000000)); // -> 'NinetyTwoQuadrillionOneHundredTwentyTrillion'
+console.log('NinetyTwoQuadrillionOneHundredTwentyTrillion');
 
 module.exports = numToWords;
