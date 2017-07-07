@@ -8,7 +8,35 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+console.log(str)
+if (str=="") return true;
+let tf = false;
+//let wordArr = str.split(" ");
+let wordArr = str.split(/\W|_/gi);
+console.log(wordArr)
+wordArr.forEach(word=>{ 
+    //console.log(word);
+    //console.log(word.split("").reverse().join(""));
+    // if (wordArr.includes(word.split("").reverse().join(""))) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+    for (let i=0; i<wordArr.length; i++){
 
+        if (word.split("").reverse().join("") == wordArr[i]) {
+            
+            tf = true;
+            console.log(tf)
+            break;
+        } else {
+            tf = false;
+        }
+    }
+}) 
+
+return tf;
 }
-
+console.log(matchWord('END DNE'));
 module.exports = matchWord;
+

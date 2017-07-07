@@ -9,7 +9,32 @@
  */
 
 function subsetSum(array, target) {
+    let newVal = 0;
+    let holdVal = 0;
+    let newArr = [];
+    newArr = array.filter(el=>{return (el<target)? true: false})
+    console.log(newArr);
+    for (let i=0; i<newArr.length; i++){
+        for (let ii=1; ii<newArr.length; ii++){
+            if (newArr[i]+newArr[ii]===target){
+                return true;
+            } else {
+                newVal = newArr[i]+newArr[ii];
+                if (newVal<target){
+                    holdVal = newArr[ii];
+                    newArr.splice[i];
+                    newArr.splice[newArr.indexOf(holdVal)];
+                    subsetSum(newArr, target)
+                } 
+            } 
+        }  if (newVal>target){
+                    newArr.splice[i];
+                    subsetSum(newArr, target);
+                }
+    }
+    return false;
 
-}
+} 
 
 module.exports = subsetSum;
+console.log(subsetSum([3, 34, 4, 12, 5, 12], 32));
