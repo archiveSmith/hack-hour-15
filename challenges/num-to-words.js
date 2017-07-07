@@ -18,7 +18,7 @@ function numToWords(num) {
   
   const str = String(num).split('').reverse().join('');
 
-  const places = ['Nonillion', 'Octillion','Septillion','Sextillion','Quintillion','Quadrillion','Trillion','Billion','Million','Hundred-thousand','Hundred']
+  const places = ['Nonillion', 'Octillion', 'Septillion', 'Sextillion', 'Quintillion', 'Quadrillion', 'Trillion', 'Billion', 'Million', 'Hundred-thousand', 'Hundred']
   places.reverse();
 
   const singles = {
