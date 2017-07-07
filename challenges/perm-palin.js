@@ -10,8 +10,8 @@
  */
 
 function permPalin(str) {
-  if(typeof str !== 'string') return undefined;
-  if(str.length === 0) return undefined;
+  if(typeof str !== 'string') return false;
+  if(str.length === 0) return false;
   if(str.length === 1) return true;
 //loop through permutations of left side
 	for(let i = 2; i <= str.length; i += 1){
