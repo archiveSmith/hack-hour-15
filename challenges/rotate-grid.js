@@ -18,28 +18,21 @@
 
 // Input
   // 2d, NxN array
-  // Number of times to rotate 90 degrees clockwise
+  // Dimension N
 // Ouptut
   // The input array rotated n * 90 degrees clockwise
 
 function rotateGrid(grid, n) {
-  // Rotate the grid n times
-  for (let i = 0; i < n; i += 1) {
+  // Rotate the grid
+  // Create a new outer array
+  return grid[0].map((x, i) => {
     
-    // Rotate the grid
-    
-    // Create a new outer array
-    grid = grid[0].map((x, i) => {
-      
-      // Where each element is an array
-      return grid.reduce((col, row) => {
-        col.unshift(row[i]);
-        return col;
-      }, []);
-    });
-  }
-  
-  return grid;
+    // Where each element is an array
+    return grid.reduce((col, row) => {
+      col.unshift(row[i]);
+      return col;
+    }, []);
+  });
 }
 
 // Test cases
