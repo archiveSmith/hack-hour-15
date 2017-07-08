@@ -16,8 +16,31 @@
  * BONUS: Do this in place
  */
 
-function rotateGrid(grid, n) {
+// Given an NxN grid of elements, rotate the grid by 90 degrees clockwise
 
+// Input 
+/*
+                                        [   [1, 2, 3],
+                                            [4, 5, 6],
+                                            [7, 8, 9]  ]
+*/
+
+
+    // Nested For Loop
+        // Iterate through the nested array, with n subarrays
+            // Create a conditional to create the nested array feature
+            // Take the last element of the current subarray, and push it to new array
+            // Continue until the subarray is empty
+        // Repeat until we do this for all the subarrays
+
+function rotateGrid(grid, n) {
+    return grid.map((subarray) => {
+        // let newArray = [];
+        return subarray.map((element, index) => {
+            return element;
+        });
+        // output.push(newArray);
+    });
 }
 
 module.exports = rotateGrid;
