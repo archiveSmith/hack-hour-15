@@ -14,7 +14,8 @@ function permPalin(str) {
 
   const letters = str.split('').sort();
   
-  let exception = true
+  let exception = true;
+  
   while (letters.length > 1) {
     if (letters[0] !== letters[1] && exception) {
       letters.shift();
