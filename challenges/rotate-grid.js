@@ -17,6 +17,28 @@
  */
 
 function rotateGrid(grid, n) {
+  // return undefined for undefined grid or n = 0
+  // initialize n-size array with n-size array as element
+  // iterate through each row and each item in the row 
+  // to the following rotational tranformation
+  // more pseudocode to come if i lose to temptation to googling
+  
+  // lost to temptation
+  // |cos theta, -sin theta| |x| + x0
+  // |sin theta, cos theta| |y| + y0
+  // theta = 90deg
+
+  // | 0  1 | |x|  + 0
+  // | -1 0 | |y|  + 3
+  // example n = 4
+  // 0,0 => 0,3 
+    // 
+  // 0,1 => 1,3
+  // 0,3 => 3,3 
+  // 1,3 => 3,2
+  
+  // multiply 
+
 
 }
 
