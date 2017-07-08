@@ -30,19 +30,27 @@ function permPalin(str) {
     
     //  - EVEN length: 
     //      -  equal number of all letters 
+    let oddFlag = 0; // if more than 1, then not palindrome
+
     if (strLength % 2 === 0 ) {
         Object.keys(lettersObj).forEach( key => {
             // if odd, return false
-            if (lettersObj[key] % 2 === 1) return false; 
+            if (lettersObj[key] % 2 === 1) {
+                oddFlag += 1;
+            }
         }); 
-        return true; 
+        if ( oddFlag > 1 ) {
+            return false;
+        } else {
+            return true; 
+        }
     }
 
     //  - ODD length:
     //      - (n - 1) letters have equal number of occurrances
     //      - EXCEPT for 1 letter which should have an odd
     //          number of occurances. 
-    let oddFlag = 0; // if more than 1, then not palindrome
+    oddFlag = 0; // if more than 1, then not palindrome
     
     Object.keys(lettersObj).forEach( key => {
         // if odd, add 1 to oddFlag
