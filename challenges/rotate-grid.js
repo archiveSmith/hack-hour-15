@@ -16,8 +16,28 @@
  * BONUS: Do this in place
  */
 
-function rotateGrid(grid, n) {
+// Input
+  // 2d, NxN array
+  // Dimension N
+// Ouptut
+  // The input array rotated n * 90 degrees clockwise
 
+function rotateGrid(grid, n) {
+  // Rotate the grid
+  // Create a new outer array
+  return grid[0].map((x, i) => {
+    
+    // Where each element is an array
+    return grid.reduce((col, row) => {
+      col.unshift(row[i]);
+      return col;
+    }, []);
+  });
 }
+
+// Test cases
+//console.log(rotateGrid([[1, 2], [3, 4]], 2)); 
+//console.log(rotateGrid([[1, 2, 3],[4, 5, 6],[7, 8, 9]], 3)); 
+//console.log(rotateGrid([[1, 2, 3, 4],[5, 6, 7, 8],[9, 10, 11, 12], [13, 14, 15, 16]], 1)); 
 
 module.exports = rotateGrid;
