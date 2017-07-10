@@ -80,17 +80,19 @@ function numToWords(num) {
   }
   let words = '';
   for (let i = numbers.length - 1; i >= 0; i -= 1) {
-    let numKey = numbers[i][0];
+    let numKey = numbers[i];
     if (num >= numKey && num != 0) {
       let leadingNum = num / numKey;
-      words += leadingNum + numKey;
+      words += dictionary[leadingNum] + dictionary[numKey];
       console.log(words)
       num = num - (leadingNum * numKey); 
       console.log('num ', num)
     }
+    if (num === 0) return words || "Zero";
   }
+  return words
 }
 
-console.log(numToWords(100));
+console.log(numToWords(10));
 
 module.exports = numToWords;
