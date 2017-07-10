@@ -35,7 +35,7 @@ function Queue() {
   
   this.length = 0;
   
-  this.push = (val) => {
+  this.enqueue = (val) => {
     const stack = new Stack();
     
     // Push all elements of data into a stack
@@ -53,7 +53,7 @@ function Queue() {
     }
   }
   
-  this.shift = () => {
+  this.dequeue = () => {
     if (this.length > 0) {
       this.length -= 1;
       return data.pop();
