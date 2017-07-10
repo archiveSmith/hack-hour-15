@@ -18,11 +18,6 @@
 
 function rotateGrid(grid, n) {
 
-  // given: a1, a2, a3,...,an
-  // need to rotate such that corner Y ends at corner X.
-  // rotation 1: a3.1 at a1.1, a3.3 at a3.1
-  // rotation 2: a3.1 at a1.3 a3.3 at a1.1
-
   let temp = []
 
   for (let i = 0; i< grid.length; i++){
@@ -35,7 +30,6 @@ function rotateGrid(grid, n) {
     let sub = grid[count];
     let subLen = sub.length
     for (let i = 0; i < subLen; i++){
-      let mth = 2 *(i - count) - i;
       sub[i] = temp[(temp.length) - n *(i+1) + count];
     }
     k--;
@@ -53,7 +47,7 @@ let test1 = [ [1, 2, 3],
 let result1 = [   [7, 4, 1],
                   [8, 5, 2],
                   [9, 6, 3]  ]
-
-console.log(rotateGrid(test1, 3));
+// 
+// console.log(rotateGrid(test1, 3));
 
 module.exports = rotateGrid;
