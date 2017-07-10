@@ -27,11 +27,6 @@ function Stack() {
 /**
 * Queue Class
 */
-
-
-1,2,3,4
-
-4,3,2,1,0
   
 // Push adds element to end of queue
 // Shift removes and returns element from front of queue
