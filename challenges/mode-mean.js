@@ -11,7 +11,16 @@
 
 
 function modemean(array) {
+  array.sort();
+  
+  let half = Math.floor(array.length/2);
 
+  let mode = array[half];
+
+  let total = array.reduce((acc, inp) => {return acc+inp;})
+  let mean = Math.floor(total/array.length);
+
+  return mode === mean;
 }
 
 module.exports = modemean;

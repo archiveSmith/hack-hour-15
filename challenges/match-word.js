@@ -8,7 +8,18 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  const words = str.split(/[^A-Za-z09]/).filter(x => { return !!x });
+  if (words.length < 1) return true;
+  const wordStack = [words[0].split('').reverse().join('')];
+  
+  for(let i = 1; i < words.length; i++) {
+    if(words[i] === wordStack[wordStack.length-1]) {
+      wordStack.pop();
+    } else {
+      wordStack.push(words[i].split('').reverse().join(''))
+    }
+  }
+  return wordStack.length === 0;
 }
 
 module.exports = matchWord;

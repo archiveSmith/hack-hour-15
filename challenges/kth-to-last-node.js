@@ -22,7 +22,24 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-
+// first find length of the list
+// then navigate to index of length - k
+  if (!head) return undefined;
+  let currentNode = head;
+  console.log(currentNode.value);
+  let length = 0;
+  while (currentNode) {
+    currentNode = currentNode.next;
+    length += 1;
+  }
+  if (length === 0 || k > length) return undefined;
+  currentNode = head;
+  let count = 0;
+  while (count < length - k) {
+    currentNode = currentNode.next;
+    count += 1;
+  }
+  return currentNode.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
