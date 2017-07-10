@@ -6,10 +6,10 @@
 function Stack() {
   this.stack = [];
 }
-Stack.prototype.add = function(value){
+Stack.prototype.push = function(value){
   this.stack.push(value);
 }
-Stack.prototype.remove = function(){
+Stack.prototype.pop = function(){
   return this.stack.pop();
 }
 
@@ -44,16 +44,16 @@ class Queue {
   }
   // FIFO
   enqueue(value){
-    this.inQ.add(value);
+    this.inQ.push(value);
   }
 
   dequeue(){
     if (this.outQ.isEmpty()){
       while (!this.inQ.isEmpty()){
-      this.outQ.add(this.inQ.remove());
+      this.outQ.push(this.inQ.pop());
       }
     }
-    return this.outQ.remove();
+    return this.outQ.pop();
   }
 
 }
