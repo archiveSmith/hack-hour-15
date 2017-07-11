@@ -2,57 +2,38 @@
  * Create a stack.Then create a queue using two stacks.
  */
 
-//
 function Stack() {
-	this.storage = {};
-	this.index = 0;
+  this.items = [];
 }
 
-Stack.prototype.push = function(value) {
-  this.storage[this.index]=value;
-  this.index++;
+Stack.prototype.push = function(item) {
+  this.items.push(item);
 };
 
 Stack.prototype.pop = function() {
-	this.index--;
-	const oldVal = this.storage[this.index];
-	delete this.storage[this.index];
-	return oldVal; 
-}
+  return this.items.pop();
+};
 
-
-/**
-* Queue Class
-*/
-
+Stack.prototype.isEmpty = function() {
+  return this.items.length;
+};
 
 function Queue() {
-  this.storage = {};
-  this.length = 0;
+  this.in = new Stack();
+  this.out = new Stack();
 }
 
-Queue.prototype.enqueue = function(value) {
-    this.storage[this.length] = value;
-    this.length++;
-
+Queue.prototype.enqueue = function(item) {
+  this.in.push(item);
 };
 
 Queue.prototype.dequeue = function() {
-    if (this.length ===0){
-        return undefined;
-    } else {
-    const result = this.storage[0];
-    const newObj = {};
-    delete this.storage[0];
-
-    for (let i=1; i<this.length; i++){
-        newObj[i-1]=this.storage[i];
+  if (this.out.isEmpty()) {
+    while (!this.in.isEmpty()) {
+      this.out.push(this.in.pop());
     }
-    this.length--;
-    this.storage = newObj;
-    return result;
-    }
-
+  }
+  return this.out.pop();
 };
 
 
