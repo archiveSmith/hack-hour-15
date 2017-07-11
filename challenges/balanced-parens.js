@@ -25,7 +25,31 @@
  */
 
 function balancedParens(input){
-
+  if (typeof input !== 'string') return 'Not a valid input'
+  
+  const bracketStack = [];
+  
+  for(let i = 0; i < input.length; i += 1) {
+    if(input[i] === '(' || input[i] === '[' || input[i] === '{') {
+      
+      bracketStack.push(input[i]);
+      
+    } else if(input[i] === ')') {
+      
+      if(bracketStack.pop() !== '(') return false;
+      
+    } else if(input[i] === ']') {
+      
+      if(bracketStack.pop() !== '[') return false;
+      
+    } else if(input[i] === '}') {
+      
+      if(bracketStack.pop() !== '{') return false;
+      
+    }
+  }
+  return bracketStack.length === 0;
 }
+ 
 
 module.exports = balancedParens;

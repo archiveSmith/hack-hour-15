@@ -4,7 +4,13 @@
 
 
 function Stack() {
-
+  this.items = [];
+}
+Stack.prototype.pushStack = (item) => {
+  this.items.push(item);
+}
+Stack.prototype.popStack = () => {
+  return this.items.pop()
 }
 
 
@@ -14,6 +20,13 @@ function Stack() {
 
 
 function Queue() {
+  this.inflow = new Stack();
+  this.outflow = new Stack();
+}
+Queue.prototype.enque = (item) => {
+  this.inflow.pushStack();
+}
+Queue.prototype.deque = () => {
 
 }
 

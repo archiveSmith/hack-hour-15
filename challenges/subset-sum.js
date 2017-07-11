@@ -9,6 +9,22 @@
  */
 
 function subsetSum(array, target) {
+  //brute force: calculate all sums?  
+  //sort first would probs be good
+  if (!Array.isArray(array) || typeof target !== 'number') return 'Not a valid input';
+  //first check to see if any of them are the number
+  // run a helper function with combos of 1, 2, all up to array.length.  
+  //if any are found/ return true
+
+  for (let i = 1; i < array.lenth; i += 1) {
+    let combos = pos(n);
+  }
+
+  return false;
+
+  function pos(n) {
+    
+  }
 
 }
 
