@@ -23,10 +23,10 @@ function Queue() {
   this.inflow = new Stack();
   this.outflow = new Stack();
 }
-Queue.prototype.add = (item) => {
-  this.inflow.pushStack()
+Queue.prototype.enque = (item) => {
+  this.inflow.pushStack();
 }
-Queue.prototype.next = () => {
+Queue.prototype.deque = () => {
 
 }
 
