@@ -8,7 +8,12 @@
  */
 
 function gcd(a, b) {
+  let i = Math.max(a, b);
+  let j = Math.min(a, b);
 
+  let remainder = i % j;
+
+  return remainder === 0 ? j : gcd(j, remainder);
 }
 
 module.exports = gcd;
