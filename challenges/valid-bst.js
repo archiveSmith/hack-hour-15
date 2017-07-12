@@ -13,53 +13,27 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-  if (!tree || !tree.value || typeof tree !== 'object') return false;
-  let parent = tree.value;
-
-  return validBSTHelper(tree, tree.value);
-
+  return checkBST(tree, null, null)
 }
 
-function validBSTHelper(tree, parent){
-
-  return BSTleft(tree.left, parent) && BSTright(tree.right, parent);
-}
-
-function BSTleft(tree, parent){
+function checkBST(tree, min, max){
   if (tree === null) return true;
-  if (tree.left){
-    if (tree.left.value > tree.value || tree.left.value > parent) return false;
-  }
-  if (tree.right){
-    if (tree.right.value < tree.value || tree.right.value > parent) return false;
-  }
+  if ((min !== null && tree.value < min)|| (max !== null && tree.value > max)) return false;
 
-  return BSTright(tree.right, parent) && BSTleft(tree.left, parent);
+  if (!checkBST(tree.left, min, tree.value) || !checkBST(tree.right, tree.value, max)) return false;
+
+  return true;
 }
-
-function BSTright(tree,parent){
-  if (tree === null) return true;
-  if (tree.left){
-    if (tree.left.value > tree.value || tree.left.value < parent) return false;
-  }
-  if (tree.right){
-    if (tree.right.value < tree.value || tree.right.value < parent) return false;
-  }
-
-  return BSTright(tree.right, parent) && BSTleft(tree.left, parent);
-}
-
-
-
-let bst = new BinaryTree(10);
-bst.left = new BinaryTree(7);
-bst.right = new BinaryTree(11);
-bst.left.left = new BinaryTree(6);
-bst.left.right = new BinaryTree(8);
-bst.right.right = new BinaryTree(15);
-bst.left.left.left = new BinaryTree(1);
-bst.right.right.left = new BinaryTree(12);
-
-console.log(validBST(bst));
+// 
+// let bst = new BinaryTree(10);
+// bst.left = new BinaryTree(7);
+// bst.right = new BinaryTree(11);
+// bst.left.left = new BinaryTree(6);
+// bst.left.right = new BinaryTree(8);
+// bst.right.right = new BinaryTree(15);
+// bst.left.left.left = new BinaryTree(11);
+// bst.right.right.left = new BinaryTree(12);
+//
+// console.log(validBST(bst));
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
