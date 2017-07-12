@@ -37,7 +37,6 @@ function gcd(a, b) {
     }
   if (a === 0) return b;
   if (b === 0) return a;
-  console.log(a,b);
   if (a > b){
     a = a % b;
     return gcd(a, b);
@@ -49,15 +48,15 @@ function gcd(a, b) {
   return gcd(a, b - a);
 }
 
-// console.log(gcd(10,8), "should be 2");
-// console.log(gcd(10,9), "should be 1");
-// console.log(gcd(30,10), "should be 10");
-// console.log(gcd(10000, 1000), "should be 1000");
-// console.log(gcd(36, 27), "should be 9");
-// console.log(gcd(14, 28), "should be 14");
-// console.log(gcd(72,80), "should be 8");
-// console.log(gcd(42,60), "should be 6");
-//console.log(gcd(12,20), "should be 4");
-
+console.log(gcd(10,8), "should be 2");
+console.log(gcd(10,9), "should be 1");
+console.log(gcd(30,10), "should be 10");
+console.log(gcd(10000, 1000), "should be 1000");
+console.log(gcd(36, 27), "should be 9");
+console.log(gcd(14, 28), "should be 14");
+console.log(gcd(72,80), "should be 8");
+console.log(gcd(42,60), "should be 6");
+console.log(gcd(12,20), "should be 4");
+console.log(gcd(100000000000002, 100000000000004))
 
 module.exports = gcd;
