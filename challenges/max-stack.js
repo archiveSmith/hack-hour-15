@@ -22,7 +22,7 @@ Stack.prototype.push = function(item) {
 		this.sorted[this.length] = x; 
 	} 
 	this.length++; 
-	return this.lenth; 
+	return this.length; 
 }
 
 Stack.prototype.pop = function() {
