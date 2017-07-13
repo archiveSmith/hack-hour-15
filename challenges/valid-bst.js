@@ -19,15 +19,23 @@ function validBST(tree) {
 
 function checkBST(tree, low, high) {
   if (tree === null) return true;
-  return low < tree.value && tree.value < high && checkBST(tree.left, low, tree.value) && checkBST(tree.right, tree.value, high);
+  return low < tree.value && tree.value < high &&
+    checkBST(tree.left,  low,        tree.value) &&
+    checkBST(tree.right, tree.value, high);
 }
 
 // const a = new BinaryTree(1);
 // const b = new BinaryTree(2);
 // const c = new BinaryTree(3);
+// const d = new BinaryTree(4);
+// const e = new BinaryTree(5);
+// const f = new BinaryTree(6);
 //
 // b.left = a;
-// b.right = a;
+// b.right = c;
+// c.right = e;
+// e.left = a;
+// e.right = f;
 // console.log(validBST(b));
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
