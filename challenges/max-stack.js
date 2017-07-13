@@ -12,8 +12,8 @@ function Stack() {
   this.max = null;
 
   this.push = function (val) {
+    if (val > this.max || this.max === null) this.max = val;    
     this.storage[this.length] = val;
-    if (val > this.max || this.max === null) this.max = val;
     this.length += 1;
   }
 
@@ -21,11 +21,11 @@ function Stack() {
     if (this.length === 0) return;
     const valToPop = this.storage[this.length - 1];
     this.length -= 1;
-    if (valToPop === this.max) this.setNewMax();
+    if (valToPop === this.max) this.setMax();
     return valToPop;
   }
 
-  this.setNewMax = function () {
+  this.setMax = function () {
     if (this.length === 0) return this.max = null;
 
     let max = this.storage[0];
@@ -34,6 +34,11 @@ function Stack() {
     }
 
     return this.max = max;
+  }
+
+  this.getMax = function () {
+    if (this.max === null) return;
+    else return this.max;
   }
 }
 
