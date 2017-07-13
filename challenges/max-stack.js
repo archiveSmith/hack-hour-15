@@ -27,9 +27,9 @@ Stack.prototype.push = function(item) {
 
 Stack.prototype.pop = function() {
 	if (this.length < 1) return; 
-	const result = this.storage[this.length];
-	delete this.storage[this.length];
-	delete this.sorted[this.length];
+	const result = this.storage[this.length - 1];
+	delete this.storage[this.length - 1];
+	delete this.sorted[this.length - 1];
 	this.length--; 
 	return result; 
 }
