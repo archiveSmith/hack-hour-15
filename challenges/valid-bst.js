@@ -20,20 +20,20 @@ function checkBST(tree, min, max){
   if (tree === null) return true;
   if ((min !== null && tree.value < min)|| (max !== null && tree.value > max)) return false;
 
-  if (!checkBST(tree.left, min, tree.value) || !checkBST(tree.right, tree.value, max)) return false;
+  return (checkBST(tree.left, min, tree.value) && checkBST(tree.right, tree.value, max)) //return false;
 
-  return true;
+//  return true;
 }
-// 
-// let bst = new BinaryTree(10);
-// bst.left = new BinaryTree(7);
-// bst.right = new BinaryTree(11);
-// bst.left.left = new BinaryTree(6);
-// bst.left.right = new BinaryTree(8);
-// bst.right.right = new BinaryTree(15);
-// bst.left.left.left = new BinaryTree(11);
-// bst.right.right.left = new BinaryTree(12);
-//
-// console.log(validBST(bst));
+
+let bst = new BinaryTree(10);
+bst.left = new BinaryTree(7);
+bst.right = new BinaryTree(11);
+bst.left.left = new BinaryTree(6);
+bst.left.right = new BinaryTree(8);
+bst.right.right = new BinaryTree(15);
+bst.left.left.left = new BinaryTree(1);
+bst.right.right.left = new BinaryTree(12);
+
+console.log(validBST(bst));
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
