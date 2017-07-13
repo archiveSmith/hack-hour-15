@@ -14,14 +14,27 @@ function Stack() {
   this.getMax = () => {
     return this.maxVal;
   };
+  this.newMax = () => {
+    this.maxVal = undefined;
+    for (i in this.stack) {
+      if (this.maxVal === undefined || this.maxVal < this.stack[i]){
+        this.maxVal = this.stack[i];
+      }
+    }
+  }
   this.push = (val) => {
     if (this.maxVal === undefined || this.maxVal < val) this.maxVal = val;
     this.stack[this.length]= val;
     return ++this.length;
   }
   this.pop = () => {
+    if (this.length === 0) {
+      this.maxVal = undefined;
+      return;
+    }
     const tmp = this.stack[--this.length];
     delete this.stack[this.length];
+    if (this.maxVal >= tmp) this.newMax();
     return tmp;
   }
 }
@@ -33,6 +46,12 @@ function Stack() {
 // console.log(stack.getMax());
 // stack.push(8);
 // console.log(stack.stack);
+// console.log(stack.getMax());
+// console.log(stack.pop());
+// console.log(stack.getMax());
+// console.log(stack.pop());
+// console.log(stack.getMax());
+// console.log(stack.pop());
 // console.log(stack.getMax());
 // console.log(stack.pop());
 
