@@ -9,7 +9,7 @@
 function Stack() {
   this.storage = {};
   this.length = 0;
-  this.max = undefined;
+  this.max = null;
 
   this.pop = function(){
     if (this.length){
@@ -30,12 +30,12 @@ function Stack() {
   }
 
   this.getMax = function() {
-    return this.max;
+    return this.max === null? undefined: this.max;
   }
 
   this.assignMax = function() {
     let keys = Object.keys(this.storage);
-    this.max = undefined;
+    this.max = null;
     keys.forEach((ele) => {
       this.max = this.storage[ele] > this.max ? this.storage[ele] : this.max;
     });
@@ -43,19 +43,31 @@ function Stack() {
 
 
 }
-astack = new Stack;
-
-console.log(astack.push(1));
-console.log(astack.push(2));
-console.log("max, pushed 1 2: ", astack.getMax());
-console.log(astack.pop());
-console.log("max, popped 2: ",astack.getMax());
-console.log(astack.pop());
-console.log(astack.pop());
-console.log(astack.storage);
-console.log(astack.push(3));
-console.log(astack.storage);
-console.log(astack.push(6));
-console.log(astack.storage);
-console.log("last max: ", astack.getMax());
+// astack = new Stack;
+//
+// console.log(astack.push(1));
+// console.log(astack.push(2));
+// console.log("max, pushed 1 2: ", astack.getMax());
+// console.log(astack.push(1));
+// console.log(astack.pop());
+// console.log("max, popped 2: ",astack.getMax());
+// console.log(astack.pop());
+// console.log(astack.pop());
+// console.log(astack.storage);
+// console.log(astack.push(3));
+// console.log(astack.push(6));
+// console.log(astack.storage);
+// console.log(astack.push(6));
+// console.log("max doulbe 6: ", astack.getMax());
+// console.log(astack.storage);
+// console.log(astack.pop());
+// console.log(astack.storage);
+// console.log("last max: ", astack.getMax());
+// console.log(astack.pop());
+// console.log(astack.pop());
+// console.log(astack.pop());
+// console.log(astack.pop());
+// console.log(astack.pop());
+// console.log(astack.pop());
+// console.log("max: ", astack.getMax());
 module.exports = Stack;
