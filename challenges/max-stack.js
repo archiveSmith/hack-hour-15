@@ -9,7 +9,7 @@
 function Stack() {
   this.storage = {};
   this.length = 0;
-  this.max = null;
+  this.max = undefined;
 
   this.pop = function(){
     if (this.length){
@@ -35,7 +35,7 @@ function Stack() {
 
   this.assignMax = function() {
     let keys = Object.keys(this.storage);
-    this.max = null;
+    this.max = undefined;
     keys.forEach((ele) => {
       this.max = this.storage[ele] > this.max ? this.storage[ele] : this.max;
     });
@@ -43,19 +43,19 @@ function Stack() {
 
 
 }
-// astack = new Stack;
-//
-// console.log(astack.push(1));
-// console.log(astack.push(2));
-// console.log("max, pushed 1 2: ", astack.getMax());
-// console.log(astack.pop());
-// console.log("max, popped 2: ",astack.getMax());
-// console.log(astack.pop());
-// console.log(astack.pop());
-// console.log(astack.storage);
-// console.log(astack.push(3));
-// console.log(astack.storage);
-// console.log(astack.push(6));
-// console.log(astack.storage);
-// console.log(astack.getMax());
+astack = new Stack;
+
+console.log(astack.push(1));
+console.log(astack.push(2));
+console.log("max, pushed 1 2: ", astack.getMax());
+console.log(astack.pop());
+console.log("max, popped 2: ",astack.getMax());
+console.log(astack.pop());
+console.log(astack.pop());
+console.log(astack.storage);
+console.log(astack.push(3));
+console.log(astack.storage);
+console.log(astack.push(6));
+console.log(astack.storage);
+console.log("last max: ", astack.getMax());
 module.exports = Stack;
