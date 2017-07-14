@@ -32,7 +32,27 @@
   // Invokes the inputted function, with the inputted args array as its arguments
 
 function applyIt(func, args) {
-  func(args[0], args[1], args[2], args[3]);
+  //func(args[0], args[1], args[2], args[3]);
+  
+  // Initialize base execution string
+  let exe = 'func(';
+  
+  // Iterate through args
+  args.forEach((arg, i) => {
+  
+    // if this is not the last arg, add a comma
+    if (i !== 0) exe += ',';
+  
+    // JSON stringify the arg and add to the execution string
+    exe += JSON.stringify(arg);
+    
+  });
+  
+  // Finish string
+  exe += ');'
+  
+  // Evaluate the execution string
+  eval(exe);
 }
 
 //applyIt(console.log, ['hi', 'hello']);
