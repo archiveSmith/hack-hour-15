@@ -25,8 +25,27 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
+// Given a function, and an array of arguments, use the applyIt function
+// to pass the array of arguments into the function
 
+// Goal: create the apply / spread operator
+// Iterate through the array, pass each argument to the function
+    // JSON Stringify?
+
+function applyIt(func, args) {
+  console.log(func.toString());
+  
+  const funcString = func.toString();
+  const firstPosition = funcString.indexOf(' ');
+  const secondPosition = funcString.indexOf('(');
+  let funcName = funcString.slice(firstPosition + 1, secondPosition);
+    let argumentString = funcName += '(';
+    for (let i = 0; i < args.length; i++) {
+      if (i === 0) argumentString += args[i];
+      else argumentString = argumentString + ', ' + args[i];
+    }
+    argumentString += ')';
+    return eval ( argumentString );
 }
 
 module.exports = applyIt;
