@@ -32,7 +32,7 @@
   // Invokes the inputted function, with the inputted args array as its arguments
 
 function applyIt(func, args) {
-  console.log(func, args);
+  console.log(func.toString(), args);
   
   // Initialize base execution string
   let exe = 'func(';
