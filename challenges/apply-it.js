@@ -29,11 +29,9 @@
   // A function
   // An array of arguments
 // Output
-  // Invokes the inputted function, with the inputted args array as its arguments
+  // Returns a function that invokes the inputted function, with the inputted args array as its arguments
 
 function applyIt(func, args) {
-  console.log(func.toString(), args);
-  
   // Initialize base execution string
   let exe = 'func(';
   
@@ -51,10 +49,29 @@ function applyIt(func, args) {
   // Finish string
   exe += ');'
   
-  // Evaluate the execution string
-  eval(exe);
+  // Return a function that evals the execution string
+  return () => eval(exe);
 }
 
 //applyIt(console.log, ['hi', 'hello']);
+
+//var jae = function(name, age, location) {
+//  return name + " is " + age + " and he lives in " + location;
+//};
+//
+//var jaero = applyIt(jae, ["Jae", 19, "South Carolina"]);
+//console.log(jaero()); //Returns "Jae is 19 and he lives in South Carolina"
+//
+////Another Example:
+//var jasmine = function(name, age) {
+//  if(!age){
+//    return "We don't know how old " + name + " is!";
+//  }
+//  else{
+//    return name + " is " + age + " years old!";
+//  }
+//};
+//var jmoney = applyIt(jasmine, ["Jasmine"]);
+//console.log(jmoney()); //Returns "We don't know how old Jasmine is!"
 
 module.exports = applyIt;
