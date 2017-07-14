@@ -25,8 +25,16 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
+// Input
+  // A function
+  // An array of arguments
+// Output
+  // Invokes the inputted function, with the inputted args array as its arguments
 
+function applyIt(func, args) {
+  func(args[0], args[1], args[2], args[3]);
 }
+
+//applyIt(console.log, ['hi', 'hello']);
 
 module.exports = applyIt;
