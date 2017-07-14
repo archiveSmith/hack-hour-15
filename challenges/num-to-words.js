@@ -13,7 +13,26 @@
  */
 
 function numToWords(num) {
+    if(typeof num !== 'number') return 'Invalid arguments';
+    const ones = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const tens = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    const onesInString = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    const tensInString = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    const teensInString = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighten', 'nineteen'];
+    const everyMajorPlaces = ['hundred', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion'];
+    const numArr = num.toString().split('');
 
+    const emptyArr = [];
+    const counter = 0;
+    let stringToNumber = ''
+    for(let i = numArr.length-1; i >= 0; i--) {
+        let temp = nummArr.splice(numArr.length-1, 1);
+        emptyArr.push(temp);
+        counter++;
+        if(counter % 3 === 1) 
+    }
+
+    
 }
 
 module.exports = numToWords;

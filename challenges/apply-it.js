@@ -26,7 +26,22 @@
  */
 
 function applyIt(func, args) {
+  let i;
+  let j;
+    console.log('func: ', func)
+    console.log('args: ', args)
+    console.log('func(args): ', func(args))
+    const argsIntoArray = Array.from(args)
+      console.log('argsIntoArray :', argsIntoArray)
+    for(i=0; i<arguments.length; i++) {
+    console.log('arg i: ', arguments[i])
+    console.log('func of arg: ', func(arguments[i]));
+      for(j=0; j<argsIntoArray.length; j++) {
+    console.log('invoked :', arguments[i](argsIntoArray[j]))
+        }
+    }
 
 }
+
 
 module.exports = applyIt;

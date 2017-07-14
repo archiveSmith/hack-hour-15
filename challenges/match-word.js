@@ -8,7 +8,29 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+    if (str === '') return true;
+    const lowerCase = str.toLowerCase().split('');
+    const reverse = str.toLowerCase().split('').reverse();
+    const lowerWord = [];
+    const reverseWord = [];
+    for (let i = 0; i< lowerCase-1; i++) {
+        if((/[a-z]/).test(lowerCase)) {
+            lowerWord.push(lowerCase[i]);
+            if(!(/[a-z]/).test(lowerCase)) {
+                break;
+            }
+        }
+    }
+    for (let i = 0; i< reverse -1; i++) {
+        if(reverse[i].includes(/[a-z]/)) {
+            reverseWord.push(reverse[i]);
+            if(!reverse[i+1].includes(/[a-z]/)) {
+                break;
+            }
+        }
+    }
+    return lowerWord.join('') === reverseWord.join('')
 }
+
 
 module.exports = matchWord;
