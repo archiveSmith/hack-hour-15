@@ -25,8 +25,22 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
+// let array = ["stuff", 'more stuff'];
+// let func = function(athing, anotherthing){
+//   return .....
+// }
+//
+// let aresult = applyIt(func, array);
 
+function applyIt(func, args) {
+  let strArgs = [];
+  let array = args.slice();
+
+  array.forEach((arg, i) =>{
+    strArgs[i] = "args["+ i + "]";
+  });
+
+  return ()=> eval("func(" + strArgs + ')');
 }
 
 module.exports = applyIt;
