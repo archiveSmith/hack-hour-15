@@ -8,6 +8,16 @@
 
 
 function countTwos(num) {
+  // 0 <= x < 10 would have one 2
+  // 10 <= x < 100
+    // would have atleast ten 2's in 20
+    // one 2 for each 
+
+  // 100 <= x < 1000
+    // would have atleast hundred 2's in 200 
+    // ten 2 for 20
+    
+  // multiply numbers?
 
 }
 
