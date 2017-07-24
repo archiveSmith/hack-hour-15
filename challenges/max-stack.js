@@ -33,7 +33,7 @@ function Stack() {
     return popped;
   };
   this.getMax = () => {
-    return this.max.value;
+    return (this.length === 0) ? undefined : this.max.value;
   };
 }
 
@@ -42,12 +42,12 @@ function Node(val) {
   this.next = null;
 }
 
-// let stack = new Stack();
-// stack.push(2);
-// stack.push(3);
-// stack.push(1);
-// console.log(stack.pop())
-// console.log(stack.pop())
-
-// console.log(stack.getMax());
+let stack = new Stack();
+stack.push(1);
+stack.push(3);
+stack.push(2);
+stack.push(1);
+stack.push(0);
+console.log(stack)
+console.log(stack.getMax());
 module.exports = Stack;
