@@ -9,19 +9,18 @@
  */
 
 function subsetSum(array, target) {
-  console.log(array, target);
-  const obj = array.reduce((acc, elem) =>{
-    acc[elem] = true;
-    return acc;
-  },{});
+  const obj = {};
   for (let i = 0; i < array.length; i++) {
     let diff = target - array[i];
+
+    console.log(i, obj);
     if (obj[diff] || diff === 0) return true;
-    obj[diff] = true;
+    //obj[diff] = true;
+    obj[array[i]] = true;
   }
   return false;
 }
 
-console.log(subsetSum([ 1, -6, 3 ], -2))
+console.log(subsetSum([8, 2, 1, -3], 6))
 
 module.exports = subsetSum;
