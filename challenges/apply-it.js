@@ -26,7 +26,17 @@
  */
 
 function applyIt(func, args) {
+    // using the spread operator: 
+    // func(...args); 
 
+    let str = 'func('; 
+    args.forEach( (arg, i) => {
+        str += `"${arg}"`; 
+        if (i !== args.length - 1) str += ','; 
+    }); 
+    str += ')'; 
+    
+    return () => eval(str); 
 }
 
 module.exports = applyIt;
