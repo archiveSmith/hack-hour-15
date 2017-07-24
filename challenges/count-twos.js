@@ -8,7 +8,23 @@
 
 
 function countTwos(num) {
+  let count = 0;
+  //iterate through 1 to the number
+  for(let i = 0; i <= num; i++){
+    // console.log(i)
+    let str = i.toString();
 
+    //iterate through each digit in i
+    for(let dos = 0; dos < str.length; dos++){
+      let parseNum = str.charAt(dos);
+      // console.log(parseNum);
+        if(parseNum === "2"){
+          count++;
+      }
+    }
+  }
+  return count;
 }
+console.log(countTwos(22));
 
 module.exports = countTwos;
