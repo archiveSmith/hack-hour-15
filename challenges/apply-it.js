@@ -26,8 +26,6 @@
  */
 
 function applyIt(func, args) {
-    // using the spread operator: 
-    // func(...args); 
 
     let str = 'func('; 
     args.forEach( (arg, i) => {
