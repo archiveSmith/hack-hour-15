@@ -20,7 +20,7 @@ function validBST(tree) {
 
 function traverse(tree) {
   if (!tree) return;
-  if (tree.left && tree.left.value > tree.value) return false;
+  if (tree.left) {if (tree.left.value > tree.value) return false;
   if (tree.right && (tree.right.value < tree.value)) return false;
   if (traverse(tree.left) !== undefined) return traverse(tree.left);
   if (traverse(tree.right) !== undefined) return traverse(tree.right);
