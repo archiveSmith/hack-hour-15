@@ -34,12 +34,7 @@
 
 function applyIt(func, args) {
   let strArgs = [];
-  let array = args.slice();
-
-  array.forEach((arg, i) =>{
-    strArgs[i] = "args["+ i + "]";
-  });
-
+  args.forEach((arg, i) => strArgs[i] = "args["+ i + "]");
   return ()=> eval("func(" + strArgs + ')');
 }
 

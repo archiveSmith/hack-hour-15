@@ -8,7 +8,27 @@
 
 
 function countTwos(num) {
+  //edge casing;
+  if (typeof num !== "number") return undefined;
+  if (num === 2) return 1;
+  if (num < 2) return 0;
 
+  let twos = 1;
+  const two = '2';
+  // if number is bigger than two, we know it has one two. so start above two.
+  
+  for (let i = 3; i <= num; i+= 1){
+    let last = 0;
+    // stringify and look for twos.
+    const num = String(i).split('');
+    let search = num.indexOf(two, last);
+    while (search !== -1){
+        twos += 1;
+        last = search;
+        search = (num.indexOf(two, last + 1));
+    }
+  }
+  return twos;
 }
 
 module.exports = countTwos;
