@@ -30,10 +30,16 @@
 function applyIt(func, args) {
 	if(typeof func !== 'function' || !Array.isArray(args)) return undefined;
 
-  	return func(args[0], args[1], args[2], args[3], args[4],  args[5],  args[6],  args[7],  args[8],  args[9],  args[10] );
-}
+	let str = 'func(';
+	args.forEach((arg, i) => {
+		str += `"${arg}"`;
+		if(i !== args.length -1) str += ',';
+	});
+
+	str += ')';
 
 
+	return () => eval(str);
 }
 
 
