@@ -4,10 +4,11 @@
 
 
 function Stack() {
-
+    this.length = 0;
+    this.storage = {};
 }
 
-
+function.protp
 /**
 * Queue Class
 */
