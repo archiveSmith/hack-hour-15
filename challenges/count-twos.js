@@ -16,7 +16,7 @@ function countTwos(num) {
   let twos = 1;
   const two = '2';
   // if number is bigger than two, we know it has one two. so start above two.
-  
+
   for (let i = 3; i <= num; i+= 1){
     let last = 0;
     // stringify and look for twos.
@@ -30,5 +30,9 @@ function countTwos(num) {
   }
   return twos;
 }
+
+let now = Date.now();
+console.log(countTwos(30161312));
+console.log((Date.now() - now) / 1000);
 
 module.exports = countTwos;
