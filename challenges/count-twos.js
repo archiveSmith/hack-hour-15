@@ -12,6 +12,7 @@
   // Integer, the number of twos contained in numbers from 1 to n
 
 function countTwos(num) {
+  // Brute Force
 
   // Create a counter to store number of twos
   let count = 0;
