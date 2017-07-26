@@ -5,7 +5,6 @@
  * EXAMPLE
  * Input: (2 -> 1 -> 5) + (5 -> 9 -> 2)
  * Output: 7 -> 0 -> 8
- *
  * The 7 is the ones digit (2 + 5).
  * The 0 is the tens digit (1 + 9, carry the 1).
  * The 8 is the hundreds digit (1 carried over + 5 + 2).
