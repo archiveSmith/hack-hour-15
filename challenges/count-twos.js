@@ -8,17 +8,18 @@
 
 
 function countTwos(num) {
+  console.log(num);
   if (typeof num !== 'number') return 'invalid input';
   let count = 0;
   for (let i = 0; i <= num; i++) {
     let strNum = String(i);
     for(let j = 0; j < strNum; j++) {
-      if (strNum.charAt(j) === '2') count += 1;
+      if (strNum[j] === '2') count += 1;
     }
   }
-  return count
+  return count;
 }
 
-// console.log(countTwos(20));
+// console.log(countTwos(122));
 
 module.exports = countTwos;
