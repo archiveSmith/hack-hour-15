@@ -30,8 +30,23 @@ function countTwos(num) {
   return count;
 }
 
+// Simpler solution?
+
 // Tests
-//console.log(countTwos(1), 0);
+console.log(1, countTwos(1));
+console.log(10, countTwos(10));
+console.log(20, countTwos(20));
+console.log(30, countTwos(30));
+console.log(40, countTwos(40));
+console.log(50, countTwos(50));
+console.log(60, countTwos(60));
+console.log(70, countTwos(70));
+console.log(80, countTwos(80));
+console.log(90, countTwos(90));
+console.log(100, countTwos(100));
+console.log(110, countTwos(110));
+console.log(120, countTwos(120));
+console.log(130, countTwos(130));
 //console.log(countTwos(3), 1);
 //console.log(countTwos(13), 2);
 //console.log(countTwos(1000), 300);
