@@ -14,7 +14,25 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+  let currentLeftTreeLevel = 0
+  let currentRightTreeLevel = 0
+  let rightTree = tree
+  while(tree.left) {
+    currentLeftTreeLevel++
+    console.log('treeLeftLevel:',currentLeftTreeLevel)
+    tree = tree.left
+    console.log('tree Left:', tree)
+  }
+  while(rightTree.right) {
+    currentRightTreeLevel++
+    console.log('treeRightLevel:',currentRightTreeLevel)
+    rightTree = rightTree.right
+    console.log('tree Right:', tree)
+  }
 
+  if (currentLeftTreeLevel === currentRightTreeLevel) return 'balanced';
+  return 'not balanced';
+  
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
