@@ -18,7 +18,7 @@
 //function that returns an array from 1 to num. Write "fizz" if i%3===0, "buzz" if i%5===0, and "fizzbuzz" if i div%3===0 && div%5===0.
 
 
-
+ 
 function fizzbuzz(num) {
   	let res = [];
   	let word = "";
