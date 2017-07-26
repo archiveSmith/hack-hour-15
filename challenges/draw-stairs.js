@@ -27,6 +27,5 @@ for(spaceCount = n; spaceCount > 0; spaceCount--){
 }
 }
 
-drawStairs(6);
 
 module.exports = drawStairs;
