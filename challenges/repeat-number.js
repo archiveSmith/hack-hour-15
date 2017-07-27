@@ -23,7 +23,7 @@ function repeatNumbers(array) {
     let key;
 
     for (key in table) {
-        if (table[key] === 1 ) return key;
+        if (table[key] === 2 ) return key;
     }
 
 }
