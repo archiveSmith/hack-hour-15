@@ -12,13 +12,13 @@
 
 function repeatNumbers(array) {
 //edge cases
+  console.log(array);
   if (Array.isArray(array) === false) return 'INVALID INPUT';
   if (array.length < 2) return -1;
 
   let match = -1
   array.forEach((e) => {
     array.forEach((f) => {
-      console.log(e,f);
       if (f === e) match = e;
     });
   });
