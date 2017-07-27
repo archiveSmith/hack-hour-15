@@ -11,13 +11,9 @@
  */
 
 function repeatNumbers(array) {
-  console.log(array);
-  // const numsFound = {};
-
-  // for (let i = 0; i < array.length; i += 1) {
-  //   if (numsFound[array[i]]) return array[i];
-  //   else numsFound[array[i]] = true;
-  // }
+  for (let i = 1; i < array.length; i += 1) {
+    if (array[i] < i) return array[i];
+  }
 }
 
 module.exports = repeatNumbers;
