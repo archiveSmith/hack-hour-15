@@ -14,7 +14,6 @@ function repeatNumbers(array) {
     if(!Array.isArray(array)) return 'invalid argument'
 
     const table = {};
-    const doubleNumbers = []
 
     array.forEach(function(element) {
         if(!table[element]) table[element] = 1
@@ -24,12 +23,9 @@ function repeatNumbers(array) {
     let key;
 
     for (key in table) {
-        if (table[key] === 2) {
-            doubleNumbers.push(key)
-        }
+        if (table[key] === 1 ) return key;
     }
 
-    return doubleNumbers;
 }
 
 
