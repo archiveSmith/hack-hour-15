@@ -11,7 +11,14 @@
  */
 
 function repeatNumbers(array) {
-
+    let sum = 0;
+    let sumact = 0;
+    for(let x = 0;x<array.length;x++){
+        sum += array[x]
+        sumact += x+1; 
+    }
+    let diff = array.length-(sumact-sum);
+    return (diff !== array.length) ? diff : 0 ; 
 }
-
+console.log(repeatNumbers([1,2,3,4,5]));
 module.exports = repeatNumbers;

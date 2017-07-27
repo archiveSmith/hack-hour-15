@@ -17,12 +17,21 @@
  */
 
 function Node(val) {
-  this.value = val;
-  this.next = null;
+    this.value = val;
+    this.next = null;
 }
 
 function kthToLastNode(k, head) {
-
+    //Find last node
+    let arr = [];
+    if (head === null) {
+        return undefined;
+    }
+    let address = head;
+    do {
+        arr.push(address.value);
+        address = address.next;
+    } while (address != null);
+    return arr[arr.length - k];
 }
-
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+module.exports = { Node: Node, kthToLastNode: kthToLastNode };

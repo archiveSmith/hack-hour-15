@@ -8,7 +8,14 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+    if (str) {
+        let splits = str.split(/\W|_/g).filter(Boolean);
+        for (let x in splits) {
+            if (splits.indexOf(splits[x].split("").reverse().join("")) === -1) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
-
 module.exports = matchWord;

@@ -1,5 +1,5 @@
 /*
- * write a function that takes a string of text and returns true if
+ * write a function that takes a inputing of text and returns true if
  * the parentheses are balanced and false otherwise.
  *
  * Example:
@@ -24,8 +24,27 @@
  *
  */
 
-function balancedParens(input){
-
+function balancedParens(input) {
+    let arr = [];
+    for (let x = 0; x < input.length; x++) {
+        if (input[x] == '[' || input[x] == '{' || input[x] == '(') {
+            arr.push(input[x]);
+        } else if (input[x] == ']' || input[x] == '}' || input[x] == ')') {
+            if (arr[arr.length - 1] === '[' && input[x] === ']') {
+                arr.pop()
+            } else if (arr[arr.length - 1] === '{' && input[x] === '}') {
+                arr.pop()
+            } else if (arr[arr.length - 1] === '(' && input[x] === ')') {
+                arr.pop()
+            } else {
+                return false;
+            }
+        }
+    }
+    if (!arr.length) {
+        return true;
+    }
+    return false;
 }
 
 module.exports = balancedParens;
