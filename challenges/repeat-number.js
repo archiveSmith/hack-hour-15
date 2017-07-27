@@ -12,7 +12,7 @@
 
 function repeatNumbers(array) {
   if (!Array.isArray(array)) return 'Invalid Input';
-  if (Array.length < 2) return;
+  if (array.length < 2) return;
   // const nums = array.reduce((acc, num) => {
   //   if (acc[num]) {
   //     acc[num] += 1;
@@ -27,11 +27,12 @@ function repeatNumbers(array) {
   // })
   let past = array[0];
   for (let i = 1; i < array.length; i++) {
-    if (array[i] - past !== 1) return array[i];
+    if ((array[i] - past) !== 1) return array[i];
+    past = array[i];
   }
   return;
 }
 
-console.log(repeatNumbers([1]))
+console.log(repeatNumbers([1, 2, 3, 4, 5, 6, 4]))
 
 module.exports = repeatNumbers;
