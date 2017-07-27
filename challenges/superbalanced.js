@@ -12,7 +12,7 @@ function BinaryTree(value) {
   this.left = null;
   this.right = null;
 }
-
+//refactor me, i'm too big.
 function superbalanced(tree) {
   if (tree === null) return true;
   if (tree.value === null) return true;
@@ -24,12 +24,10 @@ function superbalanced(tree) {
   let left = tree.left;
   let right = tree.right;
 
-  let leftHeight = checkHeight(left, 1, 0);
-  let rightHeight = checkHeight(right, 1, 0);
+  let leftHeight = checkHeight(left, 0, 0);
+  let rightHeight = checkHeight(right, 0, 0);
 
-  if (Math.abs(leftHeight - rightHeight) > 1) return false;
-
-  return (superbalanced(left) && superbalanced(right));
+  return Math.abs(leftHeight - rightHeight) <= 1 &&  (superbalanced(left) && superbalanced(right));
 
 
 }
@@ -54,17 +52,18 @@ function checkHeight(tree, currentHeight, maxHeight) {
   return maxHeight;
 }
 
-// let test = new BinaryTree(10);
-// test.left = new BinaryTree(5);
-// test.left.right = new BinaryTree(8);
-// test.left.right.right = new BinaryTree(9);
-// test.left.left = new BinaryTree(4);
-// test.left.left.left = new BinaryTree(3);
-// test.right = new BinaryTree(18);
-// // test.right.left = new BinaryTree(14);
-// // test.right.left.left = new BinaryTree(13);
-// // test.right.right = new BinaryTree(19);
-// // test.right.right.right = new BinaryTree(20);
-// console.log(superbalanced(test));
+let test = new BinaryTree(10);
+test.left = new BinaryTree(5);
+test.left.right = new BinaryTree(8);
+test.left.right.right = new BinaryTree(9);
+test.left.left = new BinaryTree(4);
+test.left.left.left = new BinaryTree(3);
+// test.left.left.left.left = new BinaryTree(1);
+test.right = new BinaryTree(18);
+test.right.left = new BinaryTree(14);
+test.right.left.left = new BinaryTree(13);
+// test.right.right = new BinaryTree(19);
+// test.right.right.right = new BinaryTree(20);
+console.log(superbalanced(test));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
