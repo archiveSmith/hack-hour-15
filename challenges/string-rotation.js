@@ -16,7 +16,14 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if (!s1 || !s2) return false
+  if (s1.split('').length !== s2.split('').length) return false
+  const combined = s1 + s1
+  return isSubstring(combined, s2)
 }
+// console.log(stringRotation("hello", "hello")) // true
+// console.log(stringRotation("hello", "llohe")) // -> true
+// console.log(stringRotation("hello", "he"))// -> false
+// console.log(stringRotation("hello", "ollhe")) //-> false (not a rotation, just an anagram)
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

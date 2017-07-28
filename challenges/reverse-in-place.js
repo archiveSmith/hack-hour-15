@@ -14,7 +14,24 @@
  */
 
 function reverseInPlace(array) {
-
+  if (array === undefined) return
+  const iterate = Math.floor(array.length / 2)
+  let tmp;
+  let secInd; 
+  for (let i = 0; i < iterate; i++){
+    secInd = array.length - 1 - i
+    tmp = array[secInd]
+    array[secInd] = array[i]
+    array[i] = tmp
+  }
+  return array
 }
+// const even = [1, 2, 3, 4]
+// console.log(reverseInPlace(even))
+// const odd = [1, 2, 3, 4, 5]
+// console.log(reverseInPlace(odd))
+// const oddstr = ['a', 'b', 'c', 'd', 'e']
+// console.log(reverseInPlace(oddstr))
+
 
 module.exports = reverseInPlace;
