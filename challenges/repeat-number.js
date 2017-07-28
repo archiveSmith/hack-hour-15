@@ -10,21 +10,23 @@
  *
  */
 
+let testArr = [1,2,3,4,5,6,5];
+
  function repeatNumbers(array) {
    //edge case handlers
    if(typeof array !== 'object') return ('invalid value type');
-   if(array === undefined) return ('please input an array with values');
-   //output variable
-   let output = 0;
-   //iterate throguh the array
-   for(let i = 0; i < array.length; i++){
-     console.log(array[i])
-     //search for the dupe and log
-     if(array[i] && array[i-1] === i){
-       output = i;
-     }
-   }
-   return output;
- } 
+   if(array.length < 2)return;
+
+   //set array.length to variable for brevityr
+   const n = array.length;
+   //expected sum
+   const expecSum = (n-1) * n/2;
+   //sum of all numbers - i = dupe
+   const acSum = array.reduce((acc,curr) => acc+curr, 0);
+
+  //return the difference
+  return acSum - expecSum;
+}
+repeatNumbers(testArr);
 
 module.exports = repeatNumbers;
