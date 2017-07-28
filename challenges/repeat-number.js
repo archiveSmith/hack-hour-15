@@ -48,32 +48,33 @@
 //   return num;
 // }
 
-// function repeatNumbers(array) {
-//   var result = 0;
-//
-//   for (var i = 0; i < array.length; i ++) {
-//     result = result ^ i ^ array[i];
-//     // console.log(result);
-//   }
-//
-//   return result;
-// }
+function repeatNumbersA(array) {
+  var result = 0;
+
+  for (var i = 0; i < array.length; i ++) {
+    result = result ^ i ^ array[i];
+    // console.log('result : ', result);
+  }
+
+  return result;
+}
 
 // O(n) time, O(1) space
 function repeatNumbers(array) {
   var expected = ( ( array.length - 1 ) * array.length ) / 2;
-  console.log('expected: ', expected);
+  // console.log('expected: ', expected);
   var actual = 0;
 
   for (var i = 0; i < array.length; i ++) {
       actual += array[i];
-      console.log(actual);
+      // console.log(' Actual: ', actual);
+      // console.log('Actual - 16: ', actual - 16);
   }
 
   return actual - expected;
 }
 
-
-console.log("final: ", repeatNumbers([16,1,2,16,5,0]));
+console.log("final: ", repeatNumbersA([0,1,2,3,5,0]));
+console.log("final: ", repeatNumbers([0,1,2,3,5,0]));
 
 module.exports = repeatNumbers;
