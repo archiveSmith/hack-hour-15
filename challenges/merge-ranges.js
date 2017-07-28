@@ -19,7 +19,11 @@ function mergeRanges(array) {
     let temp = acc.pop();
     if (temp[1] >= elem[0]) {
       times.push(temp[0]);
-      times.push(elem[1]);
+      if (temp[1] > elem[1]){
+        times.push(temp[1]);
+      } else {
+        times.push(elem[1]);
+      }
     } else {
       acc.push(temp);
       times = elem;
@@ -29,7 +33,7 @@ function mergeRanges(array) {
   }, [array.shift()]);
 }
 
-var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]];
+var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10], [5,6]];
 console.log(mergeRanges(times));
 
 module.exports = mergeRanges;
