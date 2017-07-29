@@ -33,6 +33,20 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  // The linked list is cyclical if the "last" node in the LL points 
+  // to the second node in the list (the one after head). This will fail
+  // if the "cycle" happens somewhere else in the list. 
+
+  if (!head || head.next === null) return false; 
+
+  const secondNode = head.next; 
+  const traverse = secondNode.next; 
+
+  while (traverse !== secondNode) {
+    if (traverse === null) return false; 
+    traverse = traverse.next; 
+  }
+  return true; 
 
 }
 
