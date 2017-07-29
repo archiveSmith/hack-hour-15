@@ -74,7 +74,7 @@ function repeatNumbers(array) {
   return actual - expected;
 }
 
-console.log("final: ", repeatNumbersA([0,1,2,3,5,0]));
-console.log("final: ", repeatNumbers([0,1,2,3,5,0]));
+console.log("final: ", repeatNumbersA([1,2,3,4,5,5]));
+console.log("final: ", repeatNumbers([1,2,3,4,4,5]));
 
 module.exports = repeatNumbers;
