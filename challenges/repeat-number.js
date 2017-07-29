@@ -19,19 +19,10 @@
   // return the value
 
 function repeatNumbers(array) {
-  if (!Array.isArray(array) || array.length === 1) return false;
-  if (array.length === 2) return array[0];
-  let value;
-  let tally = array.reduce((acc, curr) => {
-    acc[curr] = (acc[curr] || 0) + 1;
-    if (acc[curr] === 2) {
-      value = curr;
-    }
-    return acc;
-  }, {})
-  console.log(value);
-  console.log(tally);
-  return value;
+  let n = array.length;
+  let expected = (n - 1) * (n / 2);
+  let actual = array.reduce((acc, curr) => acc += curr, 0);
+  return actual - expected;
 }
 
 module.exports = repeatNumbers;
