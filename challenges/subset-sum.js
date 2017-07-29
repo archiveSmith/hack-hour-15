@@ -8,8 +8,29 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
-function subsetSum(array, target) {
+// Input
+    // Array of integers
+    // Target (number)
 
+// Output
+    // True or false
+
+// Base cases (recursion)
+    // If the target is 0, return true
+    // If array is empty, return false
+
+// Recursively call sliced array
+
+function subsetSum(array, target) {
+    if (target === 0) return true;
+    if (!array.length) return false;
+
+    const withEl = subsetSum(array.slice(1), target - array[0]);
+
+    const withoutEl = subsetSum(array.slice(1), target);
+
+    return withEl || withoutEl;
+    
 }
 
 module.exports = subsetSum;

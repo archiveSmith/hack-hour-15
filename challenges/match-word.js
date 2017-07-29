@@ -7,7 +7,31 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
+
+// Input
+  // String
+
+// Output
+  // True or False
+
+
 function matchWord(str) {
+    str = str.replace(/[\W_]/gi, ' ')
+    .toLowerCase()
+    .trim()
+    .replace(/\s\s+/g, ' ')
+    
+    for (let i = 0; i < str.length - 1;) {
+      if (str[i] === str[i+1].split('').reverse().join('')) {
+        str.splice(i, 2);
+        i = 0;
+      } else {
+        i++;
+      }
+    }
+    console.log(str);
+    
+    return str.length === 0 ? true : false;
 
 }
 

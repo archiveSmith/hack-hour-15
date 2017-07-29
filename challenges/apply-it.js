@@ -25,8 +25,16 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
+// Edge cases
+  // Func needs to be a function
+  // args needs to be an array
 
+// Brute force?
+
+function applyIt(func, args) {
+  if (typeof func !== 'function') return undefined;
+  if (!Array.isArray(args)) return undefined;
+  return func(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8], args[9], args[10], args[11], args[12], args[13], args[14], args[15])
 }
 
 module.exports = applyIt;
