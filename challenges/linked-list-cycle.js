@@ -35,6 +35,7 @@ var Node = function(value) {
 function hasCycle(head) {
   let tortoise = head;
   let hare = tortoise;
+  if (head === null) return false;
   // have the two pointers traverse the linkedlist
   while(hare.next) {
     // hare pointer will move twice as fast as tortoise pointer
