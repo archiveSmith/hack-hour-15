@@ -33,7 +33,22 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  // list does not exist..so no loop either
+  if(head === null) return false;
+      
+  let slow, fast; // create two references.
+  slow = fast = head; // make both refer to the start of the list
 
+  while (true) {
+    slow = slow.next;          // 1 hop
+    if (fast.next !== null) fast = fast.next.next; // 2 hops
+    else return false;          // next node null => no loop
+  // if either hits null..no loop
+    if (slow === null || fast === null) return false;
+  // if the two ever meet...we must have a loop
+    if (slow === fast) return true;
+  }
 }
+
 
 module.exports = {Node: Node, hasCycle: hasCycle}
