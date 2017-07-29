@@ -13,8 +13,34 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
+// empty tree is balanced
+// tree with one value is balanced
 
+// approach
+  // keep a count of the left side and the right side
+  // 
+
+function superbalanced(tree) {
+  let left = leftCount(tree);
+  let right = rightCount(tree);
+}
+
+function leftCount(tree) {
+  let count = 0;
+  while (tree.left) {
+    count+=1;
+    tree.value = tree.left;
+  }
+  return count;
+}
+
+function rightCount(tree) {
+  let count = 0;
+  while (tree.left) {
+    count+=1;
+    tree.value = tree.left;
+  }
+  return count;
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
