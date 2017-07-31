@@ -33,7 +33,28 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  head.visited = true;
+  // If there is a next head
+  return head.next ?
+    // And the next head has been visited
+    head.next.visited ? 
+      // This is cyclical
+      true :
+      // Else check for cyclidity
+      hasCycle(head.next):
+    // If there is no head, this is not cyclical
+    false;
+  
 }
+
+// Tes cases
+//var node1 = new Node('1');
+//var node2 = node1.next = new Node('2');
+//var node3 = node2.next = new Node('3');
+//var node4 = node3.next = new Node('4');
+//var node5 = node4.next = new Node('5');
+//console.log(hasCycle(node1), false); // => false
+//node5.next = node2;
+//console.log(hasCycle(node1), true); // => true
 
 module.exports = {Node: Node, hasCycle: hasCycle}
