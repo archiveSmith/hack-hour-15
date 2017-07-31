@@ -7,7 +7,7 @@
  *
  * A->B->C->D
  *    ^     |
- *    |     V
+ *    |     v
  *    G<-F<-E
  *
  * Create a function that accepts a linked list and returns true if the linked list has a cyclical reference
@@ -33,7 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
