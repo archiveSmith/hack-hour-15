@@ -6,7 +6,18 @@
 // below 1000 and return that sum.
 
 function sumMultiples3Or5Below1000() {
-  let sum = 0;
+  let sum;
+  const store = []
+  let i;
+
+  for(i=1; i<1000; i++) {
+    if(i%3 === 0 || i%5 === 0) store.push(i)
+  }
+
+  sum = store.reduce(
+                  function (a, b) {
+                    return a + b;
+                  }, 0);
 
   return sum;
 }
@@ -15,7 +26,18 @@ function sumMultiples3Or5Below1000() {
 // extension make it dynamic function that takes input x,y,z
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
-  let sum = 0;
+  let sum;
+  const store = []
+  let i;
+
+  for(i=1; i<z; i++) {
+    if(i%x === 0 || i%y === 0) store.push(i)
+  }
+
+  sum = store.reduce(
+                  function (a, b) {
+                    return a + b;
+                  }, 0);
 
   return sum;
 }
