@@ -27,13 +27,39 @@
  *
  */
 
-var Node = function(value) {
+ // linear space and time solution
+ // create a storage object
+ // iterate throuhg and add values to storage object
+let Node = function(value) {
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
-
+  const storage = {};
+  //  edge case handler
+  while(head!==null){
+    if(storage[head.value] === true) return true;
+    storage[head.value] = true;
+    head = head.next;
+  }
+  return false;
 }
+
+//  constant space and time solution using Floyd's 'tortoise and hare' cycle detection algorithm
+function hasCycle(head) {
+  let tortoise = head;
+  let hare = head.next;
+
+  if(!tortoise || !hare) return false;
+
+  while(hare && hare.next) {
+    if(tortoise === hare) return true;
+    tortoise = tortoise.next;
+    hare = hare.next.next;
+  }
+  return false;
+}
+
 
 module.exports = {Node: Node, hasCycle: hasCycle}
