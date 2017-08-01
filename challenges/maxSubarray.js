@@ -17,17 +17,14 @@
 ​
 
 function maxSubarray(arr) {
-	let length = arr.length;
-	let max = -Infinity; 
-	let sum;  
-	for (let i = 0; i < length; i++) {
-		sum = arr[i]; 
-		for (let y = i + 1; y < length; y++) {
-			sum += arr[y];
-			if (sum > max) max = sum; 
-		}
-	}
-	return max; 
+  let maxsofar = 0; 
+  let maxEnd = 0; 
+  for (let i = 0; i < arr.length; i++) {
+    maxEnd += arr[i];
+    if (maxsofar < maxEnd) maxsofar = maxEnd; 
+    if (maxEnd < 0) maxEnd = 0; 
+  }
+  return maxsofar; 
 }
 
 ​
