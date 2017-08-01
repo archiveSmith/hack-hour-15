@@ -44,8 +44,12 @@ function hasCycle(head) {
       hasCycle(head.next):
     // If there is no head, this is not cyclical
     false;
-  
 }
+
+//const hasCycle = head => {
+//  
+//}
+
 
 // Tes cases
 //var node1 = new Node('1');
