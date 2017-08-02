@@ -6,6 +6,7 @@
  *              maxSubarray([15,20,-5,10])  -> 40
  *
  */
+
 function maxSubarray(arr) {
   var now = 0,prev =0;
   for(var i = 0;i < arr.length;i++){  
@@ -16,3 +17,11 @@ function maxSubarray(arr) {
 }
 module.exports = maxSubarray;
 console.log(maxSubarray([15,20,-5,10]));
+// =======
+
+// function maxSubarray(arr) {
+
+// }
+
+// module.exports = maxSubarray;
+// >>>>>>> 92e4c1d34b7c264735bcde781bd76848b0443954
