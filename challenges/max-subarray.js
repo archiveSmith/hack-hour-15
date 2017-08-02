@@ -34,9 +34,9 @@ function maxSubarray(arr) {
   // });
 
   for (let i = 0; i < arr.length; i++) {
-    tempMax = 0;
+    tempMax = -Infinity;
     for (let j = i; j < arr.length; j++) {
-      if (tempMax === 0) {
+      if (tempMax === -Infinity) {
         tempMax = arr[j];
       } else {
         tempMax += arr[j];
