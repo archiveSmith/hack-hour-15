@@ -8,7 +8,20 @@
  */
 
 function maxSubarray(arr) {
-
+  // find all permutations of consecutive subarrays and compare their sum to each other
+  let maxSum = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    let sumarr = [];
+    for (let j = i; j < arr.length; j++) {
+      sumarr.push(arr[j]);
+      let sum = 0;
+      for (let k = 0; k < sumarr.length; k++) {
+        sum += sumarr[k];
+      }
+      if (maxSum < sum) maxSum = sum;
+    }
+  }
+  return maxSum;
 }
 
 module.exports = maxSubarray;
