@@ -13,7 +13,29 @@
   */
 
 function anagrams(string) {
-
+  return Array.from(new Set(permutation('', string)));
 }
+
+function permutation(start, string) {
+  if (string.length == 1) {
+    return [ start + string ];
+  } else {
+    let returnResult = [];
+    for (let i = 0; i < string.length; i++) {
+      let result = permutation(string[i], string.substr(0, i) + string.substr(i + 1));
+      for (let j = 0; j < result.length; j++) {
+          returnResult.push(start + result[j]);
+      }
+    }
+
+      return returnResult;
+  }
+}
+
+// const arr = anagrams('abcd');
+// console.log(arr);
+// const set = new Set(arr);
+// console.log(arr.length, set.size);
+// console.log('unique: ' , set.size === arr.length);
 
 module.exports = anagrams;
