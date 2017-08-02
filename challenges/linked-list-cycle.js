@@ -44,7 +44,7 @@ function hasCycle(head) {
     fast = head;
 
     if(head.next === head) return true;
-
+    //if (!fast.next.next) return false;
     while(fast.next.next) {
 
       slow = slow.next;
@@ -63,7 +63,7 @@ module.exports = {Node: Node, hasCycle: hasCycle}
    var node3 = node2.next = new Node('3');
    var node4 = node3.next = new Node('4');
    var node5 = node4.next = new Node('5');
-   var node6 = node5.next = new Node('6');
+   //var node6 = node5.next = new Node('6');
    //node5.next = node2;
   
   
