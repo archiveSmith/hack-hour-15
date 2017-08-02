@@ -35,8 +35,9 @@ function countTwos(num) {
     return searchTwos(0);
 }
 
-// console.log(countTwos(5)) // 1
-// console.log(countTwos(12)) // 2
-// console.log(countTwos(20)) // 3
+console.log(countTwos(1));  //-> 0
+console.log(countTwos(3));  //-> 1
+console.log(countTwos(13));  //-> 2
+console.log(countTwos(1000));  //-> 300
 
 module.exports = countTwos;

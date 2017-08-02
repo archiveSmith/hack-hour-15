@@ -33,14 +33,31 @@
             // Continue until the subarray is empty
         // Repeat until we do this for all the subarrays
 
+let output = [];
+
 function rotateGrid(grid, n) {
-    return grid.map((subarray) => {
-        // let newArray = [];
-        return subarray.map((element, index) => {
-            return element;
+    grid.forEach((subarray) => {
+        let newArray = [];
+        subarray.forEach((element, index) => {
+            newArray.push(element);
         });
-        // output.push(newArray);
+        output.push(newArray);
     });
+    return output;
 }
 
 module.exports = rotateGrid;
+
+
+// 'orbits' => (n - 1) / 2
+// # of rings we want to rotate => n - 2i - 1
+
+// Time Complexity - n
+
+function rotateGrid(grid, n) {
+    for (let i = 0; i < (n - 1) / 2; i += 1) {
+        for (let j = i; j < n - 2*i - 1; j += 1) {
+            // see camera for logic
+        }
+    }
+}

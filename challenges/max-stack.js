@@ -46,3 +46,7 @@ Stack.prototype.getMax = function() {
 // testStack.pop();
 
 module.exports = Stack;
+
+// We create an array for our maxStack
+// Check to see if our maxStack is empty
+// Object with the # and the corresponding index

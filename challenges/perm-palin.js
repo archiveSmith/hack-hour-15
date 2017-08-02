@@ -43,3 +43,16 @@ function permPalin(str) {
 }
 
 module.exports = permPalin;
+
+//////////////////////////////////////////////////////////
+
+// Time: n
+// Space: linear
+
+const cache = str.split("").reduce((cache, char) => {
+    if (cache[char]) delete cache[char];
+    else cache[char] = true;
+    return cache;
+}, {});
+
+return Object.keys(cache).length < 2;
