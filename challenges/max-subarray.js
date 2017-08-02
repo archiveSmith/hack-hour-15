@@ -6,6 +6,7 @@
  *              maxSubarray([15,20,-5,10])  -> 40
  *
  */
+
 function maxSubarray(arr) {
   // find all permutations of consecutive subarrays and compare their sum to each other
   let maxSum = -Infinity;
@@ -23,5 +24,4 @@ function maxSubarray(arr) {
   return maxSum;
 }
 
-console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]))
 module.exports = maxSubarray;
