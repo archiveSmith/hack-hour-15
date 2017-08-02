@@ -8,7 +8,26 @@
  */
 
 function maxSubarray(arr) {
-
+    const maxSub = [];
+    const maxSum = 0;
+    const compareSub = [];
+    const compareSum = 0;
+    return recursion(arr, maxSum)
 }
+
+function recursion(arr, maxSum) {
+    let i;
+    let j;
+    for(i=0; i<arr.length-1; i++) {
+        maxSub.push(arr[i]);
+        maxSum += arr[i];
+        for(j=1; j<arr.length; j++) {
+            maxSub.push(arr[j]);
+            maxSum += arr[j];
+        }
+    }
+    return recursion (maxSub, maxSum)
+}
+
 
 module.exports = maxSubarray;

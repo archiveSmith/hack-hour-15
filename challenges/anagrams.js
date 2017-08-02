@@ -13,6 +13,28 @@
   */
 
 function anagrams(string) {
+  const wordHash = {string: 1};
+  const anArr = [string];
+  let stringSplit = string.split('')
+  const tempWord = '';
+  const tempLetter;
+  let i;
+
+  return recursiveFor(stringSplit)
+}
+
+
+
+function recursiveFor(stringSplit) {
+  if(anArr[0] === tempWord) return anArr
+  for(i=0; i<stringSplit.length; i++) {
+    tempLetter = stringSplit[i] //a
+    tempWord += stringSplit[i] //a
+     //[b, a, c,]
+    
+    if(!wordHash[tempWord]) wordHash[tempWord] = 1;
+    else return recursiveFor(tempWord)
+  }
 
 }
 
