@@ -17,7 +17,8 @@ function anagrams(string) {
 }
 
 function permutation(start, string) {
-  if (string.length == 1) {
+  if (string.length === 0) return [''];
+  if (string.length === 1) {
     return [ start + string ];
   } else {
     let returnResult = [];
@@ -32,7 +33,7 @@ function permutation(start, string) {
   }
 }
 
-// const arr = anagrams('abcd');
+// const arr = anagrams('');
 // console.log(arr);
 // const set = new Set(arr);
 // console.log(arr.length, set.size);
