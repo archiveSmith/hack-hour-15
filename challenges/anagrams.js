@@ -13,6 +13,16 @@
   */
 
 function anagrams(string) {
+  // split the string into an array
+  const letters = string.split('').map(x => [x]);
+  // create an array to store result
+  const result = letters.slice();
+  // map through
+  for (let i = 1; i < letters.length; i += 1) {
+    
+
+    })
+  }
 
 }
 
