@@ -37,7 +37,7 @@ function hasCycle(head) {
   if (!(head instanceof Node)) return 'invalid input';
   let slow = head;
   let fast = head.next;
-  while(slow && fast) {
+  while(slow && fast && fast.next) {
     if (slow === fast) return true;
     slow = slow.next;
     fast = fast.next.next;
