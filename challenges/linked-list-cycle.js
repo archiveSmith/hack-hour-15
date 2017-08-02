@@ -27,13 +27,44 @@
  *
  */
 
+
+
 var Node = function(value) {
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
+  console.log(node1);
+  var slow, fast;
 
+  if(!head || !head.next) return false;
+
+    slow = head;
+    fast = head;
+
+    if(head.next === head) return true;
+    //if (!fast.next.next) return false;
+    while(fast.next.next) {
+
+      slow = slow.next;
+      fast = fast.next.next;
+
+      if(slow === fast) return true;
+    }
+
+  return false;
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
+
+   var node1 = new Node('1');
+   var node2 = node1.next = new Node('2');
+   var node3 = node2.next = new Node('3');
+   var node4 = node3.next = new Node('4');
+   var node5 = node4.next = new Node('5');
+   //var node6 = node5.next = new Node('6');
+   //node5.next = node2;
+  
+  
+   console.log(hasCycle(node1));

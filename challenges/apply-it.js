@@ -24,9 +24,23 @@
  *
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
+'use strict' 
 
+   let jae = function(name, age, location) {
+     return name + " is " + age + " and he lives in " + location;
+   };
+ 
 function applyIt(func, args) {
-
+   //return func.apply(this, args);
+   let obj = {};
+   obj.func = func;
+   obj.args = args;
+//    return obj.func(obj.args);
+    return func(...args);
 }
+
+// console.log(jae.apply(this, ["Jae", 19, "South Carolina"]));
+
+console.log(applyIt(jae, ["Jae", 19, "South Carolina"]));
 
 module.exports = applyIt;

@@ -8,7 +8,20 @@
  */
 
 function maxSubarray(arr) {
-
+  var now = 0,prev =0;
+  for(var i = 0;i < arr.length;i++){  
+    prev = Math.max(0,prev + arr[i]);
+    now = Math.max(prev,now);
+  }
+  return now;
 }
-
 module.exports = maxSubarray;
+console.log(maxSubarray([15,20,-5,10]));
+// =======
+
+// function maxSubarray(arr) {
+
+// }
+
+// module.exports = maxSubarray;
+// >>>>>>> 92e4c1d34b7c264735bcde781bd76848b0443954

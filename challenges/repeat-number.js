@@ -11,7 +11,21 @@
  */
 
 function repeatNumbers(array) {
+    let compArr = [];
+    let ans =  "Error, nothing appears twice.";
+    array.forEach((el, i)=>{
+        if (compArr.includes(el)) {ans = array[i]};
+        compArr.push(el);
+    })
+    console.log(compArr);
+    return ans;
+
 
 }
 
+
+
+
 module.exports = repeatNumbers;
+
+console.log(repeatNumbers([1,2,3,3,4]))

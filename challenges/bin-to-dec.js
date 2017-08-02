@@ -13,8 +13,27 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
+function binToDec(bi) {
+let acc = 0;
+let counter=0;
+for (let i=bi.length-1; i>=0; i--){
+ 
+
+if (bi[i]==="0"){
+    acc+=0;
+    counter++;
+} else if (bi[i]==="1"){
+
+    acc+=Math.pow(2, counter);
+    console.log(acc);
+    counter++;
+}
+
+}
+return acc;
 
 }
 
 module.exports = binToDec;
+
+console.log(binToDec("1111"));

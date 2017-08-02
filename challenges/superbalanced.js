@@ -7,6 +7,9 @@
 example: http://www.geeksforgeeks.org/wp-content/uploads/balanced_tree.GIF
  */
 
+// if there is a left or right leaf but no matching leaf, check for leaf of leaf. return false if leaf of leaf exists. otherwise return true. use recursion
+
+
 function BinaryTree(value) {
   this.value = value;
   this.left = null;
@@ -14,7 +17,36 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+  
+  if (tree.left && !tree.right){
+    let nodeL = tree.left;
+    if (nodeL.left){
+      return false;
+    }
+  }
+
+    if (!tree.left && tree.right){
+    let nodeR = tree.right;
+    if (nodeR.right){
+      return false;
+    }
+  }
+
+  if (tree.left && tree.right){
+    superbalanced(tree.left);
+    superbalanced(tree.right);
+  }
+
+  return true;
 
 }
+
+// let thisTree = new BinaryTree(5);
+// thisTree.left = new BinaryTree(4);
+// thisTree.right = new BinaryTree(6);
+// thisTree.left.left = new BinaryTree(3);
+// thisTree.left.left.left = new BinaryTree(2);
+// console.log(thisTree)
+// console.log(superbalanced(thisTree));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};

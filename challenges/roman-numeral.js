@@ -18,7 +18,38 @@
  */
 
 function romanNumeral(n) {
+    let mapObj = {
+        1: "I",
+        5: "V",
+        10:" X",
+        50: "L",
+        100: "C",
+        500: "D",
+        1000: "M"
+    }
 
+    let ans = "answer"
+
+    if (n<0){
+        return "Please enter postitve integer."
+    } else if (n===0){
+        return 0;
+    } else {
+        for (prop in mapObj){
+            if (prop == n){
+            //console.log(mapObj[prop])
+            return mapObj[prop]
+            } else if (prop!=1 && prop%n>0 && prop%n<prop*2){
+                console.log(prop);
+                ans = mapObj[prop];
+                romanNumeral(prop%n);
+                break;
+            }
+
+    }
+}
+return ans;
 }
 
 module.exports = romanNumeral;
+console.log(romanNumeral(6));

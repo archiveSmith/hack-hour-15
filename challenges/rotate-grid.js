@@ -16,7 +16,14 @@
  * BONUS: Do this in place
  */
 
+// arr[2][0]->0,0, arr[1][0]->0,1, arr[0][0]->0,2
+
 function rotateGrid(grid, n) {
+// for len of any arr
+// most, least to least, least
+for (let i=n; i>0; i--){
+
+}
 
 }
 
