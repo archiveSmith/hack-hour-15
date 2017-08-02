@@ -7,8 +7,8 @@
  *
  */
 function maxSubarray(arr) {
-  let max = 0; // return value
-  let tempMax = 0; // temp value to hold current array sum.
+  let max = -Infinity; // return value
+  let tempMax = -Infinity; // temp value to hold current array sum.
   // let posMax = 0; // holds possible maxes until array has been traversed.
 
   // arr.forEach((e)=> {
@@ -49,6 +49,6 @@ function maxSubarray(arr) {
   }
   return max;
 }
-// console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]));
-// console.log('should have been 18');
+// console.log(maxSubarray([-1, -2, -3, -4,-5]));
+// console.log('should have been -1');
 module.exports = maxSubarray;
