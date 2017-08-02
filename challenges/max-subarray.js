@@ -7,6 +7,7 @@
  *
  */
 
+<<<<<<< HEAD
  //find the maximum sum of consecutive integers 
 
 function maxSubarray(arr) {
@@ -39,3 +40,10 @@ function maxSubarray(arr) {
 
 
 module.exports = maxSubarray;
+=======
+function maxSubarray(arr) {
+
+}
+
+module.exports = maxSubarray;
+>>>>>>> 92e4c1d34b7c264735bcde781bd76848b0443954
