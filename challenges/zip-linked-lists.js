@@ -62,3 +62,11 @@ function zip(l1, l2) {
 };
 
 module.exports = {Node: Node, zip: zip};
+
+
+// Check for edge cases
+// Hold on to first node in the new list
+// Set a temp var to be used to reassign next pointers
+// Loop as long as both lists exist
+// Reassign (to the other list) one .next from each list on each loop
+// Set last .next to remaining last

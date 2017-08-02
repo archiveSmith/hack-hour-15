@@ -34,12 +34,24 @@ function binToDec(binary) {
     });
 }
 
-
 // Given a decimal number, return the corresponding binary string
     // Divide the number by 2, and push the number to an array
         // Use Math.floor to omit the remainder
         // Repeat with the 'altered' number
     // Transform the numbers into 0/1's - 0 for even, 1 for odd
+
+function decToBin(decimal) {
+    let tempArr = [];
+    let currDecimal = decimal;
+    // curr number is >= 2
+    while (currDecimal > 0) {
+        tempArr.unshift(currDecimal);
+        currDecimal = Math.floor(currDecimal / 2);
+    }
+    return tempArr.map((digit) => {
+        return digit % 2 ? 1 : 0;
+    });
+}
 
 console.log(binToDec('0')) //   -> 0
 console.log(binToDec('11')) //  -> 3
@@ -47,5 +59,9 @@ console.log(binToDec('100')) // -> 4
 console.log(binToDec('101')) // -> 5
 console.log(binToDec('0101')) // -> 5
 
+console.log(decToBin(0)); // '0'
+console.log(decToBin(3)); // '11'
+console.log(decToBin(4)); // '100'
+console.log(decToBin(5)); // '101'
 
 module.exports = binToDec;

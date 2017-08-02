@@ -87,3 +87,21 @@ module.exports = {Node: Node, hasCycle: hasCycle}
     // D -> E
 
   // This would be a n^2 solution
+
+
+
+
+  function hasCycle(head) {
+    if (!head || !head.next) return false;
+
+    let tortoise = head;
+    let hare = head.next;
+
+    // Conditional for hare.next instead of tortoise and hare
+    while (hare && hare.next) {
+      if (tortoise === hare) return true;
+      tortoise = tortoise.next;
+      hare = hare.next.next;
+    }
+    return false;
+  }
