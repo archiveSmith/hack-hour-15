@@ -11,9 +11,18 @@
  */
 
 
-
 function deleteDups(head) {
-
+    let nodeTracker = head
+    const tracker = [];
+    while(nodeTracker.next) {
+        if(nodeTracker.value !== nodeTracker.next.value){
+            tracker.push(nodeTracker)
+            nodeTracker = nodeTracker.next;
+        } else {
+            nodeTracker = nodeTracker.next.next
+        }
+    }
+    return tracker;
 }
 
 module.exports = deleteDups;
