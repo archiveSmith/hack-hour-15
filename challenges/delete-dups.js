@@ -16,6 +16,7 @@
   // head of the inputted linked list where duplicates are deleted
 
 function deleteDups(head) {
+  console.log(head);
   const storage = {
     inOrder: [],
   };
