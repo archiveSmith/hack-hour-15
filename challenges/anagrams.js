@@ -40,8 +40,8 @@ function anagrams(string) {
 }
 
 // Tests
-var result = anagrams('abc');
-console.log(result, [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]);
+//var result = anagrams('abc');
+//console.log(result, [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]);
 
 //abc 012
 //acb 021
