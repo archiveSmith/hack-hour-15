@@ -16,7 +16,6 @@
   // head of the inputted linked list where duplicates are deleted
 
 function deleteDups(head) {
-  console.log(head);
   const storage = {
     inOrder: [],
   };
@@ -25,23 +24,38 @@ function deleteDups(head) {
   // Iterate through linked list
   while (cur) {
     // If the current value does not exist int the storage, add it to the storage and the inOrder array
-    if (storage[cur.value] === undefined) storage[cur.value] = true;
+    if (storage[cur.value] === undefined) {
+      storage[cur.value] = true;
+      storage.inOrder.push(cur.value);
+    }
     cur = cur.next;
   }
   
   cur = head;
   
+  console.log(cur);
+  console.log(storage.inOrder);
+  
   // Iterate through inOrder array
     // Set the current node's value to the value of inOrder[i]
-  storage.inOrder.forEach(value => {
+  storage.inOrder.forEach((value, i) => {
     cur.value = value;
-    cur = cur.next;
+    if (i < storage.inOrder.length - 1) cur = cur.next;
+    else cur.next = null;
   });
-  
-  // Set the current node's next to null
-  cur.next = null;
-  
+    
   return head;
 }
+
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
+//head = new Node(1);
+//head.next = new Node(2);
+//head.next.next = new Node(3);
+//head.next.next.next = new Node(4);
+//console.log(deleteDups(head));
 
 module.exports = deleteDups;
