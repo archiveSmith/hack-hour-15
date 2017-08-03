@@ -18,10 +18,14 @@ function maxSubarray(arr) {
       for (let k = 0; k < sumarr.length; k++) {
         sum += sumarr[k];
       }
-      if (maxSum < sum) maxSum = sum;
+      maxSum = Math.max(maxSum, sum);
     }
   }
   return maxSum;
 }
+// 
+// function maxSubarray2(array) {
+//
+// }
 
 module.exports = maxSubarray;
