@@ -9,7 +9,7 @@
  * Extra:
  * How would you solve this problem if a temporary buffer is not allowed?
  */
-
+// 
 // function Node(val) {
 //   this.value = val;
 //   this.next = null;
@@ -38,12 +38,14 @@ function deleteDups(head) {
 
 // let l1 = new Node(0);
 // let l2 = new Node(0);
-// let l3 = new Node(2);
+// let l3 = new Node(0);
 // let l4 = new Node(1);
+// let l5 = new Node(0);
 //
 // l1.next = l2;
 // l2.next = l3;
 // l3.next = l4;
+// l4.next = l5;
 //
 // console.log(l1);
 //
