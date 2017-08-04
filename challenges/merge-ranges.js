@@ -26,6 +26,9 @@ function mergeRanges(array) {
   return result; 
 }
 
+var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]
+
+console.log(mergeRanges(times))
 
 
 
