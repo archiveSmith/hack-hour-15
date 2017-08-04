@@ -14,7 +14,7 @@
 
 function anagrams(string) {
   if (typeof string !== 'string') return 'invalid input';
-  if (string.length < 2) return string;
+  if (string.length < 2) return [string];
   const permutations = [];
 	permutations.push(string[0]);
 	string = string.slice(1);
@@ -30,10 +30,10 @@ function anagrams(string) {
 		string = string.slice(1);
 	}
 
-	return permutations;
+	return permutations.filter((perm, i) => permutations.indexOf(perm) === i);
 }
 
-var result = anagrams('abc');
+var result = anagrams('aa');
 console.log(result);
 
 module.exports = anagrams;
