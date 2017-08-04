@@ -22,15 +22,22 @@
  */
 
 function EventEmitter() {
-
+this.eventArr = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+this.eventArr[funcName] = func;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+    // console.log(this.eventArr[funcName]);
+return this.eventArr[funcName].apply(null, args);
 };
 
 module.exports = EventEmitter;
+
+let consHi = new EventEmitter();
+consHi.on("consoleHi", ()=>{console.log("hi")})
+
+// consHi.trigger("consoleHi", null)
+consHi.trigger("consoleHi", null)
