@@ -22,15 +22,23 @@
  */
 
 function EventEmitter() {
-
+  this.funcStore = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+  if (typeof funcName !== 'string') return 'NOT A FUNCTION NAME';
+  if (typeof func !== 'function') return 'NOT A FUNCTION';  
+  
+  if (this.funcStore[funcName] === undefined) this.funcStore[funcName] = [];
+  this.funcStore[funcName].push(func);
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+  if (typeof funcName !== 'string') return 'NOT A FUNCTION NAME';
+  this.funcStore[funcName].forEach((func) => {
+    func();
+  })
 };
+
 
 module.exports = EventEmitter;
