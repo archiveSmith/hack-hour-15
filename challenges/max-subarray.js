@@ -6,32 +6,27 @@
  *              maxSubarray([15,20,-5,10])  -> 40
  *
  */
+
+ // Find which subarray provides the max sum
+ // Check each combination of consecutive subArray
+  // Loop through each element in the arr
+  // Use the algorithm a + b vs b
+  // Use Math.max
+ // max sum => keep track of maxSum and currSum of subArray
+  // Use Math.max for maxSum and currSum
+
 function maxSubarray(arr) {
-    let leftResult = 0;
-    let rightResult = 0;
-    let leftIndex;
-    let rightIndex;
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < leftResult + arr[i] ) {
-            leftResult += arr[i];
-        } else {
-            leftResult = arr[i];
-            leftIndex = i;
-        }
-        if (arr[arr.length - 1 - i] > rightResult + arr[arr.length - 1 - i]) {
-            rightResult += arr[arr.length - 1 - i];
-        } else {
-            rightResult = arr[arr.length - 1 - i];
-            rightIndex = arr[arr.length - 1 - i]
-        }
-    }
-    // console.log('leftIndex', leftIndex); // 2
-    // console.log('rightIndex', rightIndex); // 6
-    // Find start point of maxSubarray
-    // Iterate through the loop
-    // If prevResult > arr[0] + arr[1], continue
+  let maxSum = -Infinity;
+  let currSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    currSum = Math.max(arr[i], currSum + arr[i]);
+    maxSum = Math.max(maxSum, currSum);
+  }
+  return maxSum;
 }
 
-// console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]));
+// Test Cases
+// console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5])) // 18
+// console.log(maxSubarray([15,20,-5,10])) // 40
 
 module.exports = maxSubarray;
