@@ -33,21 +33,23 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-  // The linked list is cyclical if the "last" node in the LL points 
-  // to the second node in the list (the one after head). This will fail
-  // if the "cycle" happens somewhere else in the list. 
+  // Use 2 "pointers" to traverse the linked list, one will go twice 
+  // the speed of the other. If at one point they cross, then the 
+  // linked list is cyclical 
 
+  // Either no LL exists or there's only one node 
   if (!head || head.next === null) return false; 
 
-  const secondNode = head.next; 
-  const traverse = secondNode.next; 
+  let slow = head; 
+  let fast = head.next; 
 
-  while (traverse !== secondNode) {
-    if (traverse === null) return false; 
-    traverse = traverse.next; 
+  while (!slow && !fast) {
+    if (slow === fast ) return true; 
+    slow = slow.next; 
+    fast = fast.next.next; 
   }
-  return true; 
 
+  return false; 
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
