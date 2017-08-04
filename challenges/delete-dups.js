@@ -9,7 +9,7 @@
  * Extra:
  * How would you solve this problem if a temporary buffer is not allowed?
  */
-// 
+//
 // function Node(val) {
 //   this.value = val;
 //   this.next = null;
@@ -46,10 +46,11 @@ function deleteDups(head) {
 // l2.next = l3;
 // l3.next = l4;
 // l4.next = l5;
-//
+
 // console.log(l1);
 //
 // const test = JSON.stringify(deleteDups(l1));
 // console.log('result: ', test);
+// console.log(l1);
 
 module.exports = deleteDups;
