@@ -33,9 +33,6 @@ function deleteDups(head) {
   
   cur = head;
   
-  console.log(cur);
-  console.log(storage.inOrder);
-  
   // Iterate through inOrder array
     // Set the current node's value to the value of inOrder[i]
   storage.inOrder.forEach((value, i) => {
