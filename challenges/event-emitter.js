@@ -22,15 +22,16 @@
  */
 
 function EventEmitter() {
-
+  this.events = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+  if (typeof func !== 'function') throw new Error('Event listeners must be of type function');
+  this.events[funcName] = func;
 };
 
-EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+EventEmitter.prototype.trigger = function(funcName, ...args) { 
+  this.events[funcName](...args);
 };
 
 module.exports = EventEmitter;
