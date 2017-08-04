@@ -21,9 +21,7 @@
  * - It is not necessary to write a way to remove listeners.
  */
 
-function EventEmitter() {
-
-}
+function EventEmitter() {}
 
 EventEmitter.prototype.on = function(funcName, func) {
   this[funcName] = func;
