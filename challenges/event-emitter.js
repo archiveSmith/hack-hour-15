@@ -22,15 +22,60 @@
  */
 
 function EventEmitter() {
-
+  //store relevant bits of the problem here.
+  this.listeners = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+  // store the callback and the trigger word.
+  this.listeners[funcName] = func;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+    //fire our callback if the trigger word is passed to the EE.
+  const listener = this.listeners[funcName];
+  if (listener) {
+    return listener(args);
+  }
 };
+//
+// class EventEmitter {
+//   constructor() {
+//     this.listeners = {};
+//   }
+//   on(funcName, func) {
+//     this.listeners[funcName] = func;
+//   }
+//
+//   trigger(funcName, ...args) {
+//     //fire our callback if the trigger word is passed to the EE.
+//     const listener = this.listeners[funcName];
+//     if (listener) {
+//       return listener(args);
+//     }
+//   }
+// }
+
+
+
+// const test = new EventEmitter();
+// let counter = 0;
+// test.on('codesmith', ()=> counter++);
+// test.on('sentance', ()=> console.log('blah blah blah'));
+// test.on('words', args => console.log(...args));
+// test.on('math', (args) => args.map(a => 'I am a Taco'));
+// console.log(counter);
+// test.trigger('codesmith');
+// console.log(counter);
+// test.trigger('codesmith');
+// console.log(counter);
+// test.trigger('sentance');
+// test.trigger('codesmith');
+// console.log(counter);
+// test.trigger('sentance');
+// test.trigger('words', 'fuck', 'shit', 'piss');
+// const mth = test.trigger('math', 1, 2, 3, 4, 5);
+// console.log(mth);
+
 
 module.exports = EventEmitter;
