@@ -10,8 +10,33 @@
   * example:
   * var result = anagrams('abc');
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-  */
 
+Ryan easy example
+
+function perms(str) {
+  
+  if (!str.length) return [''];
+  const fstChar = str[0];
+  const smallPerms = perms(str.slice(1));
+  const bigPerms = [];
+  for (let i = 0; i < smallPerms.length; i++) {
+    let currPerm = smallPerms[i];
+    for (let y = 0; y <= currPerm.length; y++) {
+      bigPerms.push(currPerm.slice(0,y) + fstChar + currPerm.slice(y));
+    }
+  }
+  return bigPerms; 
+}
+
+function anagrams(str) {
+  //You can filter out dupes here ('aaa');
+}
+
+
+
+
+
+  */
 function anagrams(string) {
 	if (word.length < 2) {
         return [word];
