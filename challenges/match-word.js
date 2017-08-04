@@ -8,7 +8,29 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    // create regular expression 
+    let string = str.toLowerCase(); 
+    console.log(string); // make sure it's all lowercase 
 
+    let pattern = new RegExp(/[^a-z]/,);  
+    
+    // Create regular expression that filters out non-alphabetical characters 
+    //      store the result in a new array 
+    const subStrArr = string.split(pattern)
+
+    console.log("Array of substrings is: ", subStrArr); 
+
+    // if the length of the array is empty, return true
+    if (str === '') return true; 
+
+    // if the length of the array is 1, return false 
+    if (subStrArr.length === 1) return false; 
+
+    // Compare each element in the array to the next and last -1 element
+    //      if they're the reverse of each other, return true, 
+    //      otherweise false. 
+    
+    // use reverse() to check
 }
 
 module.exports = matchWord;

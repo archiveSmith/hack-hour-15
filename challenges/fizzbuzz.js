@@ -16,8 +16,35 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
 
+// This function takes a NUMBER and puts: 
+//		- 'fizz' in place of numbers divisible by 3. 
+//		- 'buzz' in place of numbers divisible by 5.
+//		- 'fizzbuzz' in place of numbers divisible by 3 AND 5.
+// It returns an array containing the results. 
+function fizzbuzz(num) {
+	// Delcare array to store the results 
+	const result = []; 
+
+	// Test whether num is of type Number and return input (num) if it isn't 
+	//if ( (typeof num !== "number") ) return num; 
+
+	// Use for loop to "num" of times 
+	for( let i = 1 ; i <= num ; i += 1 ) {
+		
+		// fizzbuzz DIVISIBLE by 3 AND 5: 
+		if ( (i % 3 === 0) && (i % 5 === 0))
+			result.push('fizzbuzz'); 
+		else if ( i % 3 === 0) // fizz DIVISIBLe by 3 
+			result.push('fizz'); 
+		else if ( i % 5 === 0 ) // buzz DIVISIBLE by 5 
+			result.push('buzz'); 
+		else 
+			result.push(i); // push non-divisible number into array
+	}
+
+	return result; 
 }
+
 
 module.exports = fizzbuzz;

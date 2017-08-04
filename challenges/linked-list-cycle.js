@@ -33,7 +33,23 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  // Use 2 "pointers" to traverse the linked list, one will go twice 
+  // the speed of the other. If at one point they cross, then the 
+  // linked list is cyclical 
 
+  // Either no LL exists or there's only one node 
+  if (!head || head.next === null) return false; 
+
+  let slow = head; 
+  let fast = head.next; 
+
+  while (!slow && !fast) {
+    if (slow === fast ) return true; 
+    slow = slow.next; 
+    fast = fast.next.next; 
+  }
+
+  return false; 
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
