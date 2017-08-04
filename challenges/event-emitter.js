@@ -20,15 +20,13 @@
  *   listeners.
  * - It is not necessary to write a way to remove listeners.
  */
- 
+
 function EventEmitter() {
   this.events = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-  if(!this.events.hasOwnProperty(funcName)) {
     this.events[funcName] = func;
-  } 
 };
 
 
