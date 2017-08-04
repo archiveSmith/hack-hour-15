@@ -33,6 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  if (!head) return false;
   head.visited = true;
   // If there is a next head
   return head.next ?

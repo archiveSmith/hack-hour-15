@@ -19,7 +19,7 @@
 
 function anagrams(string) {
   // Base case
-  if (string.length === 1) return [string];
+  if (string.length === 0) return [''];
   
   // Create output array
   const output = [];
@@ -36,7 +36,7 @@ function anagrams(string) {
   }
   
   // return the output
-  return output;
+  return output.filter((str, i) => output.indexOf(str) === i);
 }
 
 // Tests
