@@ -13,7 +13,86 @@
  */
 
 function numToWords(num) {
-
+  // array to preserve order
+  const numbers = [
+    0,
+    1,
+    2,
+    3,
+    4, 
+    5, 
+    6,
+    7,
+    8,
+    9, 
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17, 
+    18, 
+    19, 
+    20, 
+    30, 
+    40, 
+    50, 
+    60, 
+    70, 
+    80, 
+    90, 
+    100,
+    1000
+  ]
+  const dictionary = {
+    0: "Zero",
+    1: "One",
+    2: "Two",
+    3: "Three",
+    4: "Four",
+    5: "Five",
+    6: "Six",
+    7: "Seven",
+    8: "Eight",
+    9: "Nine",
+    10: "Ten",
+    11: "Eleven",
+    12: "Twelve",
+    13: "Thirteen",
+    14: "Fourteen",
+    15: "Fifteen",
+    16: "Sixteen",
+    17: "Seventeen",
+    18: "Eighteen",
+    19: "Nineteen",
+    20: "Twenty",
+    30: "Thirty",
+    40: "Forty",
+    50: "Fifty",
+    60: "Sixty",
+    70: "Seventy",
+    80: "Eighty",
+    90: "Ninety",
+    100: "Hundred",
+    1000: "Thousand",
+  }
+  let words = '';
+  for (let i = numbers.length - 1; i >= 0; i -= 1) {
+    let numKey = numbers[i];
+    if (num >= numKey && num != 0) {
+      let leadingNum = num / numKey;
+      words += dictionary[leadingNum] + dictionary[numKey];
+      console.log(words)
+      num = num - (leadingNum * numKey); 
+      console.log('num ', num)
+    }
+    if (num === 0) return words || "Zero";
+  }
+  return words
 }
+
+console.log(numToWords(10));
 
 module.exports = numToWords;
