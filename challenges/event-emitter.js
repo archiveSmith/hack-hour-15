@@ -1,6 +1,6 @@
 'use strict';
 /**
- * Make an EventEmitter that
+Make an EventEmitter that
  *
  * Example:
  * var instance = new EventEmitter();
@@ -22,15 +22,34 @@
  */
 
 function EventEmitter() {
-
+  this.funcStore = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+  if (this.funcStore.funcName) this.funcStore.funcName.push(func);
+  else {
+    this.funcStore.funcName = [];
+    this.funcStore.funcName.push(func);
+  }
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+  this.funcStore.funcName.forEach(el => el.apply(this, ...args));
 };
+
+// var instance = new EventEmitter();
+// var counter = 0;
+// instance.on('increment', function() {
+//   console.log('old func')
+//   counter++;
+// }); // counter should be 0
+// instance.on('increment', function() {
+//   counter += 3;
+// }); // counter should be 0
+// instance.trigger('increment'); // counter should be 4
+// console.log('storage', instance.funcStore)
+// console.log('should be 1 ', counter)
+// instance.trigger('increment'); // counter should be 8
+// console.log('should be 2 ', counter)
 
 module.exports = EventEmitter;
