@@ -11,20 +11,19 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-  console.log(arr);
   let low = -1;
-  let high = arr.length;
+  let high = arr.length; // 10
   let mid;
-  while (low <= high - 1) {
-    mid = (low + high) / 2;
+  while (low + 1 <= high) {
+    mid = Math.floor((high - low) / 2) + low; // 6
     if (arr[mid] === target) return true;
-    else if (arr[mid] < target) {
-      low = mid;
-    } else high = mid
+    else if (arr[mid] > target) {
+      high = mid; // 5
+    } else low = mid; // 7
   }
   return false;
 }
-// var nums = [1, 4, 6, 7, 9, 17, 45]
-// console.log(findInOrderedSet(nums, 45))
+// var nums = [1, 4, 6, 7, 9, 17, 45, 80];
+// console.log(findInOrderedSet(nums, 80));
 
 module.exports = findInOrderedSet;
