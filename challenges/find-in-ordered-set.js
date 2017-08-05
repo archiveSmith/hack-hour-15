@@ -11,22 +11,23 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-  // const set = new Set(arr);
-  // const size = set.size;
-  // set.add(target);
-  // return set.size === size;
   return findMid(0, arr.length - 1, target, arr);
 }
 
 function findMid(min, max, target, arr) {
   if (max < min) return false;
-  const mid = (max + min) / 2;
+  const mid = Math.floor((max + min) / 2);
+
   if (target === arr[mid]) return true;
   if (target < arr[mid]) return findMid(min, (mid - 1), target, arr);
 
   return findMid((mid + 1), max, target, arr)
 }
 
+// var nums = [1, 4, 6, 7, 9, 17, 45];
+// nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1000];
+// console.log(findInOrderedSet(nums, 3)); // -> true
+// console.log(findInOrderedSet(nums, 6)); // -> false
 
 
 
