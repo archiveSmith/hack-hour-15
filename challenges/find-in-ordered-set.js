@@ -11,6 +11,7 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
+  console.log(arr);
   let low = -1;
   let high = arr.length;
   let mid;
@@ -24,6 +25,6 @@ function findInOrderedSet(arr, target) {
   return false;
 }
 // var nums = [1, 4, 6, 7, 9, 17, 45]
-// console.log(findInOrderedSet(nums, -80))
+// console.log(findInOrderedSet(nums, 45))
 
 module.exports = findInOrderedSet;
