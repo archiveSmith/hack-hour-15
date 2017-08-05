@@ -55,16 +55,22 @@
 //console.log(maxSubarray([15,20,-5,10]), 40);
 
 // Solution
-function maxSubarray(arr) {
-  let curMax = -Infinity;
-  let finalMax = -Infinity;
-  
-  arr.forEach(num => {
-    curMax = Math.max(curMax, num);
-    finalMax = Math.max(finalMax, curMax);
-  });
-  
-  return finalMax;
-}
+//function maxSubarray(arr) {
+//  let curMax = -Infinity;
+//  let finalMax = -Infinity;
+//  
+//  arr.forEach(num => {
+//    curMax = Math.max(curMax, num);
+//    finalMax = Math.max(finalMax, curMax);
+//  });
+//  
+//  return finalMax;
+//}
+
+// One-liner-ish
+maxSubarray = arr => arr.reduce((max, num) => {
+  max.cur = Math.max(max.cur, num + max.cur);
+  max.final = Math.max(max.final, curMax);
+}, { cur: -Infinity, final: -Infinity }).final;
 
 module.exports = maxSubarray;
