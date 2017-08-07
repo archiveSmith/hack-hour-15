@@ -6,6 +6,7 @@
 
 function insertionSort(array) {
   if (array.length === 1) return array;
+  if (array.length === 0) return array;
   if (!Array.isArray(array)) return undefined;
 
   let element = array.shift();
@@ -20,8 +21,8 @@ function insertionSort(array) {
 return array;
 }
 
-const arr = [1, 3, 2, 10, 9, 8, 7, 4, 6, 5];
+// const arr = [1, 3, 2, 10, 9, 8, 7, 4, 6, 5];
+//
 
-
-console.log(insertionSort(arr));
+// console.log(insertionSort(arr));
 module.exports = insertionSort;
