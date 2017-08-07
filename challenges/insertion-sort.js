@@ -5,18 +5,20 @@
 
 
 function insertionSort(array) {
-  for (let i = 1; i < array.length; i++) {
-    let current = array[i];
-    for (let j = i-1; current < array[j]; j--) {
-      array[j+1] = array[j];
-      array[j] = current;
+  const res = [...array];
+  for (let i = 1; i < res.length; i++) {
+    let current = res[i];
+    for (let j = i-1; current < res[j]; j--) {
+      res[j+1] = res[j];
+      res[j] = current;
     }
   }
+  return res
 }
 
-const arr = [9,5,3,6,8];
-console.log(arr);
-insertionSort(arr);
-console.log(arr);
+// const arr = [9,5,3,6,8];
+// console.log(arr);
+// insertionSort(arr);
+// console.log(arr);
 
 module.exports = insertionSort;
