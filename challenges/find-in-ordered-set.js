@@ -11,7 +11,16 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-
+// solution - binary search
+  if (arr.length === 1) {
+    if (arr[0] === target) return true
+    return false
+  }
+  const ind = Math.floor(arr.length);
+  
+  if (arr[ind] === target) return true
+  if (arr[ind] > target) return findInOrderedSet(arr.slice(0, ind))
+  if (arr[ind] < target) return findInOrderedSet(arr.slice(ind))
 }
 
 
