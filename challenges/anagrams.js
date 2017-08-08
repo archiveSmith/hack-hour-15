@@ -14,7 +14,7 @@
 
 function anagrams(string) {
   string = string.split("");
-  string = recur(string,string.length)
+  string = recur(string,string.length);
   return string;
 }
 function recur(string,count){
