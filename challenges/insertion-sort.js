@@ -6,14 +6,16 @@
 
 function insertionSort(array) {
   for (let i=1; i<array.length; i++) {
-    if (array[i] < array[i-1]) {
-      let temp = array[i];
-      array[i] = array[i -1];
-      array[i - 1] = temp; 
-      array = insertionSort(array);
+    for (let y = i; y > 0; y--) {
+    	if (array[y] < array[y-1]) {
+    		let temp = array[y]; 
+    		array[y] = array[y-1]; 
+    		array[y-1] = temp; 
+    	}
     }
   }
   return array; 
 }
+
 
 module.exports = insertionSort;
