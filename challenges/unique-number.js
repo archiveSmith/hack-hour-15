@@ -10,7 +10,20 @@
  *
  */
 function uniqueNumber(array) {
+    if(!Array.isArray(array)) return 'invalid argument'
 
+    const table = {};
+
+    array.forEach(function(element) {
+        if(!table[element]) table[element] = 1
+        else table[element]++
+    }, this);
+
+    let key;
+
+    for (key in table) {
+        if (table[key] === 1 ) return key;
+    }
 }
 
 module.exports = uniqueNumber;
