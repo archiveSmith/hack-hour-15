@@ -10,7 +10,17 @@
  *
  */
 function uniqueNumber(array) {
+    const doubles = {};  // Not O(1) space 
+    array.forEach( (ele, i) => {
+        if (doubles[ele]) doubles[ele] += 1; 
+        else doubles[ele] = 1; 
+    }); 
+    
+    for (key in doubles) {
+        if(doubles[key] === 1) return key; 
+    }
 
+    return 0; // if no numbers appear once 
 }
 
 module.exports = uniqueNumber;
