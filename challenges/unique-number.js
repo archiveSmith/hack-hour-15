@@ -10,7 +10,11 @@
  *
  */
 function uniqueNumber(array) {
-
+  let split = (array.length + 1) / 2;
+  // triangle sum
+  let max = split * (split + 1);
+  let actual = array.reduce((acc, curr) => acc + curr);
+  return max - actual;
 }
 
 module.exports = uniqueNumber;
