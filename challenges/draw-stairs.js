@@ -14,14 +14,16 @@
 */
 
 function drawStairs(n) {
-    let str = "";
-    for (let x = 1; x <= n; x++) {
-        str += "*";
-        for (let y = n; y >= x; y--) {
+    let str ;
+    for (let x = 0; x < n; x++) {
+        str = ""
+        for (let y = 0; y < n-x-1; y++) {
             str += " ";
         }
-        console.log(str.split("").reverse());
-
+        for(let v = n-x-1;v < n;v++){
+            str += "*";
+        }
+        console.log(str);
     }
 }
 
