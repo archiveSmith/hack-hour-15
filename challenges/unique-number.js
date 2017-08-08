@@ -10,7 +10,17 @@
  *
  */
 function uniqueNumber(array) {
-
+  const cache = {};
+  array.forEach((int) => {
+    if (cache[int]) cache[int]++;
+    else cache[int] = 1;
+  });
+  return +Object.keys(cache).filter((key) => {
+    if (cache[key] === 1) return true;
+    else return false;
+  })[0];
 }
+
+uniqueNumber([1, 2, 1, 3, 3]);
 
 module.exports = uniqueNumber;
