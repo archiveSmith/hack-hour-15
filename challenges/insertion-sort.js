@@ -5,7 +5,7 @@
 let thisArray = [2,8,3,1,5,0,22,55,3,2];
 
 function insertionSort(array) {
-      for(var i = 0; i < array.length; i++) {
+    for(var i = 0; i < array.length; i++) {
     var temp = array[i];
     var j = i - 1;
     while (j >= 0 && array[j] > temp) {
