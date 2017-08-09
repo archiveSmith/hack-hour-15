@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array) {
+  if (array.length === 0) return [0];
   const arr = array.map((e, i, a) => {
     let p = 1;
     a.forEach((f,j,b) => {
