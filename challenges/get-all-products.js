@@ -36,11 +36,11 @@ function getAllProducts(array) {
 }
 
 // Test [] input [ 1 ] input [ 1, 2 ] input [ 1, 2, 3 ] input [ 5, 2, 2, 3, 4 ] input [ 5, 0, 2, 3, 4 ]
-console.log(getAllProducts([]), [0]);
-console.log(getAllProducts([ 1, 2 ]), [ 1, 2 ]);
-console.log(getAllProducts([ 1, 2, 3 ]), [2, 3, 6]);
-console.log(getAllProducts([ 5, 0, 2, 3, 4 ]), [0, 120, 0, 0, 0]);
-console.log(getAllProducts([1, 7, 3, 4]), [84, 12, 28, 21]);
+// console.log(getAllProducts([]), [0]);
+// console.log(getAllProducts([ 1, 2 ]), [ 1, 2 ]);
+// console.log(getAllProducts([ 1, 2, 3 ]), [2, 3, 6]);
+// console.log(getAllProducts([ 5, 0, 2, 3, 4 ]), [0, 120, 0, 0, 0]);
+// console.log(getAllProducts([1, 7, 3, 4]), [84, 12, 28, 21]);
 
 
 module.exports = getAllProducts;
