@@ -9,8 +9,20 @@
  * do not use division, becuase zero might be in the array and you cannot divide by zero
  */
 
-function getAllProducts(array) {
 
+// isolate one index
+// multiply the rest of the array using reduce
+// push the produced result into a products array
+// return array
+function getAllProducts(array) {
+  let products = [];
+  for (let i = 0; i < array.length; i++) {
+    let tmp = array.pop();
+    let product = array.reduce((acc, curr) => acc *= curr);
+    products.push(product);
+    array.unshift(tmp);
+  }
+  return products;
 }
 
 module.exports = getAllProducts;
