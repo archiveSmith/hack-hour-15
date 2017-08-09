@@ -10,7 +10,17 @@
  */
 
 function getAllProducts(array) {
+let ans = array.reduce((acc, curr)=>{
+return acc*curr;
+}, 1)
 
+let ansArr = array.map((el)=>{
+    return (el===0) ?  0 :  ans/el;
+   
+})
+console.log(ans)
+console.log(ansArr)
 }
 
 module.exports = getAllProducts;
+console.log(getAllProducts([1,2,0]));
