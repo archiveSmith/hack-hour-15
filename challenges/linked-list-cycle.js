@@ -33,7 +33,15 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  let point1 = head; 
+  let point2 = head;
+  while (point1 && point2) {
+    if (!point1.next || !point2.next || !point2.next.next) return false; 
+    point1 = point1.next; 
+    point2 = point2.next.next; 
+    if (point1 === point2) return true; 
+  } 
+  return false; 
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}

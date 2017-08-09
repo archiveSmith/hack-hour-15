@@ -13,8 +13,26 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
+// Input: array
+// Output: array reversed
+
+// Caveats: No built in array functions. Do not create a new array or object to do this. 
+
+// Process: 
+// Find array's length. 
+// Loop through half of the array via a traditional for Loop
+// Switch the item at the current index with the item at the same index from the end of the array
+// Return the array
+
 function reverseInPlace(array) {
-
+  if (array === undefined) return [];
+  const length = array.length;
+  const halfLength = Math.floor(length / 2);
+  for (let i = 0; i < halfLength; i += 1) {
+    let char = array[length - 1 - i];
+    array[length - 1 - i] = array[i];
+    array[i] = char; 
+  }
+	return array; 
 }
-
 module.exports = reverseInPlace;
