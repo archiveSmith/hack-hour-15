@@ -10,7 +10,22 @@
  */
 
 function getAllProducts(array) {
+  // a function that excludes a certain index
+  // brute force --> nested for loop
+  const products = []
 
+  for(let i = 0; i < array.length; i ++) {
+    let mult = 1;
+    for(let j = 0; j < array.length; j ++) {
+      if (i === j) continue
+      
+      mult *= array[j]
+    }
+    products.push(mult)
+  }
+
+  return products
 }
 
+console.log(getAllProducts[3, 4, 6, 7])
 module.exports = getAllProducts;
