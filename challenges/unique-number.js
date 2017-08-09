@@ -31,7 +31,15 @@
 //}
 
 const uniqueNumber = array => {
-  
+  // O(n) 
+  // Create a storage object
+  const storage = {};
+  // Iterate through the array
+    // If the number doesnt exist in storage, add it
+    // Else delete it
+  array.forEach(num => storage[num] ? delete storage[num] : storage[num] = true)
+  // Return the only number left
+  return Object.keys(storage)[0];
 }
 
 // Test
