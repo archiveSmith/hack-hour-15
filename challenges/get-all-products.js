@@ -10,7 +10,14 @@
  */
 
 function getAllProducts(array) {
-
+    if(!Array.isArray(array)) return 'Invalid argument'
+    let i;
+    let answer = []
+    for (i=0; i<array.length; i++) {
+        answer.push([...array.slice(0,i), ...(array.slice(i+1))]
+                        .reduce(( acc, cur ) => acc * cur,1))
+    }
+    return answer
 }
 
 module.exports = getAllProducts;
