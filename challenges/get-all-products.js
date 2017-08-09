@@ -15,6 +15,7 @@
   // Array of integers, containing all possible products of the input numbers except one
 
 function getAllProducts(array) {
+  console.log('input', array);
   // Create an output var
   const output = [];
   // Iterate through the array
