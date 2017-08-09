@@ -10,7 +10,16 @@
  */
 
 function getAllProducts(array) {
-
+  const arr = array.map((e, i, a) => {
+    let p = 1;
+    a.forEach((f,j,b) => {
+      if (i !== j) p = p*f;
+    });
+    return p;
+  });
+  return arr;
 }
+// arr = [0,7,3,4];
+// console.log(getAllProducts(arr));
 
 module.exports = getAllProducts;
