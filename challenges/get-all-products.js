@@ -14,6 +14,7 @@ function getAllProducts(array) {
   let currentProduct = fixedMultiple
   let indexToExclude = 0;
   let newArr = [];
+  if (array.length === 0) return [0];
   while(indexToExclude < array.length - 1) {
     for(let i = array.length - 2; i >= 0; i -= 1) {
       if (i !== indexToExclude) currentProduct = currentProduct * array[i];

@@ -23,6 +23,6 @@ function uniqueNumber(array) {
   return array.length === 1 ? array[0] : false;
 }
 
-// console.log(uniqueNumber([1,2,1,3,3]));
+console.log(uniqueNumber([1,2,1,3,3,5,5,7,7,8,8]));
 
 module.exports = uniqueNumber;
