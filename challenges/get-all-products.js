@@ -15,7 +15,7 @@
   // Array of integers, containing all possible products of the input numbers except one
 
 function getAllProducts(array) {
-  console.log('input', array);
+  if (array.length === 0) return [0];
   // Create an output var
   const output = [];
   // Iterate through the array
@@ -31,10 +31,16 @@ function getAllProducts(array) {
     output.push(product);
   });
   // Return the filtered output
-  return output.filter((prod, i) => output.indexOf(prod) === i);
+  // return output.filter((prod, i) => output.indexOf(prod) === i);
+  return output;
 }
 
-// Test
+// Test [] input [ 1 ] input [ 1, 2 ] input [ 1, 2, 3 ] input [ 5, 2, 2, 3, 4 ] input [ 5, 0, 2, 3, 4 ]
+// console.log(getAllProducts([]), [0]);
+// console.log(getAllProducts([ 1, 2 ]), [ 1, 2 ]);
+// console.log(getAllProducts([ 1, 2, 3 ]), [2, 3, 6]);
+// console.log(getAllProducts([ 5, 0, 2, 3, 4 ]), [0, 120, 0, 0, 0]);
 // console.log(getAllProducts([1, 7, 3, 4]), [84, 12, 28, 21]);
+
 
 module.exports = getAllProducts;
