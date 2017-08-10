@@ -13,8 +13,23 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+// Input: array
+// Output: reversed array
 
+// Given an array, reverse the array without creating a new object in memory
+// Use the pop element to get the 2nd element of the array
+// Add to the front of the array
+// Continue until the end of the array
+
+function reverseInPlace(array) {
+    let counter = 1;
+    let length = array.length;
+    while (counter < length) {
+        let currEle = array.splice(counter, 1);
+        array = currEle.concat(array);
+        counter++;
+    }
+    return array;
 }
 
 module.exports = reverseInPlace;
