@@ -23,4 +23,4 @@ console.log(ansArr)
 }
 
 module.exports = getAllProducts;
-console.log(getAllProducts([1,2,0]));
+console.log(getAllProducts([1,7,3,4]));
