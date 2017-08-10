@@ -65,15 +65,28 @@ LinkedList.prototype.remove = function(val) {
   }
 };
 
-
-const LL = new LinkedList();
-LL.add(3);
-LL.add(4);
-LL.add(5);
-LL.add(6);
-LL.add(7);
-console.log("before: ", LL);
-console.log("REMOVED NODE: ", LL.remove(3));
-console.log("AFTER: ", LL);
+LinkedList.prototype.printValues = function(){
+  let node = this.head;
+  const vals = [];
+  while (node) {
+    vals.push(node.val);
+    node = node.next;
+  }
+  console.log('VALUES: ', vals);
+}
+// 
+//
+// const LL = new LinkedList();
+// LL.add(3);
+// LL.add(4);
+// LL.add(5);
+// LL.add(5);
+// LL.add(6);
+// LL.add(7);
+// LL.printValues();
+// console.log("before: ", LL);
+// console.log("REMOVED NODE: ", LL.remove(5));
+// LL.printValues();
+// console.log("AFTER: ", LL);
 
 module.exports = LinkedList;
