@@ -15,8 +15,10 @@ function uniqueNumber(array) {
   for (let i = 0; i < array.length; i += 1) {
     for (let j = 0; j < array.length; j += 1) {
       if (i !== j && array[i] === array[j]) {
+       console.log('before ', arr)
         array.splice(j, j + 1);
         array.splice(i, i + 1);
+      console.log('after ', array)
       }
     }
   }
