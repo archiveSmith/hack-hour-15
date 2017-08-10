@@ -10,7 +10,25 @@
  */
 
 function getAllProducts(array) {
-
+  let currArray;
+  let output = [];
+  for (let i = 0; i < array.length; i++) {
+    currArray = array.slice();
+    currArray.splice(i, 1);
+    let product = currArray.reduce((tot, val) => {
+      return tot * val;
+    }, 1);
+    output.push(product);
+  }
+  return output;
 }
+
+console.log(getAllProducts([1, 7, 3, 4])); // [84, 12, 28, 21];
+
+// Get an array of all permutations
+  // Loop through the array
+  // Create new instance of array, using splice
+  // Use reduce, and push product into output array
+// Return the output
 
 module.exports = getAllProducts;
