@@ -27,5 +27,4 @@ function getAllProducts(array) {
   return products
 }
 
-console.log(getAllProducts[3, 4, 6, 7])
-module.exports = getAllProducts;
+smodule.exports = getAllProducts;
