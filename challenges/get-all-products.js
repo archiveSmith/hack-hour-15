@@ -32,4 +32,6 @@ function getAllProducts(array) {
   return result; 
 }
 
+
+
 module.exports = getAllProducts;
