@@ -22,8 +22,38 @@
  *
  */
 
-function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+ // Approach
+ // 1. Find the starting point's lowest level (i.e. most child?) district
+ // 2. Repeat until finding the lowest level district that also contains the end_x
+ // 3. Find the end point's lowest level district
+ // 4. Repeat until finding the shared district from 2.
+ // 5. Return the number of unique districts found
 
+function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  console.log(arguments);
+  // Create a counter
+  let count = 0;
+  let shared = false;
+
+  // Iterate through the districts
+  for (let i = 0; i < x.length; i += 1) {
+    // If the district contains the start or the end, but not the other, increment the counter
+    if (containsPoint(x[i], y[i], r[i], start_x, start_y) ^ containsPoint(x[i], y[i], r[i], end_x, end_y)) count += 1;
+    // If the district contains both the start and the end, set shared district bool to true
+    if (containsPoint(x[i], y[i], r[i], start_x, start_y) && containsPoint(x[i], y[i], r[i], end_x, end_y)) shared = true;
+  }
+  // Return the counter plus 1 if the bool is true
+  return count + shared ? 1 : 0;
 }
+
+// Takes in position and radius of a circle and position of a point
+// Returns true if the circle contains the point, else false
+const containsPoint = (x, y, r, p_x, p_y) =>
+  Math.sqrt(Math.pow((p_x - x),2) + Math.pow((p_y - y),2)) < r;
+
+// Test
+// console.log(containsPoint(4, 4, 10, 5, 5), true);
+// console.log(containsPoint(4, 4, 1, 5, 5), false);
+
 
 module.exports = circleCountry;
