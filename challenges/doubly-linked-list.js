@@ -38,7 +38,7 @@ LinkedList.prototype.remove = function (val) {
 
   // Iterate throught entire doubly linked list 
   while (traverse) {
-    if (traverse.value === val) {
+    if (traverse.val === val) {
       // edge condition: value is at head 
       if (traverse === this.head) {
         this.head = this.head.next;
