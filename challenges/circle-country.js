@@ -30,7 +30,7 @@
  // 5. Return the number of unique districts found
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-  console.log(arguments);
+  // console.log(arguments);
   // Create a counter
   let count = 0;
   let shared = false;
@@ -43,7 +43,8 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
     if (containsPoint(x[i], y[i], r[i], start_x, start_y) && containsPoint(x[i], y[i], r[i], end_x, end_y)) shared = true;
   }
   // Return the counter plus 1 if the bool is true
-  return count + shared ? 1 : 0;
+  //return count + shared ? 1 : 0;
+  return count;
 }
 
 // Takes in position and radius of a circle and position of a point
@@ -54,6 +55,8 @@ const containsPoint = (x, y, r, p_x, p_y) =>
 // Test
 // console.log(containsPoint(4, 4, 10, 5, 5), true);
 // console.log(containsPoint(4, 4, 1, 5, 5), false);
+// { '0': [ -1, 0, 0, 4 ], '1': [ 0, 0, 0, 4 ], '2': [ 1, 3, 6, 0.1 ], '3': 1, '4': 0, '5': 4, '6': 4 }
+// console.log(circleCountry([ -1, 0, 0, 4 ], [ 0, 0, 0, 4 ], [ 1, 3, 6, 0.1 ], 1, 0, 4, 4));
 
 
 module.exports = circleCountry;
