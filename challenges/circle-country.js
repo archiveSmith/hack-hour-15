@@ -23,7 +23,29 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+    let i;
+    let centerX;
+    let centerY;
+    for (i = 0; i < x.length; i++) {
+        centerX = x[i]
+        centerY = y[i]
+        centerRadius = r[i]
+        calculateCircleCoordinate(centerX, centerY, centerRadius, start_x, start_y, end_x, end_y)
+    }
 
 }
 
 module.exports = circleCountry;
+
+
+function calculateCircleCoordinate(centerX, centerY, centerRadius, start_x, start_y, end_x, end_y) {
+    while(start_x !== end_x && start_y !== end_y) {
+        if(((Math.pow(start_x,2)-Math.pow(centerX,2))) + ((Math.pow(start_y,)-Math.pow(centerY,2))) !== Math.pow(centerRadius,2)) {
+            start_x ++
+        } else {
+            start_y ++
+        }
+    }
+
+
+}
