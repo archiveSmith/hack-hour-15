@@ -30,20 +30,14 @@
  // 5. Return the number of unique districts found
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-  // console.log(arguments);
   // Create a counter
   let count = 0;
-  let shared = false;
-
   // Iterate through the districts
   for (let i = 0; i < x.length; i += 1) {
     // If the district contains the start or the end, but not the other, increment the counter
     if (containsPoint(x[i], y[i], r[i], start_x, start_y) ^ containsPoint(x[i], y[i], r[i], end_x, end_y)) count += 1;
-    // If the district contains both the start and the end, set shared district bool to true
-    if (containsPoint(x[i], y[i], r[i], start_x, start_y) && containsPoint(x[i], y[i], r[i], end_x, end_y)) shared = true;
   }
-  // Return the counter plus 1 if the bool is true
-  //return count + shared ? 1 : 0;
+  // Return the counter
   return count;
 }
 
