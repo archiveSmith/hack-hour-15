@@ -1,4 +1,4 @@
-/**
+ /**
  *  Circle Country is a country that contains several circular-shaped districts.
  *  Some districts may be situated inside other districts, but their borders do not intersect or touch.
  *  Tyus is a resident of Circle Country. When he travels between two locations, he always tries to cross the fewest number of district borders as possible.
@@ -23,7 +23,31 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  // calculate which circles start_x, start_y is inside 
+  // calculate which circles end_x, end_y is inside 
+  // add up the # of unique circles
 
+  let count = 0;
+
+  for(let i = 0; i < x.length; i += 1) {
+    if (isInside(start_x, start_y, x[i], y[i], r[i]) || isInside(end_x, end_y, x[i], y[i], r[i])) {
+      count += 1;
+    }
+  }
+
+  return count;
+
+  // helper function to calculate if a point is inside a circle
+  // should return a boolean
+  function isInside(targetX, targetY, centerX, centerY, radius) {
+    // if the distance beetween targetX, targetY and centerX, centerY is less than radius, return true
+    // trigonometery!!
+    const xDif = Math.abs(targetX - centerX);
+    const yDif = Math.abs(targetY - centerY);
+    const dist = Math.sqrt(Math.pow(xDif, 2) + Math.pow(yDif, 2));
+
+    return dist < radius;
+  }
 }
 
 module.exports = circleCountry;
