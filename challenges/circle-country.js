@@ -23,6 +23,13 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  console.log('x', x);
+  console.log('y', y);
+  console.log('r', r);
+  console.log('start_x', start_x);
+  console.log('start_y', start_y);
+  console.log('end_x', end_x);
+  console.log('end_y', end_y);
   return 2;
 }
 
