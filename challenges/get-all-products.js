@@ -10,6 +10,9 @@
  */
 
 function getAllProducts(array) {
+  if (!Array.isArray(array)) return 'Invalid input';
+  if (array.length === 0) return 0;
+  if (array.length === 1) return array;
   const products = array.map(elem => 1);
   let productForward = array[0];
   let productBackward = array[array.length - 1];
@@ -23,6 +26,6 @@ function getAllProducts(array) {
   return products;
 }
 
-console.log(getAllProducts([1, 7, 3, 4]))
+console.log([1, 7, 3, 4].slice())
 
 module.exports = getAllProducts;
