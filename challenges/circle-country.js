@@ -47,7 +47,7 @@ const containsPoint = (x, y, r, p_x, p_y) =>
 // console.log(containsPoint(4, 4, 10, 5, 5), true);
 // console.log(containsPoint(4, 4, 1, 5, 5), false);
 // { '0': [ -1, 0, 0, 4 ], '1': [ 0, 0, 0, 4 ], '2': [ 1, 3, 6, 0.1 ], '3': 1, '4': 0, '5': 4, '6': 4 }
-console.log(circleCountry([ -1, 0, 0, 4 ], [ 0, 0, 0, 4 ], [ 1, 3, 6, 0.1 ], 1, 0, 4, 4));
+// console.log(circleCountry([ -1, 0, 0, 4 ], [ 0, 0, 0, 4 ], [ 1, 3, 6, 0.1 ], 1, 0, 4, 4));
 
 
 module.exports = circleCountry;
