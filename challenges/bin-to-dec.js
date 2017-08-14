@@ -13,8 +13,13 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
-
-}
+ function binToDec(binary) {
+   const binArray = binary.split('').reverse();
+   let dec = 0;
+   for (let i = 0; i < binArray.length; i++) {
+     dec += binArray[i] * Math.pow(2, i);
+   }
+   return dec;
+ }
 
 module.exports = binToDec;

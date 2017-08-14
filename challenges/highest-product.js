@@ -3,7 +3,12 @@
  */
 
 function highestProduct(array) {
-
+  if (!array
+    || array.length === 0
+    || array.some(element => typeof element !== 'number')
+  ) return;
+  array.sort((a, b) => b - a);
+  return array[0] * array[1] * array[2];
 }
 
 
