@@ -19,6 +19,6 @@ function bubbleSort(array) {
   return array;
 }
 
-// const arr = [10,9,8,7,6,5,4,3,2,1];
+// const arr = [10,9,8,6,5,7,64,4,3,2,1];
 // console.log(bubbleSort(arr));
 module.exports = bubbleSort;
