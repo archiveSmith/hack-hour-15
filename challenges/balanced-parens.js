@@ -25,7 +25,11 @@
  */
 
 function balancedParens(input){
+  if (typeof input !== 'string') return 'not a string';
 
+  let openChars = input.replace(/[^([{]/g, "");
+  let closeChars = input.replace(/[^)\]\}]/g, "");
+  return openChars.length === closeChars.length;
 }
 
 module.exports = balancedParens;

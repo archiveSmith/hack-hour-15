@@ -21,16 +21,85 @@
  * - It is not necessary to write a way to remove listeners.
  */
 
-function EventEmitter() {
+// function EventEmitter() {
+//   //store relevant bits of the problem here.
+//   this.listeners = {};
+// }
+//
+// EventEmitter.prototype.on = function(funcName, func) {
+//   // store the callback and the trigger word.
+//   if(!this.listeners[funcName]){
+//     this.listeners[funcName] = [ func ];
+//   } else {
+//     this.listeners[funcName].push(func);
+//   }
+//
+// };
+//
+// EventEmitter.prototype.trigger = function(funcName, ...args) {
+//     //fire our callback if the trigger word is passed to the EE.
+//   const listeners = this.listeners[funcName];
+//   if (listeners) {
+//     listeners.forEach((listener) => {
+//        listener(args);
+//     });
+//     // return listeners(args);
+//   }
+// };
+//
+class EventEmitter {
+  constructor() {
+    this.listeners = {};
+  }
+  on(funcName, func) {
+    if(!this.listeners[funcName]){
+      this.listeners[funcName] = [ func ];
+    } else {
+      this.listeners[funcName].push(func);
+    }
+  }
 
+  trigger(funcName, ...args) {
+    //fire our callback if the trigger word is passed to the EE.
+    const listeners = this.listeners[funcName];
+    if (listeners) {
+      listeners.forEach((listener) => {
+         listener(args);
+      });
+      // return listeners(args);
+    }
+  }
 }
 
-EventEmitter.prototype.on = function(funcName, func) {
 
-};
 
-EventEmitter.prototype.trigger = function(funcName, ...args) {
-
-};
+// const test = new EventEmitter();
+// let counter = 0;
+// test.on('codesmith', ()=> counter++);
+// test.on('coral', ()=> counter++);
+// test.on('sentance', ()=> console.log('blah blah blah'));
+// test.on('words', args => console.log(...args));
+// test.on('math', (args) => args.map(a => 'I am a Taco'));
+// console.log(counter);
+// test.trigger('codesmith');
+// console.log(counter);
+// test.trigger('codesmith');
+// console.log(counter);
+// test.trigger('sentance');
+// test.trigger('codesmith');
+// console.log(counter);
+// test.trigger('sentance');
+// test.trigger('words', 'fuck', 'shit', 'piss');
+// const mth = test.trigger('math', 1, 2, 3, 4, 5);
+// console.log(mth);
+// console.log('precoral: ', counter);
+// test.trigger('coral');
+// console.log(counter);
+//
+// test.on('alpha', ()=> console.log('yes'));
+// test.on('alpha', ()=> console.log('no'));
+// test.trigger('alpha');
+//
+// console.log(test.listeners);
 
 module.exports = EventEmitter;

@@ -14,7 +14,36 @@
  */
 
 function binToDec(binary) {
+//add 2^n * val[idx] for numbers. n = ary.len - i;
+ let ary = binary.slice('');
+ let len = ary.length - 1;
+ let dec = 0;
+ for (let i = 0; i < ary.length; i++){
+   let digit = Number(ary[i]);
+   dec += digit * Math.pow(2, len - i);
+ }
 
+ return dec;
 }
+
+function decToBin(num){
+  let bin = [];
+  let digit = 0;
+  while (num > 0){
+    digit = (num % 2);
+    bin.unshift(digit);
+    num = (num - digit) /2;
+  }
+  console.log(bin.join(''));
+  return bin.join('');
+}
+
+console.log(binToDec(decToBin(999999999999999)));
+
+console.log(decToBin(999999999999999));
+console.log(binToDec('100011100001101111001001101111110000010000000000000000'))
+console.log(binToDec('100011100001101111001001101111110000001111111111111111'));
+
+
 
 module.exports = binToDec;
