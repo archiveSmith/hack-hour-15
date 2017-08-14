@@ -13,7 +13,7 @@ function bubbleSort(array) {
     flag = true; 
     // largest # in unsorted array will always move to the very end, 
     // so you don't have to check its index on subsequent passes
-    for(let i = 0; i < array.length - i - 1; i += 1) {
+    for(let i = 0; i < array.length - 1; i += 1) {
       if(array[i] > array[i+1]) {
         flag = false;
         array[i] = array[i] ^ array[i+1];
