@@ -37,36 +37,55 @@ function findName(jazbook, name) {
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-this.book = jazbook.reduce((entry, value) => {
+  console.log(jazbook);
+  const phonebook = jazbook.reduce((entry, value) => {
     entry[value[0]] = value[1];
     return entry;
   }, {});
+
+  phonebook.add = function(name, number) {
+    if (this[name]) return false;
+    this[name] = number;
+  }
+
+  phonebook.lookUp = function(name) {
+    if (this[name]) return this[name];
+    return false;
+  }
+
+  phonebook.remove = function(name) {
+    if (!this[name]) return false;
+    delete this[name];
+    return true;
+  }
+
+  return phonebook;
 }
 
-makePhoneBookObject.prototype.add = function(name, number) {
-  if (this.book[name]) return false;
-  this.book[name] = number;
-}
+// makePhoneBookObject.prototype.add = function(name, number) {
+//   if (this.book[name]) return false;
+//   this.book[name] = number;
+// }
+//
+// makePhoneBookObject.prototype.lookUp = function(name) {
+//   if (this.book[name]) return this.book[name];
+//   return false;
+// }
+//
+// makePhoneBookObject.prototype.remove = function(name) {
+//   if (!this.book[name]) return false;
+//   delete this.book[name];
+//   return true;
+// }
 
-makePhoneBookObject.prototype.lookUp = function(name) {
-  if (this.book[name]) return this.book[name];
-  return false;
-}
-
-makePhoneBookObject.prototype.remove = function(name) {
-  if (!this.book[name]) return false;
-  delete this.book[name];
-  return true;
-}
-
-const jazbook = [
-     ['alex','301-844-3421'],
-     ['jae','301-844-1211'],
-     ['david','301-844-0978'],
-     ['travis','301-844-8505'],
-     ['jasmine','1800-974-4539'],
-   ];
-
+// const jazbook = [
+//      ['alex','301-844-3421'],
+//      ['jae','301-844-1211'],
+//      ['david','301-844-0978'],
+//      ['travis','301-844-8505'],
+//      ['jasmine','1800-974-4539'],
+//    ];
+//
 // const res = findName(jazbook, 'david');
 // // console.log(res);
 // const two = findName(jazbook, 'garrett');
