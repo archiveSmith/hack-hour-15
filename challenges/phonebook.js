@@ -39,8 +39,12 @@ function findName(jazbook, name) {
 // return an object literal representing the jazbook
 const makePhoneBookObject = jazbook => jazbook.reduce((phoneBook, entry) => {
   phoneBook[entry[0]] = entry[1];
-  return phoneBook
+  return phoneBook;
 }, {});
+
+function phonebook() {
+  this.
+}
 
 // Test
 const jazbook = [
