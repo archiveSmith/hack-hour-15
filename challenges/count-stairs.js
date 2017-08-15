@@ -23,7 +23,8 @@
   // floor(n/2) + 1
 // Sum unique anagrams of each combination
 
-const countStairs = n => n <= 1 ? 1 : countStairs(n - 1) + countStairs(n - 2);
+// const countStairs = n => n <= 1 ? 1 : countStairs(n - 1) + countStairs(n - 2);
+const countStairs = n => console.log(n);
 
 //Test
 // console.log(countStairs(1))
