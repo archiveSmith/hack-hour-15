@@ -55,8 +55,6 @@ makePhoneBookObject.prototype.add = function(name, number) {
   if (this[name]) return 'already exists';
   this[name] = number;
   return `added ${name}`;
-  
-  // Add names
 }
 
 makePhoneBookObject.prototype.lookup = function(name) {
@@ -68,7 +66,6 @@ makePhoneBookObject.prototype.remove = function(name) {
   if (!this[name]) return undefined;
   delete this[name];
   return `deleted ${name}`;
-  // Remove
 }
 
 const jazbook = [
