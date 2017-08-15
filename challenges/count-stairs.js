@@ -23,46 +23,54 @@
   // floor(n/2) + 1
 // Sum unique anagrams of each combination
 
+// const countStairs = n => n <= 1 ? 1 : countStairs(n - 1) + countStairs(n - 2);
+const countStairs = n => console.log(n);
+
 //Test
+// console.log(countStairs(1))
+// console.log(countStairs(2))
+// console.log(countStairs(3))
+// console.log(countStairs(4))
 // console.log(countStairs(5))
+// console.log(countStairs(6))
 
-function countStairs(n) {
-  let result = 0;
-  // Iterate from 0 to n by steps of 2
-  for (let i = 0; i <= n; i += 2) {
-    // insert n-i '1's into the combination string
-    let output = '1'.repeat(n-i);
-    // Insert i/2 '2's into the combination string
-    output += '2'.repeat(i/2);
-    // Find anagrams of output string
-    // Increment result by length of anagrams array
-    result += anagrams(output).length;
-  }
-  // Return result
-  return result;
-}
-
-// From previous hack hour
-function anagrams(string) {
-  // Base case
-  if (string.length === 0) return [''];
-
-  // Create output array
-  const output = [];
-
-  // Iterate through the string
-  for (let i = 0; i < string.length; i += 1) {
-
-    temp = string.split('');
-    temp.splice(i, 1);
-
-    // append to output the result of anagram on a substring + the first character
-    anagrams(temp.join('')).forEach(anagram => output.push(string[i] +anagram));
-
-  }
-
-  // return the output
-  return output.filter((str, i) => output.indexOf(str) === i);
-}
+// function countStairs(n) {
+//   let result = 0;
+//   // Iterate from 0 to n by steps of 2
+//   for (let i = 0; i <= n; i += 2) {
+//     // insert n-i '1's into the combination string
+//     let output = '1'.repeat(n-i);
+//     // Insert i/2 '2's into the combination string
+//     output += '2'.repeat(i/2);
+//     // Find anagrams of output string
+//     // Increment result by length of anagrams array
+//     result += anagrams(output).length;
+//   }
+//   // Return result
+//   return result;
+// }
+//
+// // From previous hack hour
+// function anagrams(string) {
+//   // Base case
+//   if (string.length === 0) return [''];
+//
+//   // Create output array
+//   const output = [];
+//
+//   // Iterate through the string
+//   for (let i = 0; i < string.length; i += 1) {
+//
+//     temp = string.split('');
+//     temp.splice(i, 1);
+//
+//     // append to output the result of anagram on a substring + the first character
+//     anagrams(temp.join('')).forEach(anagram => output.push(string[i] +anagram));
+//
+//   }
+//
+//   // return the output
+//   return output.filter((str, i) => output.indexOf(str) === i);
+// }
 
 module.exports = countStairs;
