@@ -22,3 +22,5 @@ function newIntersections(x, y){
 }
 
 module.exports = newIntersections;
+
+// dont understand ?
