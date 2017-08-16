@@ -54,7 +54,7 @@ function intersection(l1,l2){
   return [pointx,pointy]  
 }
 
-let arr = [1,2,3,7,5]
+let arr = [1,2,3,7,5] 
 let zrr = [1,2,3,4,5]
 
 console.log(newIntersections(arr,zrr))
