@@ -30,7 +30,7 @@ function newIntersections(x, y) {
 		if (item > top) top = item; 
 		if (item < bottom) bottom = item; 
 	});
-	return (Math.abs(top - bottom) - 2) * (Math.abs(right - left) - 2); 
+	return (Math.abs(top - bottom) - 1) * (Math.abs(right - left) - 1); 
 }
 
 module.exports = newIntersections;
