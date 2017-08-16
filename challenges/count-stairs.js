@@ -15,7 +15,13 @@
  */
 
 function countStairs(n) {
+  if (typeof n !== 'number') return 'invalid input';
+  if (n < 0) return 0;
+  if (n <= 1) return 1;
+  return countStairs(n-1) + countStairs(n-2);
 
 }
+
+// console.log(countStairs(4));
 
 module.exports = countStairs;
