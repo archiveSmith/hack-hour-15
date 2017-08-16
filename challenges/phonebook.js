@@ -25,37 +25,39 @@
 */
 
 //  return the number associated with the name in the jazbook
+// function findName(jazbook, name) {
+//   //traverse through the jazbook 
+//   for (let index in jazbook) {
+//       if (jazbook[index][0] === name)
+//       //return the corrseponding number
+//         return jazbook[index][1];
+//         //console.log(jazbook[index][1]);
+//     }
+//   return false;
+// }
+
 function findName(jazbook, name) {
-  //traverse through the jazbook 
-  for (let index in jazbook) {
-      if (jazbook[index][0] === name)
-      //return the corrseponding number
-        return jazbook[index][1];
-        //console.log(jazbook[index][1]);
-    }
+  for(let i = jazbook.length - 1; i--;) {
+    if(jazbook[i][0] == name) return jazbook[i][1];
+  }
   return false;
+}
+
+function phoneBook() {
+  this.book = {};
+  this.remove = name => delete this.book[name];
+  this.add = (name, number) => this.book[name] = number;
 }
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-  let phoneBook = {}; //create new empty Obj instance
+  let phonebook = new phoneBook; //create new empty Obj instance
   //traverse through the object
-  for (let index in jazbook) {
-  	//make sure index[0] matches the numbers 
-    if (jazbook[index][0].match(/^[0-9]$/)) phoneBook[jazbook[index][1]] = jazbook[index][0]; 
-    else phoneBook[jazbook[index][0]] = jazbook[index][1];
-  }
-  return phoneBook;
+  jazbook.forEach(pair => phonebook.book[pair[0]] = pair[1]);
+  return phonebook;
 }
 
-// makePhoneBookObject.prototype.add = (name, number) => {
-	
-// }
 
-// makePhoneBookObject.prototype.remove = (name) => {
-
-
-// }
 
 const objectToExport = {
   findName,
