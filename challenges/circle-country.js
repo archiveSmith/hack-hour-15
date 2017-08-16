@@ -23,6 +23,21 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+    // x, y, r ---> arrays 
+    // start_x, start_y  --> starting point 
+    // end_x, end_y  --> ending point 
+
+    // First calculate the circumferance of each of the circles in the country 
+    //      saving each of the points on the circle's boudary in a separate array 
+
+    return r.reduce((acc, rad, i) => {
+        const startDistance = Math.hypot(x[i] - start_x, y[i] - start_y); 
+
+        const endDistance = Math.hypot(x[i] - end_x, y[i] - end_y); 
+
+        return (startDistance > rad && rad > endDistance) || (startDistance < rad && rad < endDistance) ? +acc : acc; 
+    }); 
+
 
 }
 
