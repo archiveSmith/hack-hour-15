@@ -22,7 +22,22 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  // FIRST option: create array to store values 
+  const valuesArr = []; 
 
+  // traverse through list
+  if (head === null) return undefined; 
+  if (head.next === null) return undefined; 
+
+  let traverse = head; 
+  while (traverse.next !== null) {
+    valuesArr.push(traverse.value); 
+    traverse = traverse.next; 
+  }
+  valuesArr.push(traverse.value); // makes sure to push the last value in linked list to valuesArr
+
+  // Return value on the second to last node: 
+  return valuesArr[valuesArr.length - k]; 
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

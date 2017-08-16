@@ -13,7 +13,23 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
+    // if tree is null, return false 
+    if (!tree) return false; 
 
+    // create boolean flag that will return whether tree is a valid BST or not 
+    let isBST = true; // assume is BST from the get-go 
+
+    // Base case: 
+    while (this.left) {
+        if (this.left.value > this.value) return false;
+        return validBST(this.left); 
+    }
+    while (this.right){
+        if (this.right.value < this.value) return false; 
+        return validBST(this.right); 
+    }
+
+    return isTree; 
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
