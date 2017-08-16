@@ -17,8 +17,20 @@
  * 	 
  */
 
-function newIntersections(x, y){
-
+function newIntersections(x, y) {
+	let left = Infinity; 
+	let right = -Infinity; 
+	let top = -Infinity; 
+	let bottom = Infinity; 
+	x.forEach(item => {
+		if (item < left) left = item; 
+		if (item > right) right = item; 
+	});
+	y.forEach(item => {
+		if (item > top) top = item; 
+		if (item < bottom) bottom = item; 
+	});
+	return (Math.abs(top - bottom) - 2) * (Math.abs(right - left) - 2); 
 }
 
 module.exports = newIntersections;
