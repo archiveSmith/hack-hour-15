@@ -11,7 +11,22 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  const x = parseInt(str[1]);
+  const y = parseInt(str[3]);
+  let validMoves = 8;
 
+  // make sure that piece is within 1 - 8 bounds
+  if (x + 1 > 8) validMoves -= 4;
+  if (x - 1 < 1) validMoves -= 4;
+  if (y + 1 > 8) validMoves -= 4;
+  if (y - 1 < 1) validMoves -= 4;
+  if (x + 1 > 8 && y + 1 > 8) validMoves -= 2;
+  if (x - 1 < 1 && y + 1 > 8) validMoves -= 2;
+  if (x - 1 < 1 && y - 1 < 1) validMoves -= 2;
+  if (x + 1 > 8 && y - 1 < 1) validMoves -= 2;
+  return validMoves;
 }
+
+// console.log(knightjumps('(5 8)'))
 
 module.exports = knightjumps;
