@@ -11,6 +11,28 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+    let split = str.split(' ');
+    let x = split[0]
+    let y = split[1]
+    let xSpace = 8 - split[0];
+    let ySpace = 8 - split[1];
+    let counter = 0;
+
+        if(xSpace >= 3 && ySpace >= 1) {
+            if(x + 3 <= 8 && y + 1 <= 8) counter ++
+            if(x + 3 <= 8 && y - 1 >= 1) counter ++
+            if(x - 3 >= 1 && y + 1 <= 8) counter ++
+            if(x - 3 >= 1 && y - 1 >= 1) counter ++
+        }
+
+        if(ySpace >= 3 && xSpace >= 1) {
+            if(y + 3 <= 8 && x + 1 <= 8) counter ++
+            if(y + 3 <= 8 && x - 1 >= 1) counter ++
+            if(y - 3 >= 1 && x + 1 <= 8) counter ++
+            if(y - 3 >= 1 && x - 1 >= 1) counter ++
+        }
+    
+    return counter
 
 }
 
