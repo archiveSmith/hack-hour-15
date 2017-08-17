@@ -24,14 +24,15 @@ function knightjumps(str) {
   if(x_coord > 8 || x_coord <= 0 || y_coord <= 0 || y_coord > 8) return 0;
   
   //all the possible moves 
+    if(y_coord - 1 > 0 && x_coord + 2 <= 8) count++;
+    if(y_coord - 2 > 0 && x_coord - 1 > 0) count++;
+	if(y_coord - 2 > 0 && x_coord + 1 <= 8) count++;
     if(y_coord + 2 <= 8 && x_coord - 1 > 0) count++;
 	if(y_coord + 2 <= 8 && x_coord + 1 <= 8) count++;
 	if(y_coord + 1 <= 8 && x_coord - 2 > 0) count++;
 	if(y_coord + 1 <= 8 && x_coord + 2 <= 8) count++;
-	if(y_coord - 2 > 0 && x_coord - 1 > 0) count++;
-	if(y_coord - 2 > 0 && x_coord + 1 <= 8) count++;
 	if(y_coord - 1 > 0 && x_coord - 2 > 0) count++;
-	if(y_coord - 1 > 0 && x_coord + 2 <= 8) count++;
+	
 	
 	return count;
 }
