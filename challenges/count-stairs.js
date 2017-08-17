@@ -15,19 +15,22 @@
  */
 
 function countStairs(n) {
-    ans = "";
-    let twos = Math.floor(n/2)
-    for (let i=0; i<n; i++){
-        if (i!=n-1){
-        ans = ans + "1 + "
-        } 
-        else {
-            ans = ans + "1"
-        }
+    // ans = "";
+    // let twos = Math.floor(n/2)
+    // for (let i=0; i<n; i++){
+    //     if (i!=n-1){
+    //     ans = ans + "1 + "
+    //     } 
+    //     else {
+    //         ans = ans + "1"
+    //     }
     
-        // console.log("1:", twos)
-    }
-    return ans;
+    //     // console.log("1:", twos)
+    // }
+    // return ans;
+    if (n===0){return 1}
+    if (n===1){return 1}
+    return countStairs(n-1) + countStairs(n-2)
 }
 console.log(countStairs(2));
 module.exports = countStairs;
