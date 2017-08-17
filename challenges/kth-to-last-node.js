@@ -22,7 +22,12 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-
+  let countFromHead = [];
+  // traverse all nodes until tail, store all values in order, and return kth value from last node
+  for (let i = head; i !== null; i = i.next) {
+    countFromHead.push(i.value);
+  }
+  return countFromHead[countFromHead.length - k];
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

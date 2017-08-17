@@ -8,7 +8,16 @@
  */
 
 function gcd(a, b) {
-
+  let n;
+  // Cover negative numbers
+  a = Math.abs(a);
+  b = Math.abs(b);
+  (a < b) ? n = a : n = b;
+  for (let i = n; i > 0; i -= 1) {
+    if ( a % i === 0 && b % i === 0) {
+      return i;
+    }
+  }
 }
 
 module.exports = gcd;

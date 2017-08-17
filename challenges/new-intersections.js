@@ -18,7 +18,40 @@
  */
 
 function newIntersections(x, y){
+  let boundCount = 0;
+  for (let i = 0; i < x.length; i += 1) {
+    // bounded if equal to 4
+    let count = 0;
+    let rightX = x[i] + 2;
+    let rightY = y[i];
 
+    // from left bound
+    // check for right bound
+    console.log('right?', x.indexOf(x[i]+2), y.indexOf(y[i]), i)
+    if (x.indexOf(x[i] + 2) === y.indexOf(y[i]) && y.indexOf(y[i]) !== -1) {
+      console.log('in right bound', x[i] + 2, y[i])
+      count += 1;
+   } 
+    // check for upper bound 
+    if (x.indexOf(x[i] + 1) === y.indexOf(y[i] + 1) && y.indexOf(y[i] + 1) !== -1) {
+      console.log('in upper bound', x[i] + 1, y[i] +1)
+      
+      count += 1;
+    }
+    // check for lower bound 
+    if (x.indexOf(x[i] + 1) === y.indexOf(y[i]-1) && y.indexOf(y[i]-1) !== -1) {
+      console.log('in lower bound', x[i]+1, y[i] -1, i)
+      
+      count += 1;
+    }
+    if (count === 3) boundCount += 1;
+  }
+  return boundCount;
 }
+
+x = [1,2,2,3,3,3,4,4];
+y = [2,1,3,3,2,4,4,3];
+
+console.log(newIntersections(x,y))
 
 module.exports = newIntersections;
