@@ -11,6 +11,41 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  //  |2|3|4|4|4|4|3|2|
+  //  |3|4|6|6|6|6|4|3|
+  //  |4|6|8|8|8|8|6|4|
+  //  |4|6|8|8|8|8|6|4|
+  //  |4|6|8|8|8|8|6|4|
+  //  |4|6|8|8|8|8|6|4|
+  //  |4|6|8|8|8|8|6|4|
+  //  |3|4|6|6|6|6|4|3|
+  //  |2|3|4|4|4|4|3|2|
+
+  // strategy -> distance from each edge
+  // calculate distances from each edge, take the minimum for top/bottom/ left/right and contrstrain at two
+  // sum these two distances 
+  // if sum === 4 -> return 8
+  // if sum === 3 -> return 6
+  // if sum === 2 -> return 4
+  // if sum === 1 -> return 3
+  // if sum === 0 -> return 2
+
+  const x = parseInt(str[1]);
+  const y = parseInt(str[1]);
+
+  let distX = x > 4 ? 8 - x : x - 1
+  let distY = y > 4 ? 8 - y : y - 1
+
+  if (distX > 2) distX = 2
+  if (distY > 2) distY = 2
+
+  const sumDist = distX + distY
+
+  if (sumDist === 4) return 8
+  if (sumDist === 3) return 6
+  if (sumDist === 2) return 4
+  if (sumDist === 1) return 3
+  if (sumDist === 0) return 2
 
 }
 

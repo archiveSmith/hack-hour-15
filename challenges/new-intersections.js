@@ -18,6 +18,29 @@
  */
 
 function newIntersections(x, y){
+  // find horiontal lines -- AKA sets of coordinates with matching y values
+  // find vertical lines -- AKA sets of coordinates with matching x values
+  // see if any of those lines intersect
+  // if they do, increment a counter
+
+  // maybe build up an object to track horizontal and vertical line segments -- have to check against all existing for each
+  // points obj- instantiate each as false -- if on a line - set to true and make a new entry in verticals obj
+  // horizLines kvps have a key that is the y coord. and the value is an obj with min and max 
+  // if a point is has a match, it needs to know if it is horizontal or vertical.  
+  // so maybe need to structure the points obj differently -- collect
+  // ex verts = { 4: { min: 1, max: 5}}
+  const points = {
+    x: {},
+    y: {}
+  };
+  const horizLines = {};
+  const vertLines = {};
+
+  for (let i = 0; i < x.length; i += 1) {
+    if (points[x[i]]) {
+      // modify lines o
+    }
+  }
 
 }
 
