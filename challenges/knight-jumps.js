@@ -7,7 +7,7 @@
 // Your function should determine the number of spaces the knight can move to from a given location.
 // For example: if str is "(4 5)" then your program should output 8 because the knight can move to 8 different spaces
 // from position x = 4 and y = 5.
-//  example input:
+// example input:
 // var str = "(4 5)"
 
 function knightjumps(str) {
