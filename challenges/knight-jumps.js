@@ -11,7 +11,27 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+    coordArr = str.split(" ");
+    coordArrNums = coordArr.map((num)=>{return Number(num)});
+    let moves = 0;
+    //uplt
+    (coordArrNums[0]+2)<=8 ? ((coordArrNums[1]-1) >=1 ? moves+=1 : null) : null;
+    //uprt
+    (coordArrNums[0]+2)<=8 ? ((coordArrNums[1]+1) <=8 ? moves+=1 : null) : null;
+    //dnlt
+    (coordArrNums[0]-2)>=1 ? ((coordArrNums[1]-1) >=1 ? moves+=1 : null) : null;
+    //dnrt
+    (coordArrNums[0]-2)>=1 ? ((coordArrNums[1]+1) <=8 ? moves+=1 : null) : null;
+    //ltup
+    (coordArrNums[1]-2)>=1 ? ((coordArrNums[1]+1) <=8 ? moves+=1 : null) : null;
+    //rtup
+    (coordArrNums[1]+2)<=8 ? ((coordArrNums[1]+1) <=8 ? moves+=1 : null) : null;
+    //ltdwn
+    (coordArrNums[1]-2)>=1 ? ((coordArrNums[1]-1) >=1 ? moves+=1 : null) : null;
+    //rtdw
+    (coordArrNums[1]-2)>=1 ? ((coordArrNums[1]+1) <=8 ? moves+=1 : null) : null;
+    return moves;
 }
 
 module.exports = knightjumps;
+console.log(knightjumps("4 8"))
