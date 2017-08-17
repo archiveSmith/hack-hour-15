@@ -11,12 +11,25 @@
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
  */
 
+ // Input: 2 Strings
+ // Output: True or False, based on above conditions
+
+ // Edge Cases: 
+ //  Strings are not same length; 
+ //  Inputs are not strings
+ //  Inputs are empty, unclear what output should be there, let's output false
+
+
 function isSubstring(s1, s2) {
   return s1.indexOf(s2) >= 0;
 }
 
 function stringRotation(s1, s2) {
-
+	if (s1.length !== s2.length) return false; 
+	if (typeof s1 !== 'string' || typeof s2 !== 'string') return false; 
+	if (s1.length === 0) return false;
+	const check = s2.concat(s2); 
+  	return isSubstring(check, s1); 
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

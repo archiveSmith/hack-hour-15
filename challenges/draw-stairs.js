@@ -13,9 +13,13 @@
 
 */
 
+
 function drawStairs(n) {
-
+	for (let i = 1; i <= n; i++) {
+		const blankSpaces = Array(n-i).fill(' ').join('');
+		const starSpaces = Array(i).fill('*').join(''); 
+		console.log(blankSpaces + starSpaces);
+	}
 }
-
 
 module.exports = drawStairs;
