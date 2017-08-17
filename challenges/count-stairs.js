@@ -22,6 +22,7 @@ function countStairs(n) {
   // if the top is one step away, you can only take one step;
   // else you can take one or two, and should call the function with each
   // when each function reaches the top, it returns 1, which can inrement a counter
+  
   if (n < 1) return 'invalid input'
 
   let count = 0
