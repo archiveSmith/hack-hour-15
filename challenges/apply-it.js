@@ -26,7 +26,15 @@
  */
 
 function applyIt(func, args) {
-
+  let functString = 'func('; 
+  args.forEach((arg, index) => {
+  	functString += `'${arg}'`; 
+  	if (index < args.length - 1) functString += ', '
+  })
 }
+
+functString += ')';
+
+return () => eval(functString);
 
 module.exports = applyIt;

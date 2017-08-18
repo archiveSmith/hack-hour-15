@@ -8,7 +8,20 @@
 
 
 function countTwos(num) {
+	// create counter starting at 0
+	// loop from 1 to num
+	// For each iteration, convert num to string
+	// loop through string and see if char is 2, increment counter if so
+  let count = 0; 
+  let str; 
+  for (let i = 0; i <= num; i++) {
+  	str = i.toString(); 
+  	for (let y = 0; y < str.length; y++) {
+  		if (str[y] === '2') count++; 
+  	}
+  }
 
+  return count; 
 }
 
 module.exports = countTwos;
