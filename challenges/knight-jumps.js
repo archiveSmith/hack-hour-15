@@ -31,22 +31,21 @@ function knightjumps(str) {
   // if sum === 0 -> return 2
 
   const x = parseInt(str[1]);
-  const y = parseInt(str[1]);
+  const y = parseInt(str[3]);
 
   let distX = x > 4 ? 8 - x : x - 1
   let distY = y > 4 ? 8 - y : y - 1
 
-  if (distX > 2) distX = 2
-  if (distY > 2) distY = 2
+  if (distX > 2) distX = 2;
+  if (distY > 2) distY = 2;
 
-  const sumDist = distX + distY
+  const sumDist = distX + distY;
 
   if (sumDist === 4) return 8
   if (sumDist === 3) return 6
   if (sumDist === 2) return 4
   if (sumDist === 1) return 3
   if (sumDist === 0) return 2
-
 }
 
 module.exports = knightjumps;
