@@ -18,30 +18,53 @@
  */
 
 function newIntersections(x, y){
-  // find horiontal lines -- AKA sets of coordinates with matching y values
-  // find vertical lines -- AKA sets of coordinates with matching x values
+  // find horiontal lines -- AKA sets of coordinates with same y value
+  // find vertical lines -- AKA sets of coordinates with same x value
   // see if any of those lines intersect
   // if they do, increment a counter
 
   // maybe build up an object to track horizontal and vertical line segments -- have to check against all existing for each
-  // points obj- instantiate each as false -- if on a line - set to true and make a new entry in verticals obj
-  // horizLines kvps have a key that is the y coord. and the value is an obj with min and max 
-  // if a point is has a match, it needs to know if it is horizontal or vertical.  
-  // so maybe need to structure the points obj differently -- collect
-  // ex verts = { 4: { min: 1, max: 5}}
-  const points = {
-    x: {},
-    y: {}
-  };
+
+
   const horizLines = {};
   const vertLines = {};
 
+  // build objects 
   for (let i = 0; i < x.length; i += 1) {
-    if (points[x[i]]) {
-      // modify lines o
+    if (vertLines[x[i]]) {
+      vertLines[x[i]].push(y[i]) 
+    } else {
+      vertLines[x[i]] = [y[i]]
+    }
+
+    if (horizLines[y[i]]) {
+      horizLines[y[i]].push(x[i]) 
+    } else {
+      horizLines[y[i]] = [x[i]]
     }
   }
+  // delete values that are just points and extract the two endpoints for lines
+  Object.keys(horizLines).forEach(key => { 
+    if (horizLines[key].length === 1) delete horizLines[key] 
+    else horizLines[key] = [Math.min(...horizLines[key]), Math.max(...horizLines[key])]
+  })
 
+  Object.keys(vertLines).forEach(key => { 
+    if (vertLines[key].length === 1) delete vertLines[key] 
+    else vertLines[key] = [Math.min(...vertLines[key]), Math.max(...vertLines[key])]
+  })
+
+  let count = 0;
+
+  Object.keys(horizLines).forEach(yCoor => {
+    Object.keys(vertLines).forEach(xCoor => {
+      if (vertLines[xCoor][0] >= yCoor && yCoor <= vertLines[xCoor][1]  &&  horizLines[yCoor][0] >= xCoor && xCoor <= horizLines[yCoor][1]) {
+        count += 1;
+      }
+    })
+  })
+
+  return count
 }
 
 module.exports = newIntersections;
