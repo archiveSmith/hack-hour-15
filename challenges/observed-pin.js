@@ -44,7 +44,50 @@ expectations = {
 
 function getPINs(observed) {
 
+  const result = [observed.toString()]
+
+  let split = observed.split('')
+  let tempNumber; 
+  let i;
+
+  for (i=0; i<split.length; i++) {
+    tempNumber = splite.splice(i,0)
+    if(tempNumber <= 3 && tempNumber >= 0) 
+
+    if(tempNumber <= 6 && tempNumber >= 4)
+
+    if(tempNumber <= 9 && tempNumber >= 7) 
+
+    if(tempNumber === 0) tempWord += 8
+
+    if(tempNumberi === split.length-1) tempWord = ''
+  }
+
+
+
+  return result
 }
 
+/*        horizontally or vertically
+┌───┬───┬───┐       1  2  3
+│ 1 │ 2 │ 3 │     1 *  X  *
+├───┼───┼───┤
+│ 4 │ 5 │ 6 │     2 X  *  X
+├───┼───┼───┤
+│ 7 │ 8 │ 9 │     3 *  X  X
+└───┼───┼───┘
+    │ 0 │              0
+    └───┘
+
+    // 3 x 3 grid
+    // 4 numbers
+    // 0's get trimmed out
+
+He noted the PIN 1357, but he also said, it is possible that each of the digits he saw could actually 
+be another adjacent digit (horizontally or vertically, but not diagonally). E.g. instead of the 1 it 
+could also be the 2 or 4. And instead of the 5 it could also be the 2, 4, 6 or 8.
+
+
+*/
 
 module.exports = getPINs
