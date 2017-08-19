@@ -43,7 +43,32 @@ expectations = {
 
 
 function getPINs(observed) {
+  const alts = {
+    '1': ['2','4'],
+    '2': ['1', '3', '5'],
+    '3': ['2', '6'],
+    '4': ['1', '5', '7'],
+    '5': ['2', '4', '6', '8'],
+    '6': ['3', '5', '9'],
+    '7': ['4', '8'],
+    '8': ['5', '7', '9', '0'],
+    '9': ['6', '8'],
+    '0': ['8']
+  }
+  
+  // go through observed digit by digit
+  // for each digit, find its alt values in alts and return a string with that value subbed for each
+  const pos = [];
 
+  observed.split('').forEach((num, i) => {
+    alts[num].forEach((digit => {
+      // slice away the index at i
+      const newPin = i === 0 ? digit + observed.slice(1) : observed.slice(0, i) + digit + observed.slice(i+1)
+      pos.push(newPin);
+    }))
+  })
+
+  return pos;
 }
 
 
