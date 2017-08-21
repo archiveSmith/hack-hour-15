@@ -20,7 +20,52 @@
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
 function poker(hand1, hand2) {
+  hand1.sort();
+  hand2.sort();
 
+  function fourOfAKind(arr) {
+    if (arr[0] === arr [3] || arr[1] === arr[4]) return 1
+    return false
+  }
+  
+  function fullHouse(arr) {
+    if ((arr[0] === arr[2] && arr[3] === arr[4]) || (arr[0] === arr[1] && arr[2] === arr[4])) return 2
+    return false
+  }
+  function straight(arr) {
+    for(let i = 0; i < arr.length-1; i++) {
+      if ((arr[i] + 1) !== arr[i+1]) return false
+    }
+    return 3
+  }
+
+  function threeOfAKind(arr) {
+    if (arr[0] === arr[2] || arr[1] === arr[3] || arr[2] === arr[4]) return 4
+    return false
+  }
+
+  function twoPair(arr) {
+    if((arr[0] === arr[1] && arr[2] === arr[3]) || (arr[0] === arr[1] && arr[3] === arr[4]) || (arr[1] === arr[2] && arr[3] === arr[4])) return 5
+    return false
+  }
+
+  function onePair(arr) {
+    if(arr[0] === arr[1] || arr[1] === arr[2] || arr[2] === arr[3] || arr[3] === arr[4]) return 6
+    return false
+  }
+
+  const p1 = fourOfAKind(hand1) || fullHouse(hand1) || straight(hand1) || threeOfAKind(hand1) || twoPair(hand1) || onePair(hand1) || 7
+  const p2 = fourOfAKind(hand2) || fullHouse(hand2) || straight(hand2) || threeOfAKind(hand2) || twoPair(hand2) || onePair(hand2) || 7
+
+  if (p1 > p2) return 'Player 2 wins'
+  if (p1 < p2) return 'Player 1 wins'
+ 
+
+  if (hand1[4] > hand2[4]) return 'Player 1 Wins'
+  if (hand1[4] < hand2[4]) return 'Player 2 Wins'
+    
+  return 'Draw'
+ 
 }
 
 module.exports = poker;
