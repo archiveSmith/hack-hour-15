@@ -20,7 +20,51 @@
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
 function poker(hand1, hand2) {
+    let twos = [];
+    let threes = [];
+    let fullHouses = [];
+    let highCards = [];
+    let oneObj = {};
+    let twoObj = {};
+    let playOne;
+    let playTwo;
+
+    hand1.forEach((card)=>{
+        oneObj[card] ? oneObj[card] += 1 : oneObj[card] = 1;
+    });
+    console.log(oneObj);
+    hand2.forEach((card)=>{
+        twoObj[card] ? twoObj[card] += 1 : twoObj[card] = 1;
+    });
+    console.log(twoObj);
+    // find twos and threes and highcards
+    for (cards in oneObj){
+        oneObj[cards] === 2 ? (twos[0] ? twos[0] += 1 : twos[0] = 1) : twos[0] = 0;
+        oneObj[cards] === 3 ? (threes[0] = true, playOne = "threeOfKind") : threes[0] = false;
+    }
+    ((twos[0]===1) &&threes[0]) ? fullHouses[0] = true : fullHouses[0] = false;
+    twos[0] === 2 ? playOne = "twoPair": (twos[0]===1 ? playOne = "onePair" : null );
+    // straight
+    let handOneArr = Object.keys(oneObj).sort((a,b)=>{return a+b})
+    console.log(handOneArr);
+    // handOneArr.forEach((card, counter = 1)=>{
+    //     (card-counter) === 
+    // })
+
+console.log(playOne)
+     
+//     switch(expression) {
+//     case n:
+//         code block
+//         break;
+//     case n:
+//         code block
+//         break;
+//     default:
+//         code block
+// }
 
 }
 
 module.exports = poker;
+console.log(poker([3,5,5,5,2], [4,6,7,8,8]))
