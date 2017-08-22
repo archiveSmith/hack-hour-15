@@ -26,6 +26,21 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  // sum all numbers in the array 
+  let expectedSum = 0;  // the total sum if Num wasn't missing 
+  let actualSum = 0;
+
+  for (let i = 0; i < Array.length; i += 1) {
+    actualSum += Array[i]; 
+    expectedSum = expectedSum + i + 1; 
+    console.log("Exp sum", expectedSum); 
+    console.log("i is: ", i); 
+    if ( Array.length - i  === 1)  expectedSum += i + 1; 
+  }
+
+  // expected sum minus the actual sum 
+  return (expectedSum - actualSum); 
+   
 }
 
 module.exports = missingNum;
