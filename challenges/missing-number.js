@@ -25,7 +25,24 @@ Challange:
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
 */
+
+
+/*
+  Base Case: We are not given an array, return zero(?)
+  
+  Problem: The largest number could be missing
+    Find the length
+      Length + 1 x Length + 2 = Expected Sum of All Numbers
+    Find total
+    Subtract Expected - Actual to get the missing number
+*/
+
+
 function missingNum(Array) {
+  if (!Array.length) return 0;
+  let expectedSum = (Array.length + 1) * (Array.length + 2);
+  let actualSum = Array.reduce((a, b) => a + b);
+  return expectedSum - actualSum;
 }
 
 module.exports = missingNum;
