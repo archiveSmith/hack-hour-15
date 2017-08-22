@@ -52,12 +52,6 @@ function pascalTriangle(numRows) {
       } else {
         upLeft = prevRow[ j - 1] || 1;
         upRight = prevRow[j] || 1;
-        if (i === 3) {
-          console.log(prevRow);
-          console.log('upLeft', upLeft);
-          console.log('upRight', upRight);
-        }
-
         nextRow.push(upLeft + upRight);
       }
 
