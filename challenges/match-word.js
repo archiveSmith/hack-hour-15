@@ -8,7 +8,23 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  if (typeof str !== 'string') return;
+  if (str === '') return true;
 
+  const wordStack = [];
+  const words = str
+    .split(/[!@#$%^&*()-=_+\[\]{}\|\\'";:/?.>,<\s]/g)
+    .filter((value) => value !== '')
+    .map(word => word.toLowerCase());
+
+  words.forEach((word) => {
+    const reversedWord = word.split('').reverse().join('');
+    const topOfStack = wordStack[wordStack.length - 1];
+    if (reversedWord === topOfStack) wordStack.pop();
+    else wordStack.push(word);
+  });
+
+  return wordStack.length === 0;
 }
 
 module.exports = matchWord;

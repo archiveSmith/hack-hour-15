@@ -6,9 +6,22 @@
 // countTwos(1000);  -> 300
 // countTwos(11420);  -> 4483
 
+const countTwos = (num) => {
+  let twoCount = 0;
 
-function countTwos(num) {
+  for (let i = 1; i <= num; i += 1) {
+    let numToShave = i;
 
-}
+    while (numToShave > 0) {
+      let lastDigit = numToShave % 10;
+      if (lastDigit === 2) twoCount += 1;
+      numToShave = shaveDigit(numToShave);
+    }
+  }
+
+  return twoCount;
+};
+
+const shaveDigit = n => Math.floor(n / 10);
 
 module.exports = countTwos;
