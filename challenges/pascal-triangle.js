@@ -42,10 +42,9 @@ function pascalTriangle(numRows) {
       for (let i = 0; i < row; i += 1) {
         if (i === 0 || i === row - 1) newRow.push(1);
         else {
-          newRow.push(triangle[triangle.length - 1][i -1] + triangle[triangle.length - 1][i ]);
+          newRow.push(triangle[triangle.length - 1][i -1] + triangle[triangle.length - 1][i]);
         }
       }
-      
       triangle.push(newRow);
     }
     if (row === numRows) return triangle;
@@ -56,6 +55,6 @@ function pascalTriangle(numRows) {
   return triangle;
 }
 
-console.log(pascalTriangle(7))
+// console.log(pascalTriangle(7))
 
 module.exports = pascalTriangle;
