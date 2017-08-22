@@ -23,21 +23,31 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-  const InCircle = {};
+  const InCircle = [];
   for (let i = 0; i < r.length; i += 1) {
-    InCircle[i] = Math.abs(inCircle(x[i], y[i], r[i], start_x, start_y)) - inCircle(x[i], y[i], r[i], end_x, end_y))
+    InCircle.push(Math.abs(inCircle(x[i], y[i], r[i], start_x, start_y) - inCircle(x[i], y[i], r[i], end_x, end_y)));
   }
-  return Object.keys(InCircle).reduce((acc, i) => {
-    acc += InCircle[i];
+  return InCircle.reduce((acc, elem) => {
+    acc += elem;
     return acc;
   })
 }
 
 
 function inCircle(x, y, r, pos_x, pos_y) {
-  const xFromCenter = Math.abs(x-pos_x);
-  const yFromCenter = Math.abs(y-pos_y);
-  return Math.hypot(xFromCenter, yFromCenter) < r ? 1 : 0; 
+  const xFromCenter = Math.abs(x - pos_x);
+  const yFromCenter = Math.abs(y - pos_y);
+  return (Math.hypot(xFromCenter, yFromCenter) < r) ? 1 : 0;
 }
+
+const x = [-1, 0, 0, 4];
+const y = [0, 0, 0, 4];
+const r = [1, 3, 6, 0.1];
+const start_x = 1;
+const start_y = 0;
+const end_x = 4;
+const end_y = 4;
+
+console.log(circleCountry(x, y, r, start_x, start_y, end_x, end_y));
 
 module.exports = circleCountry;
