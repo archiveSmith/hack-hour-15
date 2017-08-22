@@ -26,6 +26,15 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  let index;
+  let counter;
+  let temp = Array[0]
+  for (index = 1; index < Array.length; index++) {
+    counter = Math.abs(temp - Array[index]);
+    console.log('counter: ', counter)
+    temp = Array[index]
+    if(index === Array.length-1) return counter+1; 
+  }
 }
 
 module.exports = missingNum;
