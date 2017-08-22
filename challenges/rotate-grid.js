@@ -17,7 +17,13 @@
  */
 
 function rotateGrid(grid, n) {
+  // 2 nested for loops
+  // first loop denotes number of rings n/2 - 1
 
+  // second loop denotes number of orbits n - 2i -1
 }
 
+
+const sampleGrid = [[1,2,3], [4,5,6], [7,8,9]];
+// 1 - > 3 -> 6 -> 7 -> 1 and so on
 module.exports = rotateGrid;

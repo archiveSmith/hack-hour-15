@@ -15,7 +15,24 @@
  */
 
 function countStairs(n) {
-
+  let ways = 0
+  function stairsPossibilities(currentSum, oneOrTwo) {
+    currentSum += oneOrTwo;
+    // base case -> if sum hits target n
+    if (currentSum === n) {
+      ways += 1;
+      return null;
+    // if it goes over, end recursive call
+    } else if (currentSum > n) return null;
+    // call two instances -> either take one or two steps
+    return stairsPossibilities(currentSum, 1) || stairsPossibilities(currentSum, 2);
+  }
+  // start with 0
+  stairsPossibilities(0, 0);
+  return ways;
 }
 
+
+// console.log(countStairs(6))
 module.exports = countStairs;
+  

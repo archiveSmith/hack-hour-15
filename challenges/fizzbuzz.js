@@ -17,7 +17,24 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  // return is an array
+  const arr = [];
+  // increment from 1 to num
+  for (let i = 1; i <= num; i += 1) {
+  // if divisible by both, insert fizzbuzz
+    if (i % 3 === 0 && i % 5 === 0) {
+      arr.push('fizzbuzz');
+  // if divisible by 3,  insert element as fizz
+    } else if (i % 3 === 0) {
+      arr.push('fizz');
+  // if divisible by 5 ,insert element as buzz
+    } else if (i % 5 === 0) {
+      arr.push('buzz');
+    } else {
+      arr.push(i);
+    }
+  }
+  return arr;
 }
 
 module.exports = fizzbuzz;

@@ -25,7 +25,29 @@
  */
 
 function balancedParens(input){
-
+  let bracketsArr = [];
+  for (let i = 0; i < input.length; i += 1) {
+    if (input[i] === "(" ||
+        input[i] === "[" ||
+        input[i] === "{") {
+      bracketsArr.push(input[i]);
+    } else if ( (input[i] === ")" && bracketsArr[bracketsArr.length - 1] === "(") ||
+                (input[i] === "]" && bracketsArr[bracketsArr.length - 1] === "[") ||
+                (input[i] === "}" && bracketsArr[bracketsArr.length - 1] === "{")) {
+      bracketsArr.pop()
+    }
+  }
+  return bracketsArr.length === 0;
 }
 
 module.exports = balancedParens;
+    // if (input.charAt(i) === '[' ||
+    //     input.charAt(i) === '(' ||
+    //     input.charAt(i) === '{') {
+    //   lastBracket = input.charAt(i)
+    //   openBrackets += 1;
+    // } else if (input.charAt(i) === ']' ||
+    //           input.charAt(i) === ')' ||
+    //           input.charAt(i) === '}') {
+    //   openBrackets -= 1;
+    // }
