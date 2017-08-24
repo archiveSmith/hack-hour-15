@@ -22,8 +22,34 @@
  *
  */
 
-function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
 
+// x - array of x coordinates
+// y - array of y coordinates
+// r - radius of circles
+
+let x = [0, 10, 15];
+let y = [0, 8, 13];
+let r = [4, 1, 2,];
+
+// need straight line distance between XY and XY.
+// d = sqrt((x2 -x1)^2 + (y2-y1^2))
+// need to find circles that have starts along the same path
+// need to count how many borders fall between that point.
+
+
+function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  const dX= Math.pow((end_x - start_x), 2);
+  const dY = Math.pow((end_y - start_y), 2);
+  const distance = Math.sqrt(dX + dY);
+  const m = (end_x - start_x)/(end_y - start_y);
+  const b = start_y - m * start_x;
+  // y = mx + b;
+
+
+
+  return distance;
 }
+
+console.log(circleCountry(x, y, r, 0,0, 10,10));
 
 module.exports = circleCountry;

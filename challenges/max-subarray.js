@@ -6,9 +6,49 @@
  *              maxSubarray([15,20,-5,10])  -> 40
  *
  */
-
 function maxSubarray(arr) {
+  let max = -Infinity; // return value
+  let tempMax = -Infinity; // temp value to hold current array sum.
+  // let posMax = 0; // holds possible maxes until array has been traversed.
 
+  // arr.forEach((e)=> {
+  //   if (tempMax === -Infinity) {
+  //     max = tempMax = posMax = e;
+  //   } else if (tempMax + e > posMax) {
+  //     tempMax = posMax = tempMax + e;
+  //   } else {
+  //     tempMax = tempMax + e;
+  //   }
+  //
+  //
+  //   if (tempMax > posMax) {
+  //     posMax = tempMax;
+  //   } else if (tempMax < posMax) {
+  //     max = posMax;
+  //     tempMax = posMax = 0;
+  //   }
+  //
+  //   if (posMax > max) {
+  //     max = posMax;
+  //   }
+  // });
+
+  for (let i = 0; i < arr.length; i++) {
+    tempMax = -Infinity;
+    for (let j = i; j < arr.length; j++) {
+      if (tempMax === -Infinity) {
+        tempMax = arr[j];
+      } else {
+        tempMax += arr[j];
+      }
+
+      if (tempMax > max) {
+        max = tempMax;
+      }
+    }
+  }
+  return max;
 }
-
+// console.log(maxSubarray([-1, -2, -3, -4,-5]));
+// console.log('should have been -1');
 module.exports = maxSubarray;
