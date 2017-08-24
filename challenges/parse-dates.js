@@ -40,7 +40,27 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
-  
+
+    const months = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ]
+
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    let amPM = ["AM", "PM"]
+
+    let currentDate = new Date("Thurday December 17, 2015")
+
+    let splitStr = str.split(' ')
+    let i;
+    let template = ''
+    for (i=0; i<splitStr.length; i++) {
+        if(months.includes(splitStr[i])) template += ` ${splitStr[i]} `
+        if(days.includes(splitStr[i])) template += ` ${splitStr[i]} `
+        if(amPM.includes(splitStr[i])) {
+            template = template + ` ${splitStr[i-1]} `  + ` ${splitStr[1]} ` 
+        }
+    return new Date(template)
+    }
 }
 
 module.exports = parseDates;
