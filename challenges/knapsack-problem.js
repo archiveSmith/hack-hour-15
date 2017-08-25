@@ -10,6 +10,20 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+  let counter = weightAvailable
+  let weightObject = []
+  let valueCounter = 0
+  items.forEach(function(element) {
+    if(!weightObject.includes(Object.val(element)[0])) {
+      weightObject.push(Object.val(element)[0]) = 1
+      if(counter - Object.val(element)[0] !== 0) {
+        counter -= Object.val(element)[0]
+        valueCounter += Object.val(element)[1]
+      }
+    } else {
+      
+    }
+  }, this);
 
 };
 
