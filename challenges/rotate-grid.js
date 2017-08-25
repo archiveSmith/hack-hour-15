@@ -17,7 +17,58 @@
  */
 
 function rotateGrid(grid, n) {
-
+  for (let i = 0; i < n; i += 1) rotateClockWise(grid);
+  return grid;
 }
 
+const rotateClockWise = (grid) => {
+  if (!grid || !grid.length) return;
+
+  const rowLength = grid[0].length - 1;
+  let tempA;
+  let tempB;
+  let top = true;
+  let middle = false;
+  let bottom = false;
+
+  for (let i = 0; i < grid.length; i += 1) {
+    if (i === 0) top = true;
+    if (i > 0 && i < grid.length - 1) middle = true;
+    if (i === grid.length - 1) bottom = true;
+
+    if (top) {
+      tempA = grid[i][rowLength];
+      shiftRight(grid[i]);
+      grid[i][0] = grid[i + 1][0];
+    } else if (middle) {
+      grid[i][0] = grid[i + 1][0];
+      tempB = grid[i][rowLength];
+      grid[i][rowLength] = tempA;
+      tempA = tempB;
+    } else if (bottom) {
+      shiftLeft(grid[i]);
+      grid[i][rowLength] = tempA;
+    }
+
+    top = middle = bottom = false;
+  }
+
+  return grid;
+}
+
+const shiftRight = (row) => {
+  for (let i = row.length - 1; i > 0; i -= 1) row[i] = row[i - 1];
+}
+
+const shiftLeft = (row) => {
+  for (let i = 0; i < row.length - 1; i += 1) row[i] = row[i + 1];
+}
+
+
+console.log(rotateGrid([
+  [1, 2, 3, 14],
+  [4, 5, 6, 15],
+  [7, 8, 9, 16],
+  [10, 11, 12, 13]
+], 2))
 module.exports = rotateGrid;

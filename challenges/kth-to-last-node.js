@@ -15,14 +15,35 @@
  *
  * kthToLastNode(2, a); -> returns 'D' (the value on the second to last node)
  */
-
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function kthToLastNode(k, head) {
+  if (!head || typeof k !== 'number') return;
+  let currentNode = head;
+  let previousNode = currentNode;
+  let nextNode = currentNode.next;
 
+  // Apply .before and Get last node
+  while (nextNode) {
+    currentNode = nextNode;
+    currentNode.before = previousNode;
+    previousNode = currentNode;
+    nextNode = currentNode.next;
+  }
+
+  // Loop backwards
+  for (let i = 1; i < k; i += 1) {
+    if (!currentNode.before) return currentNode.value;
+    currentNode = currentNode.before;
+  }
+
+  return currentNode.value;
 }
 
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+module.exports = {
+  Node: Node,
+  kthToLastNode: kthToLastNode
+};
