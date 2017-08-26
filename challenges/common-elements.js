@@ -13,7 +13,24 @@
 // if there are no common numbers or strings return the string "Nothing in Common!"
 
 function commonElements(array1, array2, array3, array4){
+  const commonContainer1 = []
+  looper(array1, array2, commonContainer1)
+  const commonContainer2 = []
+  looper(array3, array4, commonContainer2)
+  const commonContainer3 = []
+  looper(commonContainer1, commonContainer2, commonContainer3)
+  return commonContainer3
+}
 
+const looper = (arrayA, arrayB, commonContainer)=>{
+  let index;
+  let array;
+
+  if(arrayA.length>arrayB.length) array = arrayA
+
+  for (index = 0; index < array.length; index++) {
+     if(arrayA.includes(arrayB[index])) commonContainer.push(arrayB[index])
+  }
 }
 
 module.exports = commonElements;
