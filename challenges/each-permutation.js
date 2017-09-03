@@ -19,11 +19,23 @@ eachPermutation([1, 2, 3], function(perm) {
 [ 3, 1, 2 ]
 [ 3, 2, 1 ]
 */
+const getArrayPermutations = (arr) => {
+  if (arr.length === 1) return [arr];
 
-function eachPermutation(arr, callback) {
+  const allPermutations = [];
 
-}
+  for (let i = 0; i < arr.length; i += 1) {
+    const permutationsWithoutCurrentIndex =
+      getArrayPermutations([...arr.slice(0, i), ...arr.slice(i + 1)])
+      .map(permutation => [arr[i], ...permutation])
 
+    allPermutations.push(...permutationsWithoutCurrentIndex);
+  }
 
+  return allPermutations;
+};
+
+const eachPermutation = (arr, callback) =>
+  getArrayPermutations(arr).forEach(perm => callback(perm));
 
 module.exports = eachPermutation;
