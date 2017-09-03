@@ -16,8 +16,43 @@
  * BONUS: Do this in place
  */
 
-function rotateGrid(grid, n) {
+// Input
+// Nested array
 
+// Output
+// Nested array that has been rotate clockwise, n number of times
+
+function rotateGrid(grid, n) {
+  if (!Array.isArray(grid)) return 'Error';
+  let length = grid[0].length - 1;
+  while (n > 1) {
+    let tmp = grid[0][length];
+    for (let i = length; i > 0; i -= 1) {
+      grid[0][i] = grid[0][i - 1];
+    }
+    for (let i = 0; i < length - 1; i++) {
+      grid[i][0] = grid[i + 1][0];
+    }
+    for (let i = 0; i < length - 1; i++) {
+      grid[length][i] = grid[length][i + 1];
+    }
+    for (let i = length; i > 0; i -= 1) {
+      grid[i][length] = grid[i - 1][length];
+    }
+    grid[1][length] = tmp;
+  }
+  return grid;
 }
+
+// let tmp = grid[0][2];
+// grid[0][2] = grid[0][1];
+// grid[0][1] = grid[0][0];
+// grid[0][0] = grid[1][0];
+// grid[1][0] = grid[2][0];
+// grid[2][0] = grid[2][1];
+// grid[2][1] = grid[2][2];
+// grid[2][2] = grid[1][2];
+// grid[1][2] = tmp;
+// n -= 1;
 
 module.exports = rotateGrid;

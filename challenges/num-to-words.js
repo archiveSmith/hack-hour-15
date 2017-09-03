@@ -13,7 +13,18 @@
  */
 
 function numToWords(num) {
+  const digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const tens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+  const twn = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+  const hund = ['hundred', 'thousand', 'million', 'trillion'];
 
+  num = num.toString();
+  if(num !== parseFloat(num)) return 0;
+  num = num.split('');
+
+  return num;
 }
+
+console.log(numToWords(43));
 
 module.exports = numToWords;
