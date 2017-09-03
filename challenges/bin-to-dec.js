@@ -12,7 +12,6 @@
  * Extension:
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
-
 function binToDec(binary) {
   binary = parseInt(binary);
 
@@ -26,6 +25,21 @@ function binToDec(binary) {
   }
 
   return intBinToDec(binary);
+}
+
+const decToBin = (decimal) => { // 5
+  if (decimal === 0) return 0;
+
+  let output = '';
+  let quotient = decimal;
+
+  while (quotient !== 0) {
+    let remainder = quotient % 2 === 0 ? 0 : 1;
+    output = remainder.toString() + output;
+    quotient = Math.floor(quotient / 2);
+  }
+
+  return output;
 }
 
 module.exports = binToDec;
