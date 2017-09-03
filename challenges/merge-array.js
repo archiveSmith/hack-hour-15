@@ -14,6 +14,39 @@
  */
 
 function mergeArrays(arr1, arr2) {
+  if(!arr1 || !arr2) return undefined;
+  let allArrays = arr1.concat([], arr2);
+  if(allArrays.length < 2) return allArrays;
+  let result = mergeSort(allArrays);
+  return result;
+}
+
+function mergeSort(array) {
+  if (array.length < 2) return array;
+  const mid = array.length/2;
+  const left = array.slice(0,mid);
+  const right = array.slice(mid);
+  
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+      const result = [];
+      while(left && left.length !== 0 || right && right.length !== 0) {
+        if(right.length === 0) {
+          result.push(left.shift());
+        } else if (left.length === 0){
+          result.push(right.shift());
+        } else if (left[0] <= right[0]) {
+          result.push(left.shift());
+        } else if(right[0] <= left[0]) {
+          result.push(right.shift());
+        }
+      }
+      return result;
+    }
+    
+
 
 }
 

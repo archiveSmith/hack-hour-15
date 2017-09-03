@@ -27,13 +27,40 @@
  *
  */
 
+
 var Node = function(value) {
   this.value = value;
   this.next = null;
 }
 
-function hasCycle(head) {
+//check if head is valid
+//as you go through the list, you need to keep a track of the values 
+//check whether the head.next value matches any of the previous values
+//return true/false
 
+function hasCycle(head) {
+  if(!head || head === null) return false;
+  //set two pointers
+  let prev = head;
+  let curr = head.next; 
+  
+  while(true) {
+    //if there is no current value or next value, it's false
+    if(!curr || !curr.next) return false;
+    //if the current value or the current next value matches a previous value, it's true;
+    else if(curr === prev || curr.next === prev) return true;
+    //traverse through the list and reassign prev and current 
+    else prev = prev.next; curr = curr.next.next;
+  }
+  
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
+
+
+
+
+
+
+
+

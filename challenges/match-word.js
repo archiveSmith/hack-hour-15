@@ -8,7 +8,46 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  if(balancedParens(str)) {
+  	let charStr = 
+  }
+}
 
+function balancedParens(input) {
+    let result = [];
+    let openMatch = {
+        '{': '}',
+        '[': ']',
+        '(': ')',
+        '_': '_',
+        '#': '#',
+        '$': '$',
+        '%': '%'
+    };
+    let closeMatch = {
+        '}': true,
+        ']': true,
+        ')': true,
+        '_': true,
+        '#': true,
+        '$': true,
+        '%': true
+    };
+    //loop through the input and push each openMatch character into result
+
+    for (let i = 0; i < input.length; i++) {
+        let item = input[i];
+        if (openMatch[item]) {
+            result.push(item);
+            //console.log(item);
+
+            //if there is no more openMatches, then push the closeMatch in the result
+        } else if (closeMatch[item]) {
+
+            if (openMatch[result.pop()] !== item) return false;
+        }
+    }
+    return true;
 }
 
 module.exports = matchWord;

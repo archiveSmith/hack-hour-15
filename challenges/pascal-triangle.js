@@ -33,7 +33,35 @@
 */
 
 function pascalTriangle(numRows) {
-
+  let newArr = [];
+  newArr[0] = [1]; //if numRows = 1
+  newArr[1] = [1,1]; //if numRows = 2
+  for(let row = 2; row < numRows; row += 1) {
+    newArr[row] = [1];
+    console.log('this is newArr[row]: ', newArr[row]);
+    for(let col = 1; col <= row - 1; col += 1) {
+      //console.log('this is newArr[row][col]: ', newArr[row][col]);
+      newArr[row][col] = newArr[row-1][col] + newArr[row-1][col-1];
+      //at the end push 1
+      newArr[row].push(1); 
+    }
+  }
+  return newArr;
+  
 }
+
+console.log(pascalTriangle(6));
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = pascalTriangle;

@@ -11,7 +11,33 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+	//split the string
+	let strknight = str.slice(1,-1).split('');
+	let x_coord = Number(strknight[0]);
+	console.log('this is x_coord', x_coord);
+	let y_coord = Number(strknight[2]);
+	console.log('this is y_coord', y_coord);
+	
+  let count = 0;
+  
+  //outside the grid 
+  if(x_coord > 8 || x_coord <= 0 || y_coord <= 0 || y_coord > 8) return 0;
+  
+  //all the possible moves 
+    if(y_coord - 1 > 0 && x_coord + 2 <= 8) count++;
+    if(y_coord - 2 > 0 && x_coord - 1 > 0) count++;
+	if(y_coord - 2 > 0 && x_coord + 1 <= 8) count++;
+    if(y_coord + 2 <= 8 && x_coord - 1 > 0) count++;
+	if(y_coord + 2 <= 8 && x_coord + 1 <= 8) count++;
+	if(y_coord + 1 <= 8 && x_coord - 2 > 0) count++;
+	if(y_coord + 1 <= 8 && x_coord + 2 <= 8) count++;
+	if(y_coord - 1 > 0 && x_coord - 2 > 0) count++;
+	
+	
+	return count;
 }
+
+let val = "(4 5)";
+console.log(knightjumps(val));
 
 module.exports = knightjumps;

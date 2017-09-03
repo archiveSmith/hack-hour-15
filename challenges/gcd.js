@@ -8,7 +8,15 @@
  */
 
 function gcd(a, b) {
-
+  if(!a || !b) return 0;
+	if(a === b) {
+		return b;
+	} else if(a > b) {
+		return gcd(a-b, b);
+	} else {
+		return gcd(a, b-a);
+	}
 }
+
 
 module.exports = gcd;

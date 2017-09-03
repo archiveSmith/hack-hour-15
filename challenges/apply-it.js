@@ -25,8 +25,33 @@
  *  DO NOT USE THE BUILT IN APPLY METHOD OR THE SPREAD OPERATOR
  */
 
-function applyIt(func, args) {
 
+
+function applyIt(func, args) {
+	if(typeof func !== 'function' || !Array.isArray(args)) return undefined;
+
+	let str = 'func(';
+	args.forEach((arg, i) => {
+		str += `"${arg}"`;
+		if(i !== args.length -1) str += ',';
+	});
+
+	str += ')';
+
+
+	return () => eval(str);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = applyIt;

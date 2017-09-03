@@ -26,6 +26,18 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  let newArr = Array.sort();
+  let lastNumber = newArr[newArr.length-1];
+  //console.log(lastNumber);
+  let expectedSum = (lastNumber * (lastNumber + 1)) /2;
+  //console.log(expectedSum);
+  let sum = 0;
+  
+  for(let i = 0 ; i < newArr.length; i++) {
+    sum += newArr[i];
+    //console.log(sum);
+  }
+  return expectedSum - sum;
 }
 
 module.exports = missingNum;

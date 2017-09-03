@@ -21,8 +21,27 @@ function Node(val) {
   this.next = null;
 }
 
-function kthToLastNode(k, head) {
 
+function kthToLastNode(k, head) {
+  let temp = head;
+  let length = 0;
+  let i;
+
+  if(typeof k !== 'number' || k < 1 || Object.getPrototypeOf(head) !== Node.prototype) return undefined; //added edge cases
+  //initiate length variable to count the number of nodes 
+  while(temp !== null) {
+    temp = temp.next;
+    length++;
+  }
+  //make sure the k is less than the length
+  if(length < k) return;
+  temp = head;
+  
+  //start to find specified node from the beginning of the list
+  for(i = 1; i <= length-k; i++) {
+    temp = temp.next;
+  }
+  return temp.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
