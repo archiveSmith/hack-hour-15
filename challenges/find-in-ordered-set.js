@@ -9,10 +9,28 @@ findInOrderedSet(nums, 2);  -> false
 
  */
 
-
 function findInOrderedSet(arr, target) {
+  if (!arr.length || !target) return;
 
+  let searcher = arr.length / 2;
+  let limiter = arr.length / 4;
+  let searcherLow;
+  let searcherHigh;
+
+  while (true) {
+    searcherLow = Math.floor(searcher);
+    searcherHigh = Math.ceil(searcher);
+    
+    if (arr[searcherLow] === target || arr[searcherHigh] === target) {
+      return true;
+    } else if (arr[searcherLow] < target || arr[searcherHigh] < target) {
+      searcher += limiter;
+    } else if (arr[searcherLow] > target || arr[searcherHigh] > target) {
+      searcher -= limiter;
+    }
+
+    limiter /= 2;
+  }
 }
-
 
 module.exports = findInOrderedSet;

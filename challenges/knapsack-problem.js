@@ -9,8 +9,19 @@
   solveKnapsack(items, 5); // returns 9 (from items[1] and items[2])
 */
 
-function solveKnapsack(items, weightAvailable) {
+function solveKnapsack(items, weightAvailable, valueCount = 0) {
+  let max = valueCount;
 
+  for (let i = 0; i < items.length; i += 1) {
+    if (items[i].weight <= weightAvailable) {
+      const newItems = [...items.slice(0, i), ...items.slice(i + 1)];
+      const newWeight = weightAvailable - items[i].weight;
+      const newValue = valueCount + items[i].value;
+      max = Math.max(solveKnapsack(newItems, newWeight, newValue), max);
+    }
+  }
+
+  return max;
 };
 
 module.exports = solveKnapsack;

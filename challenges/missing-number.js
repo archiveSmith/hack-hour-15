@@ -25,7 +25,23 @@ Challange:
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
 */
-function missingNum(Array) {
+function missingNum(array) {
+  let lowest = Infinity;
+  let highest = -Infinity;
+  let actualSum = 0;
+  let expectedSum = 0;
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] < lowest) lowest = array[i];
+    else if (array[i] > highest) highest = array[i];
+    actualSum += array[i];
+  }
+
+  for (let i = lowest; i <= highest; i += 1) {
+    expectedSum += i;
+  }
+
+  return expectedSum - actualSum;
 }
 
 module.exports = missingNum;
