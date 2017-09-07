@@ -64,11 +64,4 @@ const shiftLeft = (row) => {
   for (let i = 0; i < row.length - 1; i += 1) row[i] = row[i + 1];
 }
 
-
-console.log(rotateGrid([
-  [1, 2, 3, 14],
-  [4, 5, 6, 15],
-  [7, 8, 9, 16],
-  [10, 11, 12, 13]
-], 2))
 module.exports = rotateGrid;

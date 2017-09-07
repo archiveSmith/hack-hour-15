@@ -9,8 +9,14 @@
  *
  */
 
-function permPalin(str) {
-	
+function permPalin(str, ) {
+  if (typeof str !== 'string') return;
+  if (str.length === 1) return true;
+
+
+
 }
+
+console.log(permPalin('cbac'));
 
 module.exports = permPalin;

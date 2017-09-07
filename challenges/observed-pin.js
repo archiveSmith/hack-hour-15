@@ -43,8 +43,59 @@ expectations = {
 
 
 function getPINs(observed) {
+  // Loop through each index, trying all adjacents
+  // -> for each adjacent, loop through each other index, trying all of its adjacents
+
+  for (let i = 0; i < observed.length; i += 1) {
+    let adjacents = getAdjacents(parseInt(observed.charAt(i)));
+
+  }
 
 }
 
+const loopThroughAdjacents = (string, index) => {
+  const combos = [];
+  const adjacents = getAdjacents(parseInt(string.charAt(index)));
+
+  for (let i = 0; i < adjacents.length; i += 1) {
+    combos.push(string.slice(0, index - 1) + adjacents[i] + string.slice(index));
+  }
+
+  return combos;
+}
+
+const getAdjacents = (num) => {
+  if (num === 0) return [0, 8].map(elem => elem.toString());
+  else if (num === 8) return [7, 8, 9, 0].map(elem => elem.toString());
+  const adjacents = [];
+
+  adjacents.push(num);
+  if (num - 3 > 0) adjacents.push(num - 3);
+  if (num + 3 < 10) adjacents.push(num + 3);
+  if (num - 1 % 3 !== 0) adjacents.push(num - 1);
+  if (num % 3 !== 0) adjacents.push(num + 1);
+
+  return adjacents.map(elem => elem.toString());
+}
+
+// const getAdjacents = (num) => {
+//   if (num === 0) return [0, 8];
+//   const adjacents = [];
+
+//   let verticalPoint;
+//   for (let i = num; i >= 1; i -= 3) verticalPoint = i;
+//   for (let i = verticalPoint; i <= 10; i += 3) adjacents.push(i % 10);
+
+//   let horizontalPoint;
+//   for (let i = num - 1; i % 3 !== 0; i -= 1) horizontalPoint = i;
+//   for (let i = horizontalPoint; true; i += 1) {
+//     adjacents.push(i % 10);
+//     if (i % 3 === 0) break;
+//   }
+
+//   return adjacents;
+// }
+
+console.log(loopThroughAdjacents('1325', 1));
 
 module.exports = getPINs

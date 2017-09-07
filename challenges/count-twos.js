@@ -13,7 +13,7 @@ const countTwos = (num) => {
     let numToShave = i;
 
     while (numToShave > 0) {
-      let lastDigit = numToShave % 10;
+      const lastDigit = numToShave % 10;
       if (lastDigit === 2) twoCount += 1;
       numToShave = shaveDigit(numToShave);
     }

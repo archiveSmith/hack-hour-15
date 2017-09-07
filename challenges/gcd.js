@@ -6,7 +6,6 @@
  * gcd(10, 9) -> 1
  *
  */
-
 function gcd(a, b) {
   const larger = Math.max(a, b);
   const smaller = Math.min(a, b);
@@ -32,5 +31,7 @@ const getLargestFactors = (num) => {
 
   return [num, 1];
 }
+
+console.log(gcd(5540, 8990))
 
 module.exports = gcd;

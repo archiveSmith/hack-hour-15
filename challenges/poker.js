@@ -23,4 +23,29 @@ function poker(hand1, hand2) {
 
 }
 
+const getRank = (hand) => {
+  const handRank = {
+    rank: null,
+    high: null
+  }
+
+  const cardToMatches = hand.reduce((acc, val) => {
+    acc[val] ? acc[val] += 1 : acc[val] = 1;
+    return acc;
+  }, {});
+
+  // Four of kind
+  if (Object.values(cardToMatches).includes(4)) {
+    return Object.entries(cardToMatches).reduce((acc, entry) => {
+      const [key, value] = [0, 1];
+      if (entry[value] === 4) return { rank: 1, high: entry[value] };
+      return acc;
+    }, {});
+  }
+
+  // Full house
+}
+
+console.log(getRank([3, 3, 3, 3, 4]));
+
 module.exports = poker;
