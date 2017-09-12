@@ -7,31 +7,12 @@
  *
  */
 function gcd(a, b) {
-  const larger = Math.max(a, b);
-  const smaller = Math.min(a, b);
-  if (larger % smaller === 0) return smaller;
+  const big = Math.max(a, b);
+  const small = Math.min(a, b);
 
-  let largestFactors = getLargestFactors(smaller);
-
-  while (true) {
-    for (let i = 0; i < largestFactors.length; i += 1) {
-      if (larger % largestFactors[i] === 0) return largestFactors[i];
-    }
-    largestFactors = [
-      ...getLargestFactors(largestFactors[0]),
-      ...getLargestFactors(largestFactors[1]),
-    ].sort((a, b) => a - b);
+  for (let i = small; i >= 0; i -= 1) {
+    if (Number.isInteger(small / i) && Number.isInteger(big / i)) return i;
   }
 }
-
-const getLargestFactors = (num) => {
-  for (let i = 2; num / i >= i; i += 1) {
-    if (num % i === 0) return [num / i, i];
-  }
-
-  return [num, 1];
-}
-
-console.log(gcd(5540, 8990))
 
 module.exports = gcd;

@@ -37,15 +37,17 @@ function newIntersections(xPoints, yPoints) {
 const hasSurroundingPoints = (xPoints, yPoints, point) => {
   // Search left and right
   // For each left and right, check if there is corresponding up and down
-  xPoints.findIndex(point.x)
-}
+  xPoints.findIndex(point.x);
+};
 
-const getMinMax = (arr) => (
-  arr.reduce((acc, val) => {
-    if (val < acc.min) acc.min = val;
-    if (val > acc.max) acc.max = val;
-    return acc;
-  }, { min: Infinity, max: -Infinity })
-);
+const getMinMax = arr =>
+  arr.reduce(
+    (acc, val) => {
+      if (val < acc.min) acc.min = val;
+      if (val > acc.max) acc.max = val;
+      return acc;
+    },
+    { min: Infinity, max: -Infinity }
+  );
 
 module.exports = newIntersections;

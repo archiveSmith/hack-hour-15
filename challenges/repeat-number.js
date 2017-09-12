@@ -10,26 +10,24 @@
  *
  */
 
-const repeatNumbers = array => {
-  let actualSum = 0;
-  let expectedSum = 0;
+const repeatNumbers = array =>
+  array.reduce((acc, val) => acc + val) - getSeriesSum(array.length - 1);
 
-  for (let i = 1; i <= array.length - 1; i += 1) {
-    expectedSum += i;
-  }
+const getSeriesSum = length => length * (length + 1) / 2;
 
-  for (let i = 0; i < array.length; i += 1) {
-    actualSum += array[i];
-  }
+// const repeatNumbers = array => {
+//   let actualSum = 0;
+//   let expectedSum = 0;
 
-  return expectedSum - actualSum;
-};
+//   for (let i = 1; i <= array.length - 1; i += 1) {
+//     expectedSum += i;
+//   }
 
-// const getSeriesSum = length => length * (length + 1) / 2;
+//   for (let i = 0; i < array.length; i += 1) {
+//     actualSum += array[i];
+//   }
 
-// const repeatNumbers = array =>
-//   array.reduce((acc, val) => acc + val) - getSeriesSum(array.length - 1);
-
-console.log(repeatNumbers([1, 2, 3, 4, 4, 5]));
+//   return expectedSum - actualSum;
+// };
 
 module.exports = repeatNumbers;
